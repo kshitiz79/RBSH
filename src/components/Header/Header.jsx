@@ -23,7 +23,7 @@ const NavItem = ({
               activeDropdown === hasDropdown ? null : hasDropdown
             )
           }
-          className=" text-lg text-black uppercase hover:text-black hover:text-xl hover:font-extrabold cursor-pointer flex items-center "
+          className=" text-lg text-black uppercase hover:text-black hover:text-xl hover:font-extrabold cursor-pointer flex items-center w-44"
           aria-expanded={activeDropdown === hasDropdown}
           aria-haspopup="true"
         >
@@ -50,7 +50,7 @@ const NavItem = ({
     ) : (
       <Link
         to={path}
-        className="block text-lg text-black uppercase hover:text-yellow-500"
+        className="block text-lg text-slate-800 uppercase hover:text-black hover:text-xl hover:font-extrabold w-20"
       >
         {link}
       </Link>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from './Hero/Hero';
-import Blog from './Blog/Blog';
+
 
 import VideoSection from '../../pages/Home/Video/Video';
 import Gallery from '../../pages/Home/Gallery/Gallery';
@@ -11,9 +11,11 @@ import HorizontalScrollCard from '../../components/HorizontalScrollCard/Horizont
 
 import DefineUs from './DefineUs/DefineUs';
 
+
 const Home = () => {
   return (
     <div>
+
        <Hero/>
        <DefineUs className="z-10" />
    
@@ -24,7 +26,7 @@ const Home = () => {
         <Gallery/>
         <HorizontalScrollCard/>
         <ClientSection/>
-        
+     
     </div>
   )
 }

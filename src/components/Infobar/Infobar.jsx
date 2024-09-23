@@ -1,63 +1,61 @@
-// components/ScrollText/ScrollText.jsx
-
-import { motion } from 'framer-motion';
-
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 const ScrollText = () => {
-  // Variants for the scrolling animation
-  const scrollVariants = {
-    animate: {
-      x: ['100%', '-100%'], // Move from right to left
-      transition: {
-        x: {
-          repeat: Infinity,
-          repeatType: 'loop',
-          duration: 30, // Adjust this to change the scrolling speed
-          ease: 'linear',
-        },
-      },
-    },
-  };
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const element = scrollRef.current;
+    const width = element.scrollWidth;
+    
+    gsap.to(element, {
+      x: -width,
+      duration: 19, // Adjust the duration to control speed
+      repeat: -1,   // Infinite loop
+      ease: 'linear',
+      modifiers: {
+        x: gsap.utils.unitize(value => parseFloat(value) % width) // Smooth looping
+      }
+    });
+  }, []);
 
   return (
-    <div className="bg-black text-white py-7 overflow-hidden">
-      <motion.div
+    <div className="bg-black text-white py-7 overflow-hidden relative">
+      <div
+        ref={scrollRef}
         className="flex items-center space-x-8 whitespace-nowrap"
-        variants={scrollVariants}
-        animate="animate"
       >
         {/* Repeating set of information */}
-        {Array(3).fill(
+        {Array(11).fill(
           <div className="flex items-center space-x-4">
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500"> *</span>Create
+              <span className="font-semibold text-yellow-500"></span>Create
               <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
             </span>
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500">*</span>Innovate
+              <span className="font-semibold text-yellow-500"></span>Innovate
+              <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
+            </span>
 
-              <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
-            </span>
-
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500">* </span>Grow
+              <span className="font-semibold text-yellow-500"> </span>Grow
               <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
             </span>
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500">*</span>Succeed
+              <span className="font-semibold text-yellow-500"></span>Succeed
               <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
             </span>
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500">*</span>Build
+              <span className="font-semibold text-yellow-500"></span>Build
               <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
             </span>
             <span className="text-xl flex items-center">
-              <span className="font-semibold text-yellow-500">*</span>Trend
-
+              <span className="font-semibold text-yellow-500"></span>Trend
+              <i className="fas fa-star-of-life text-yellow-500 mx-2"></i>
             </span>
           </div>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -7,9 +7,11 @@ const Hero = () => {
     { word: 'captivating', symbols: { left: '', right: '' } },
     { word: 'creative', symbols: { left: '', right: '' } }
   ];
+
+  // Corresponding colors for each word
+  const colors = ['text-red-500', 'text-blue-500', 'text-green-500', 'text-yellow-500'];
   
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,8 +47,10 @@ const Hero = () => {
           RBSH Studio delivers{' '}
           <span className="transition-all duration-500 ease-in-out symbol">
             {words[currentWordIndex].symbols.left} {/* Left Symbol */}
-            <span className="font-bold symbol">{words[currentWordIndex].word}</span> {/* Dynamic word */}
-            {words[currentWordIndex].symbols.right} 
+            <span className={`font-bold ${colors[currentWordIndex % colors.length]}`}>
+              {words[currentWordIndex].word}
+            </span> {/* Dynamic word with dynamic color */}
+            {words[currentWordIndex].symbols.right}
           </span>{' '}
           designs that <br /> bring your vision to life and set your brand apart.
         </p>
@@ -55,7 +59,6 @@ const Hero = () => {
           Contact Us
         </button>
       </div>
-
 
       <div
         className="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat overflow-scroll -z-40"
@@ -66,6 +69,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
 
 // import bgImage from '../../../assets/background.jpg'; // Adjust path as necessary
