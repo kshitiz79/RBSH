@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import {Link} from "react-router-dom"
 const Hero = () => {
   // Static array of words with surrounding symbols
   const words = [
@@ -56,7 +56,9 @@ const Hero = () => {
         </p>
 
         <button className="border mt-24 border-black p-3 px-20 text-2xl rounded-full uppercase hover:text-white hover:bg-black">
+          <Link to="/contactus" >
           Contact Us
+          </Link>
         </button>
       </div>
 

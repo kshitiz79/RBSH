@@ -10,6 +10,9 @@ import Tablet from './Tablet/Tablet';
 import HorizontalScrollCard from '../../components/HorizontalScrollCard/HorizontalScrollCard';
 
 import DefineUs from './DefineUs/DefineUs';
+import Technology from './Technology/Technology';
+import ScrollingText from '../../components/ScrollingText/ScrollingText';
+
 
 
 const Home = () => {
@@ -18,7 +21,7 @@ const Home = () => {
 
        <Hero/>
        <DefineUs className="z-10" />
-   
+
         <VideoSection/>
         <Tablet/>
         <FloatingSection/>
@@ -26,7 +29,9 @@ const Home = () => {
         <Gallery/>
         <HorizontalScrollCard/>
         <ClientSection/>
-     
+    
+        <Technology/>
+        <ScrollingText/>
     </div>
   )
 }

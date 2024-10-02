@@ -1,17 +1,20 @@
+import { Link } from "react-router-dom";
+
 // CardButtonGrid.jsx
 const CardButton = ({ text, link }) => (
-    <a
-      href={link}
+  
+    <Link
+      to={link}
       className="flex items-center justify-between bg-black text-white p-4 rounded hover:bg-yellow-500 transition"
     >
       <span>{text}</span>
       <span className="text-lg">&rarr;</span>
-    </a>
+    </Link>
   );
   
   const CardButtonGrid = () => {
     return (
-      <div className="px-14 mt-16">
+      <div className="lg:px-14 mt-16 sm:px-5 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <CardButton text="Branding & Design" link="/branding-design" />
           <CardButton text="Video Editing" link="/video-editing" />

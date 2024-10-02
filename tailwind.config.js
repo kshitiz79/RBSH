@@ -10,25 +10,27 @@ export default {
         'primary': "#010851",
       },
       fontFamily: {
-        // Add Lato as a custom font
+        // Add Lato and Roboto Mono as custom fonts
         lato: ['Lato', 'sans-serif'],
-        robot:['Roboto Mono' ,'monospace']
+        robot: ['Roboto Mono', 'monospace'],
       },
-      animation: {
-        scroll: 'scroll 200s linear infinite', // Adds the scrolling animation
-        'scroll-reverse': 'scroll-reverse 150s linear infinite', // Reverse scrolling
-      },
-      keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        'scroll-reverse': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
-        },
-      },
+      // Add custom stroke widths and colors for hollow text
+      
     },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.hollow-text-black': {
+          '-webkit-text-stroke': '2px black',  // Black stroke
+          'color': 'transparent',
+        },
+        '.hollow-text-white': {
+          '-webkit-text-stroke': '2px white',  // White stroke
+          'color': 'transparent',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
+};

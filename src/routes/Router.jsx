@@ -12,6 +12,8 @@ import SocialMedia from "../pages/Services/SocialMedia";
 import LeadGeneration from "../pages/Services/LeadGeneration";
 import PhotoGraphy from "../pages/Services/PhotoGraphy";
 import WebDesign from "../pages/Services/WebDesign";
+import Test from "../pages/Test/Test";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
 
@@ -65,10 +67,16 @@ const router = createBrowserRouter([
       {
         path: "/web-design-development",
         element:<WebDesign/>
-      }
+      },
       
-
-
+      {
+        path: "/Test",
+        element:<Test/>
+      },
+      {
+        path: "/contactus",
+        element:<ContactUs/>
+      }
       ],
     },
   ]);

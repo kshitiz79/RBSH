@@ -38,7 +38,8 @@ const NavItem = ({
               <li key={path} className="hover:bg-gray-200 px-4 py-2">
                 <Link
                   to={path}
-                  className="block text-sm uppercase hover:text-yellow-500"
+                  className="block text-sm uppercase hover:font-bold "
+                  onClick={() => setActiveDropdown(null)}
                 >
                   {link}
                 </Link>
@@ -147,7 +148,7 @@ const Header = () => {
     <header className="w-full h-auto bg-white fixed top-0 left-0 z-50 right-0 transition-all ease-in duration-300">
       <nav
         ref={navRef}
-        className={`py-6 lg:px-16 px-4 ${
+        className={`py-3 lg:px-16 px-4 ${
           isSticky
             ? "sticky top-0 left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in"
             : "transition-all duration-300 ease-in"
@@ -191,10 +192,14 @@ const Header = () => {
 
           {/* Responsive Save Changes Button */}
           <div className="hidden lg:flex items-center space-x-12">
-            <button className="transition ease-in-out px-6 py-3 delay-150 rounded-full bg-black text-white hover:-translate-y-1 hover:scale-110 hover:bg-yellow-400 duration-300">
-              Contact Us
-            </button>
-          </div>
+  <a href="/contactus">
+    <button className="transition ease-in-out px-6 py-3 delay-150 rounded-full bg-black text-white hover:-translate-y-1 hover:scale-110 hover:bg-yellow-400 duration-300">
+      <Link to="/contactus">
+      Contact Us
+      </Link> 
+    </button>
+  </a>
+</div>
         </div>
 
         {/* Mobile Menu */}

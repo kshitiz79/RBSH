@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
-import "./App.css";
 
 // Ensure that `router` is exported correctly from `Router.jsx`
 import router from "./routes/Router.jsx"; // Make sure this export matches

@@ -14,7 +14,7 @@ const FeaturedSection = () => {
 
 
   return (
-    <section className="bg-black  text-white  px-8 flex flex-col lg:flex-row items-center justify-between">
+    <section className="bg-black relative text-white  px-8 flex flex-col lg:flex-row items-center justify-between">
       {/* Text Section */}
       <div className="lg:w-1/2 space-y-6">
         <h2  className="text-5xl lg:text-6xl font-bold leading-tight">

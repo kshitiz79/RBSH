@@ -1,104 +1,218 @@
 
+import React, { useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+
+
+
 
 const Career = () => {
+
+  const images = [
+    './careerslider1.png',
+    './careerslider2.png',
+    './careerslider3.png',
+  
+
+  ];
+
+
+
+  const [activeText, setActiveText] = useState('HOW');
+
+ // Set initial state as false
+
+
+
+
+  // This object holds the text content for each tab
+  const textContent = {
+    // MAFIA: "Would you be the good old Thakur who's remembered only in Gabbar’s dialogues, or would you rather be Gabbar himself, whose name is iconic?",
+    HOW: "We believe in power of collaboration. At RBSH, every voice counts, and we foster an open environment where innovation flourishes. By blending technology and creativity, we deliver campaigns that exceed expectations. You’ll work alongside passionate professionals who share your drive for excellence.",
+    WHY: "We are a community of forward-thinkers dedicated to creating bold, innovative work. Our culture is built on inclusion, adaptability, and collaboration. If you’re looking to make an impact in a supportive and dynamic environment, RBSH Studio is where you can leave your mark and shape the future of advertising.",
+    WHAT: "Joining RBSH Studio means more than just a job — it’s a career investment. We provide the mentorship, tools, and opportunities to help you grow. You’ll work on cutting-edge projects that challenge and inspire you, with a team that celebrates your achievements and values your development. "
+  }
+  const getArrowPosition = () => {
+    switch (activeText) {
+      case 'HOW':
+        return '10%';  // Adjust the percentage based on the layout
+      case 'WHY':
+        return '40%';  // Adjust as necessary
+      case 'WHAT':
+        return '67%';  // Adjust as necessary
+      default:
+        return '10%';
+    }
+  };
+
   return (
-    <div className="bg-black min-h-screen text-white">
-      {/* Hero Section */}
-      <section className="container mx-auto py-6 md:py-12">
-        <header className="text-center mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold outline-heading">CAREERS</h1>
-        </header>
-      </section>
+    <>
 
-      {/* Why Work with Us Section */}
-      <section className="container mx-auto flex flex-col md:flex-row items-center py-6 md:py-12 px-6 md:px-0">
-        <figure className="w-full md:w-1/2 p-4">
-          <img
-            src="./download.jpg" // Replace with actual image source
-            alt="David Ogilvy, 1978"
-            className="w-full h-auto rounded-md object-cover"
-          />
-        </figure>
-        <article className="w-full md:w-1/2 p-4 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">Why Work with Us?</h2>
-          <p className="text-base md:text-lg leading-relaxed">
-            At RBSH Studio, we believe in nurturing talent and creating an environment where everyone can succeed. Here are some reasons why you should consider joining our team:
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            Ogilvy has been there every step of the way, shepherding the world’s most successful brands through uncertainty and helping them adapt and stay relevant for the long term.
-          </p>
-        </article>
-      </section>
+<section className="flex flex-row items-center bg-blue-600 p-10 lg:h-[70vh] relative h-[38vh]">
+      {/* Left section with text */}
+      <div className="flex-1 text-white hollow-text-white text-3xl md:text-9xl  lg:text-9xl font-extrabold space-y-4 lg:ml-[11%] font-lato ">
+    <p
+      className={`hover:text-white cursor-pointer ${activeText === 'HOW' ? 'text-white' : ''}`}
+      onMouseEnter={() => setActiveText('HOW')}
+    >
+      HOW
+    </p>
+    <p
+      className={`hover:text-white cursor-pointer ${activeText === 'WHY' ? 'text-white' : ''}`}
+      onMouseEnter={() => setActiveText('WHY')}
+    >
+      WHY
+    </p>
+    <p
+      className={`hover:text-white cursor-pointer ${activeText === 'WHAT' ? 'text-white' : ''}`}
+      onMouseEnter={() => setActiveText('WHAT')}
+    >
+      WHAT
+    </p>
+  </div>
 
-      {/* Diversity and Inclusion Section */}
-      <section className="container mx-auto flex flex-col md:flex-row items-center py-6 md:py-12 px-6 md:px-0">
-        <article className="w-full md:w-1/2 p-4 order-2 md:order-1 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">Diversity and Inclusion</h2>
-          <p className="text-base md:text-lg leading-relaxed">
-            At Ogilvy, our people are at the heart of what we do: a creative agency that sparks game-changing ideas through collaboration, integrity, and a celebration of self-expression.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            We build powerful teams with purpose, hiring talent across all races, ethnicities, religions, abilities, sexual orientations, and gender identities, ensuring equity and fairness.
-          </p>
-        </article>
-        <figure className="w-full md:w-1/2 p-4 order-1 md:order-2">
-          <img
-            src="./download.jpg" // Replace with actual image source
-            alt="Employee making a comment during a Town Hall staff meeting"
-            className="w-full h-auto rounded-md object-cover"
-          />
-        </figure>
-      </section>
+      {/* Right section with active arrow */}
+      <div className="max-w-lg bg-white lg:px-12 lg:py-12 rounded-2xl shadow-lg lg:mr-60 relative px-6 py-6  md:px-6 ml-12  md:mr-32  ">
+        {/* Arrow that moves with active text */}
+        <div
+          className="absolute left-[-2rem] text-white"
+          style={{ top: getArrowPosition(), fontSize: '3rem' }}// Dynamically setting the top position
+        >
+          &#9664; {/* Arrow symbol */}
+        </div>
 
-      {/* Who We Are Section */}
-      <section className="container mx-auto flex flex-col md:flex-row items-center py-6 md:py-12 px-6 md:px-0">
-        <figure className="w-full md:w-1/2 p-4">
-          <img
-            src="./download.jpg" // Replace with actual image source
-            alt="David Ogilvy, 1978"
-            className="w-full h-auto rounded-md object-cover"
-          />
-        </figure>
-        <article className="w-full md:w-1/2 p-4 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">Who We Are</h2>
-          <p className="text-base md:text-lg leading-relaxed">
-            Ogilvy was founded in 1948 as one office. Today, we operate as a creative network in 132 locations across 83 countries. Throughout this growth, the world has transformed beyond recognition.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            Ogilvy has been there every step of the way, helping the world’s most successful brands navigate change and adapt for the long term.
-          </p>
-        </article>
-      </section>
+        <p className=" md:text-xl text-black text-justify lg:w-80 lg:mb-20  lg:text-xl  text-[0.6rem]   md:mb-6 ">
+          {textContent[activeText]}
+        </p>
+      </div>
+    </section>
 
-      {/* Quote Section */}
-      <section className="container mx-auto py-6 md:py-12 text-center px-6">
-        <blockquote className="text-2xl md:text-3xl lg:text-4xl font-semibold italic leading-relaxed">
-          “Talent, I believe, is most likely to be found among nonconformists, rebels, and dissenters.”
-          <br />
-          <span className="text-xl md:text-2xl">– David Ogilvy</span>
-        </blockquote>
-      </section>
 
-      {/* Diversity and Inclusion Section (Repeat) */}
-      <section className="container mx-auto flex flex-col md:flex-row items-center py-6 md:py-12 px-6 md:px-0">
-        <article className="w-full md:w-1/2 p-4 order-2 md:order-1 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-semibold leading-tight">Diversity and Inclusion</h2>
-          <p className="text-base md:text-lg leading-relaxed">
-            At Ogilvy, our people are at the heart of what we do: a creative agency that sparks game-changing ideas through collaboration, integrity, and a celebration of self-expression.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            We build powerful teams with purpose, hiring talent across all races, ethnicities, religions, abilities, sexual orientations, and gender identities, ensuring equity and fairness.
-          </p>
-        </article>
-        <figure className="w-full md:w-1/2 p-4 order-1 md:order-2">
-          <img
-            src="./download.jpg" // Replace with actual image source
-            alt="Employee engaged in a discussion"
-            className="w-full h-auto rounded-md object-cover"
-          />
-        </figure>
-      </section>
-    </div>
+    <div className="bg-white text-black">
+        <section className="container mx-auto py-6 md:py-12 px-4 md:px-32">
+          <div className="text-center mb-8">
+            <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold outline-heading">Our Core Values</h1>
+            <p className="mt-4 md:mt-10 text-lg md:text-xl text-justify">
+              At the heart of everything we do are our core values. These guide our decisions, define our work environment, and help us maintain our vision:
+            </p>
+
+            <div className="mt-4 md:mt-6 space-y-3">
+              <p className="text-sm md:text-base leading-relaxed text-justify">
+                <span className="font-bold uppercase">Integrity:</span> We uphold the highest standards of integrity in all of our actions.
+              </p>
+              <p className="text-sm md:text-base leading-relaxed text-justify">
+                <span className="font-bold uppercase">Collaboration:</span> We work together to achieve common goals and support each other's growth.
+              </p>
+              <p className="text-sm md:text-base leading-relaxed text-justify">
+                <span className="font-bold uppercase">Excellence:</span> We are committed to excellence in everything we do, constantly striving to improve.
+              </p>
+              <p className="text-sm md:text-base leading-relaxed text-justify">
+                <span className="font-bold uppercase">Customer-Centricity:</span> Our customers are at the centre of everything we do, and we go the extra mile to exceed their expectations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="w-full h-64 md:h-80 mx-auto px-4">
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            className="h-full w-full"
+          >
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="w-full h-full">
+                  <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="object-cover w-full h-full rounded-md"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+
+
+
+
+      <div className="flex flex-col md:flex-col lg:flex-row  h-auto lg:h-[70vh] md:h-[50vh] p-6 md:p-0 lg:mt-16 md:mt-10">
+        {/* "WORK WITH US" text with black stroke */}
+        <h1 className="text-left inline-block text-6xl lg:text-[12rem]  md:text-[10rem] font-bold leading-tight md:ml-36 lg:ml-14 hollow-text-black font-lato mt-5 md:mt-9">
+          WORK<br />WITH US
+        </h1>
+
+        <div className="w-full lg:w-1/4 md:w-4/6 mx-auto mt-9  px-4  ">
+          <form>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 lg:mt-6">
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="First Name"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Last Name"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Email"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Phone <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Phone"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700">
+                Location (City) <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Location (City)"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Submit Application
+            </button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

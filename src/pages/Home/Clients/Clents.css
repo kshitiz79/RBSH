@@ -1,0 +1,11 @@
+..invert.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease; /* Optional, for a smooth transition */
+  }
+  
+  .invert.grayscale:hover {
+    filter: grayscale(0%);
+  }
+  /* Technology.css */
+  
+  

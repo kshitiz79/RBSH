@@ -1,5 +1,6 @@
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { RxArrowTopRight } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -48,10 +49,10 @@ const Footer = () => {
           <div className="z-10">
             <h5 className="text-lg font-semibold mb-4 z-10">Our Links</h5>
             <ul className="space-y-2 z-10">
-              <li><a href="#" className="hover:text-yellow-500">Careers</a></li>
-              <li><a href="#" className="hover:text-yellow-500">FAQ</a></li>
-              <li><a href="/blog" className="hover:text-yellow-500">Latest Blogs</a></li>
-              <li><a href="/career" className="hover:text-yellow-500">Career</a></li>
+              <li><Link to="/career" className="hover:text-yellow-500">Careers</Link></li>
+              <li><Link to="/about" className="hover:text-yellow-500">FAQ</Link></li>
+              <li><Link to="/blog" className="hover:text-yellow-500">Latest Blogs</Link></li>
+              <li><Link to="/career" className="hover:text-yellow-500">Career</Link></li>
             </ul>
           </div>
 
@@ -59,10 +60,10 @@ const Footer = () => {
           <div className="z-10">
             <h5 className="text-lg font-semibold mb-4 z-20">Find It Fast</h5>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-yellow-500 z-10">About Us</a></li>
-              <li><a href="#" className="hover:text-yellow-500">Services</a></li>
-              <li><a href="#" className="hover:text-yellow-500">Portfolio</a></li>
-              <li><a href="#" className="hover:text-yellow-500">Contact Us</a></li>
+              <li><Link to="/about" className="hover:text-yellow-500 z-10">About Us</Link></li>
+              <li><Link to="/branding-design" className="hover:text-yellow-500">Services</Link></li>
+              <li><Link to="/blog" className="hover:text-yellow-500">Blogs</Link></li>
+              <li><Link to="/contactus" className="hover:text-yellow-500">Contact Us</Link></li>
             </ul>
           </div>
 

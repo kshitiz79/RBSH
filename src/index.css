@@ -3,28 +3,55 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+
+
+
+}
+/* PP.css */
+body {
+  padding-top: 120px; /* Adjust based on the height of your navbar */
+}
+.service__heading {
+  font-size: 2.25rem;    /* Equivalent to Tailwind's text-4xl */
+  line-height: 2.5rem;   /* Ensures proper line spacing */
+  margin-top: 1.75rem;   /* Equivalent to Tailwind's mt-7 */
+       
+    /* Equivalent to Tailwind's text-yellow-500 */
 }
 
-@keyframes marquee-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+::placeholder {
+  text-align: center;
+  color:black; /* Horizontally center the placeholder text */
 }
 
-.animate-marquee {
-  animation: marquee 90s linear infinite;
+.placeholder-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure the placeholder is vertically centered */
+}
+.symbol {
+  color: red;
+  font-size: 1.2rem;
+  padding: 0 0.2rem;
 }
 
-.animate-marquee-reverse {
-  animation: marquee-reverse 90s linear infinite;
+
+
+
+.active::after {
+  content: "";
+  position: absolute;
+  left: -20px; /* Adjust the arrow position */
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.35em solid transparent;
+  border-right-color: #fff; /* White arrow */
 }
