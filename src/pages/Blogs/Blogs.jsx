@@ -61,6 +61,7 @@ const testimonials = [
 const images = [
   './career1.png',
   './career2.png',
+  './career3.png',
   // Add more image paths as needed
 ];
 
@@ -75,6 +76,9 @@ const Blog = () => {
   
 
   const contentRefs = useRef([]); 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
 
 
@@ -127,15 +131,15 @@ const Blog = () => {
 
 
   return (
-    <div className=" p-6 sm:p-8   lg:mt-0 ">
+    <div className=" p-6 sm:p-8  mt-6 lg:mt-0 ">
       <header className="text-center mb-8 lg:mb-24 ">
-        <h1 className="text-2xl sm:text-3xl lg:text-6xl md:text-4xl font-bold text-black font-lato">
+        <h1 className="text-2xl sm:text-3xl lg:text-6xl md:text-4xl  font-bold text-black font-lato">
           BLOGS
         </h1>
       </header>
 
       <main>
-        <section className="flex flex-col sm:flex-row gap-6 lg:p-28 -mt-32">
+        <section className="flex flex-col sm:flex-row gap-6 lg:-mt-32 lg:p-28 ">
           {columns.map((columnTestimonials, columnIndex) => (
             <div key={columnIndex} className="flex-1 space-y-6">
              {columnTestimonials.map((testimonial, idx) => {

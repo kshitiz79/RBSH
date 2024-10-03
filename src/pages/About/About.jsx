@@ -6,6 +6,7 @@ import FAQ from "../../components/FAQ/FAQ";
 import AboutTop from "./AboutTop";
 import AboutPhotoGrid from "./AboutPhotoGrid";
 import About3 from "./About3";
+import { useEffect } from "react";
 
 
 
@@ -13,7 +14,9 @@ import About3 from "./About3";
 const AboutPage = () => {
 
 
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   
 

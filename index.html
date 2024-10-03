@@ -4,53 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Title -->
+    <!-- Title (Primary SEO factor) -->
     <title>RBSH Studio | Creative Design Solutions</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
 
-    <!-- Meta Description -->
-    <meta name="description" content="RBSH Studio provides creative design solutions for businesses. Explore our marketplace for video editing, branding, and more." />
+    <!-- Meta Description (Critical for SEO) -->
+    <meta name="description" content="RBSH Studio offers creative design, video editing, branding, and digital marketing services to businesses. Let's bring your vision to life." />
 
-    <!-- Meta Keywords -->
-    <meta name="keywords" content="RBSH Studio, design, creativity, video editing, branding, digital marketing, creative solutions" />
+    <!-- Meta Keywords (Though not heavily used by Google, still good for other search engines) -->
+    <meta name="keywords" content="creative design, video editing, branding, digital marketing, creative solutions, RBSH Studio" />
 
     <!-- Meta Author -->
     <meta name="author" content="RBSH Studio" />
 
-    <!-- Open Graph Tags for Social Media Sharing -->
+    <!-- Open Graph for Social Media Sharing (Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="RBSH Studio | Creative Design Solutions" />
-    <meta property="og:description" content="Find innovative design solutions at RBSH Studio. We offer branding, video editing, and digital marketing services." />
+    <meta property="og:description" content="RBSH Studio provides expert design services like branding, video editing, and more for businesses." />
     <meta property="og:image" content="https://rbshstudio.com/og-image.jpg" />
     <meta property="og:url" content="https://rbshstudio.com/" />
     <meta property="og:type" content="website" />
     
-    <!-- Twitter Card Tags -->
+    <!-- Twitter Cards for Sharing -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="RBSH Studio | Creative Design Solutions" />
-    <meta name="twitter:description" content="RBSH Studio offers professional design and creative solutions for businesses." />
+    <meta name="twitter:description" content="Professional creative design solutions for businesses. Contact RBSH Studio for video editing, branding, and digital marketing services." />
     <meta name="twitter:image" content="https://rbshstudio.com/twitter-image.jpg" />
-   
-   
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-    <!-- Google Fonts - Lato -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
+    <!-- Canonical URL (To avoid duplicate content issues) -->
+    <link rel="canonical" href="https://rbshstudio.com/" />
 
+    <!-- Robots Meta Tag (Ensures the page is indexed and links followed) -->
+    <meta name="robots" content="index, follow" />
 
+    <!-- Google Fonts Preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMhfY6X8U+T8xymDfdXK6xSP8OTuPsOVy/J2K" crossorigin="anonymous">
+
+    <!-- Structured Data (JSON-LD for SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RBSH Studio",
+        "url": "https://rbshstudio.com/",
+        "logo": "https://rbshstudio.com/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/RBSHStudio",
+          "https://www.instagram.com/RBSHStudio",
+          "https://www.linkedin.com/company/rbshstudio"
+        ],
+        "description": "RBSH Studio provides creative design solutions including branding, video editing, and digital marketing for businesses.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-555-5555",
+          "contactType": "Customer Service",
+          "availableLanguage": ["English", "Spanish"]
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- No-JS Fallback for better accessibility -->
+    <noscript>
+      <p>Please enable JavaScript to view this website.</p>
+    </noscript>
   </body>
 </html>

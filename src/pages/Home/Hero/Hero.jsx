@@ -63,7 +63,7 @@ const Hero = () => {
       </div>
 
       <div
-        className="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat overflow-scroll -z-40"
+        className="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat  -z-40 overflow-hidden"
         style={{ backgroundImage: `url('./image1.png')` }}
       ></div>
     </div>
@@ -74,28 +74,4 @@ export default Hero;
 
 
 
-// import bgImage from '../../../assets/background.jpg'; // Adjust path as necessary
-// import image1 from '../../../assets/image1.jpg';
 
-// const Hero = () => {
-//   return (
-//     <>
-//     <div
-//       className='bg-center bg-fixed h-[100vh] w-[100vw] overflow-auto bg-no-repeat top-14'
-//       style={{
-//         backgroundImage: ⁠ url(${bgImage}) ⁠,
-//         backgroundPositionX: '37%', // Moves the background to the right
-//         backgroundPositionY: '70%', // Moves the background down
-//       }}
-
-//       >
-//       <h1 className='text-black  absolute ml-[35%] mt-[30%]   '>Transform Your World with Creativity, Media, and Technology.</h1>
-//       <div className='relative top-20 flex gap-[70%] overflow-scroll'>
-//         <img className='-ml-9' src={image1} alt='Hero Image' /> {/* Ensure image1 is imported correctly */}
-//       </div>
-//     </div>
-//       </>
-//   );
-// };
-
-// export default Hero;

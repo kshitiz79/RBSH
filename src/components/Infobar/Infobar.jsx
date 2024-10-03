@@ -10,7 +10,7 @@ const ScrollText = () => {
 
   useEffect(() => {
     const element = scrollRef.current;
-
+ 
     // Ensure the element has loaded and has a width
     if (!element) return;
 

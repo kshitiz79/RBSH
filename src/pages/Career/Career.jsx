@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
@@ -17,6 +17,9 @@ const Career = () => {
 
   ];
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
 
   const [activeText, setActiveText] = useState('HOW');
@@ -49,7 +52,7 @@ const Career = () => {
   return (
     <>
 
-<section className="flex flex-row items-center bg-blue-600 p-10 lg:h-[70vh] relative h-[38vh]">
+<section className="flex flex-row items-center bg-blue-600 p-10 lg:h-[80vh] relative h-[38vh]">
       {/* Left section with text */}
       <div className="flex-1 text-white hollow-text-white text-3xl md:text-9xl  lg:text-9xl font-extrabold space-y-4 lg:ml-[11%] font-lato ">
     <p
@@ -73,7 +76,7 @@ const Career = () => {
   </div>
 
       {/* Right section with active arrow */}
-      <div className="max-w-lg bg-white lg:px-12 lg:py-12 rounded-2xl shadow-lg lg:mr-60 relative px-6 py-6  md:px-6 ml-12  md:mr-32  ">
+      <div className="max-w-lg bg-white lg:px-12 lg:py-12  rounded-2xl shadow-lg lg:mr-60 relative px-6 py-6 sm:py-6  md:px-6 ml-12  md:mr-32   ">
         {/* Arrow that moves with active text */}
         <div
           className="absolute left-[-2rem] text-white"
@@ -82,7 +85,7 @@ const Career = () => {
           &#9664; {/* Arrow symbol */}
         </div>
 
-        <p className=" md:text-xl text-black text-justify lg:w-80 lg:mb-20  lg:text-xl  text-[0.6rem]   md:mb-6 ">
+        <p className=" md:text-xl text-black text-justify lg:w-80 lg:mb-20  lg:text-xl  text-[0.6rem]   md:mb-6  ">
           {textContent[activeText]}
         </p>
       </div>
@@ -92,7 +95,7 @@ const Career = () => {
     <div className="bg-white text-black">
         <section className="container mx-auto py-6 md:py-12 px-4 md:px-32">
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold outline-heading">Our Core Values</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold outline-heading uppercase">Our Core Values</h1>
             <p className="mt-4 md:mt-10 text-lg md:text-xl text-justify">
               At the heart of everything we do are our core values. These guide our decisions, define our work environment, and help us maintain our vision:
             </p>
@@ -115,13 +118,14 @@ const Career = () => {
         </section>
 
         <div className="w-full h-64 md:h-80 mx-auto px-4">
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{ delay: 3000 }}
-            className="h-full w-full"
-          >
+        <Swiper
+  spaceBetween={30}
+  slidesPerView={1}
+  loop={true}
+  autoplay={{ delay: 3000 }}
+  modules={[Autoplay]}
+  className="h-full w-full"
+>
             {images.map((image, index) => (
               <SwiperSlide key={index}>
                 <div className="w-full h-full">

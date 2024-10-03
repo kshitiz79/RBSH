@@ -9,7 +9,7 @@ const VideoEditing = () => {
       <div className="relative flex justify-center items-center p-4 sm:p-6">
   
         <img
-          src="./services2.png"
+          src="./services3.png"
           alt="Video Editing Services"
           className="w-full h-48 sm:h-[50vh] rounded object-cover"
        

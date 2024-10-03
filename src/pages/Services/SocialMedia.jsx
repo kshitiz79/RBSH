@@ -11,7 +11,7 @@ const SocialMedia = () => {
 
         {/* Image */}
         <img
-          src="./services1.png"
+          src="./service7.png"
           alt="Social Media Services"
           className="w-full h-48 sm:h-[50vh] rounded object-cover"
     

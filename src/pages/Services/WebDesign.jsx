@@ -1,6 +1,6 @@
-import React from 'react';
+
 import CardButtonGrid from '../../components/CardGrid/CardGrid';
-import { Link } from 'react-router-dom';
+
 import QuickLinks from '../../components/QuickLinks/QuickLinks';
 
 const WebDesign = () => {
@@ -10,7 +10,7 @@ const WebDesign = () => {
       <div className="relative flex justify-center items-center p-4 sm:p-6">
     
         <img
-          src="https://rbshstudio.com/wp-content/uploads/2024/08/video-editing-1.png"
+          src="./service.png"
           alt="Web Design Services"
           className="w-full h-48 sm:h-[50vh] rounded object-cover"
           loading="lazy"

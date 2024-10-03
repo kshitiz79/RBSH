@@ -1,9 +1,9 @@
 import React from 'react'
 
-import image1 from "./../../../public/about1.avif";
-import image2 from "./../../../public/about2.avif";
-import image3 from "./../../../public/about3.avif";
-import image4 from "./../../../public/about4.avif";
+import image1 from "./../../../public/about1.png";
+import image2 from "./../../../public/about2.png";
+import image3 from "./../../../public/about3.png";
+import image4 from "./../../../public/about4.png";
 
 
 

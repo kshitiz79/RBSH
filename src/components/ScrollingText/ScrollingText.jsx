@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const ScrollingText = () => {
@@ -6,8 +6,8 @@ const ScrollingText = () => {
   const containerRef = useRef(null);
 
   // Initial small text array
-  const initialTextArray = ["Partner With Us For Innovative Strategies And Standout Campaigns",
-   
+  const initialTextArray = [
+    "Partner With Us For Innovative Strategies And Standout Campaigns",
   ];
 
   // Repeat the small array enough times to make it seem like 100 items
@@ -18,34 +18,6 @@ const ScrollingText = () => {
 
   useEffect(() => {
     const element = textRef.current;
-    const container = containerRef.current;
-
-    const updateOpacity = () => {
-      const containerWidth = container.offsetWidth;
-      const leftBoundary = containerWidth * 0.13; // 10% from the left
-      const rightBoundary = containerWidth * 0.87; // 10% from the right
-
-      const spans = element.querySelectorAll("span");
-
-      spans.forEach((span) => {
-        const spanRect = span.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        const spanLeft = spanRect.left - containerRect.left;
-        const spanRight = spanRect.right - containerRect.left;
-
-        // Calculate opacity based on proximity to boundaries
-        if (spanLeft < leftBoundary) {
-          const opacity = Math.max(0.7, spanLeft / leftBoundary); // Fade out towards the left
-          span.style.opacity = opacity;
-        } else if (spanRight > rightBoundary) {
-          const opacity = Math.max(0.7, (containerWidth - spanRight) / (containerWidth - rightBoundary)); // Fade out towards the right
-          span.style.opacity = opacity;
-        } else {
-          span.style.opacity = 1; 
-        }
-      });
-      
-    };
 
     // GSAP animation
     gsap.to(element, {
@@ -53,30 +25,43 @@ const ScrollingText = () => {
       repeat: -1,
       duration: totalItems * 0.03, // Adjust duration based on the total number of array items
       ease: "linear",
-      onUpdate: updateOpacity, // Call updateOpacity on each animation frame
     });
 
-    // Update opacity on resize as well
-    window.addEventListener("resize", updateOpacity);
-
+    // Cleanup GSAP animation on component unmount
     return () => {
-      window.removeEventListener("resize", updateOpacity);
+      gsap.killTweensOf(element);
     };
   }, [totalItems]);
 
   return (
-    <div ref={containerRef} className="overflow-hidden relative w-full py-9 bg-black">
+    <div ref={containerRef} className="overflow-hidden relative w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-black">
+      {/* Scrolling Text */}
       <div
         ref={textRef}
-        className="whitespace-nowrap flex text-white text-7xl font-bold"
+        className="whitespace-nowrap flex text-white font-bold"
       >
-        {/* Looping through the array to create spans */}
+        {/* Responsive Text Sizes */}
         {textArray.map((text, index) => (
-          <span key={index} className="px-4 ">
+          <span
+            key={index}
+            className="px-2 sm:px-4 md:px-6 lg:px-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          >
             {text}
           </span>
         ))}
       </div>
+
+      {/* Left Gradient Overlay */}
+      <div className="absolute top-0 left-0 h-full 
+                      w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
+                      bg-gradient-to-r from-black to-transparent 
+                      pointer-events-none"></div>
+
+      {/* Right Gradient Overlay */}
+      <div className="absolute top-0 right-0 h-full 
+                      w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
+                      bg-gradient-to-l from-black to-transparent 
+                      pointer-events-none"></div>
     </div>
   );
 };

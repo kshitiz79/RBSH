@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
   return (
 <>
 <div className="min-h-screen bg-white flex items-start justify-center py-12">
@@ -11,7 +14,7 @@ const ContactUs = () => {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Drop Us A Message</h2>
           <p className="mb-4 text-sm sm:text-base">
             We're excited to work with you soon! Please drop an email with your details at{' '}
-            <a href="mailto:bd@sch.com" className="text-blue-500">abes game</a>
+            <a href="mailto:bd@sch.com" className="text-blue-500">RBSH STUDIO</a>
           </p>
 
           <form className="space-y-4 sm:space-y-6">

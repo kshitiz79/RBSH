@@ -19,15 +19,16 @@ import img17 from '/src/assets/17.png';
 import img18 from '/src/assets/18.png';
 import img19 from '/src/assets/19.png';
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8];
-const images2 = [img19, img11, img12, img13, img14, img15, img16, img17, img18, img9];
+const images = [img1, img2, img3, img4,img5,  img6,  img7,img8 ,img19, img11, img12, img13, img14, img15, img16, img17, img18, img9 ];
+const images2 = [img19, img11, img12, img13, img14, img15, img16, img17, img18, img9  ];
 
 const Gallery = () => {
   return (
     <div className="bg-black py-8 overflow-hidden relative">
       <div className="w-full space-y-4">
-        {/* Rows with different scrolling directions */}
-        <MovingRow images={images} direction="right" />
+
+        <MovingRow images={images} direction="left" />
+     
         <MovingRow images={images2} direction="left" />
       </div>
     </div>
@@ -37,29 +38,39 @@ const Gallery = () => {
 const MovingRow = ({ images, direction }) => {
   const rowRef = useRef(null);
 
-  // Duplicate the images array multiple times outside of useEffect
-  const totalImages = 100; // Number of times to duplicate images for smooth scrolling
-  const duplicatedImages = Array(totalImages).fill(images).flat(); // Duplicate the images array multiple times
+  // Adjusted to 10 duplications for performance
+  const totalImages = 10; 
+  const duplicatedImages = Array(totalImages).fill(images).flat(); 
 
   useEffect(() => {
     const element = rowRef.current;
-    const scrollWidth = element.scrollWidth; // Get the total scroll width
+    const scrollWidth = element.scrollWidth;
 
-    // Set the initial position of the row based on the scrolling direction
+    // Set the initial position based on direction
     gsap.set(element, {
-      x: direction === 'left' ? 6 : -scrollWidth,
+      x: direction === 'left' ? 0 : -scrollWidth,
     });
 
-    gsap.to(element, {
+   
+
+
+    const animation = gsap.to(element, {
       x: direction === 'left' ? -scrollWidth : scrollWidth,
-      duration: 9500, // Adjust the duration for smoother or faster scrolling
+      duration: 700, // Adjust duration as needed
       ease: 'none',
-      repeat: -1, // Infinite loop for continuous scrolling
+      repeat: -1,
       modifiers: {
         x: gsap.utils.unitize((value) => parseFloat(value) % scrollWidth),
       },
     });
-  }, [direction]);
+
+    
+    // Cleanup on unmount
+    return () => {
+
+      animation.kill();
+    };
+  }, [direction, duplicatedImages]);
 
   return (
     <div
@@ -67,22 +78,21 @@ const MovingRow = ({ images, direction }) => {
       className="flex"
       style={{ minWidth: '100%', whiteSpace: 'nowrap' }}
     >
-      {/* Use the large duplicated images array for continuous scrolling */}
       {duplicatedImages.map((image, index) => (
         <div
           key={index}
           className="flex-none"
           style={{
             flex: '0 0 auto',
-            minWidth: '250px', // Adjust the width for mobile
-            height: '40vh', // Adjust height for mobile to 40% of the viewport
+            minWidth: '250px', 
+            height: '40vh', 
             margin: '0 10px',
           }}
         >
           <img
             src={image}
             alt={`Gallery image ${index + 1}`}
-            className="w-full h-full object-cover rounded-lg" // Added rounded corners
+            className="w-full h-full object-cover rounded-lg"
             loading="lazy"
           />
         </div>

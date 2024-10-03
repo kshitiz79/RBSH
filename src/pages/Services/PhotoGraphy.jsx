@@ -11,7 +11,7 @@ const PhotoGraphy = () => {
      
 
         <img
-          src="./services3.png"
+          src="./services1.png"
           alt="Photography Services"
           className="w-full h-48 sm:h-[50vh] rounded object-cover"
    

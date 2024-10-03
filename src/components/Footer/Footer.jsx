@@ -49,10 +49,10 @@ const Footer = () => {
           <div className="z-10">
             <h5 className="text-lg font-semibold mb-4 z-10">Our Links</h5>
             <ul className="space-y-2 z-10">
-              <li><Link to="/career" className="hover:text-yellow-500">Careers</Link></li>
-              <li><Link to="/about" className="hover:text-yellow-500">FAQ</Link></li>
-              <li><Link to="/blog" className="hover:text-yellow-500">Latest Blogs</Link></li>
               <li><Link to="/career" className="hover:text-yellow-500">Career</Link></li>
+              <li><Link to="/about" className="hover:text-yellow-500">FAQ</Link></li>
+              <li><Link to="/blog" className="hover:text-yellow-500">Blogs</Link></li>
+
             </ul>
           </div>
 
@@ -62,16 +62,17 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:text-yellow-500 z-10">About Us</Link></li>
               <li><Link to="/branding-design" className="hover:text-yellow-500">Services</Link></li>
-              <li><Link to="/blog" className="hover:text-yellow-500">Blogs</Link></li>
+         
               <li><Link to="/contactus" className="hover:text-yellow-500">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Contact Information */}
           <div className="z-10">
-            <p className="text-base md:text-lg">
-              T3-236, Golden-I, Techzone IV, Greater Noida West,<br /> UP - 201308
-            </p>
+          <a href="https://maps.app.goo.gl/uDgAc8vujYwuEMcu6" target="_blank">
+  T3-236, Golden-I, Techzone IV, Greater Noida West, UP - 201308
+</a>
+
             <a href="mailto:info@rbshstudio.com" className="block hover:text-yellow-500 mt-5" title="Email us at info@rbshstudio.com">
               info@rbshstudio.com
             </a>

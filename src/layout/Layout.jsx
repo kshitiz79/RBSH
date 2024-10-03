@@ -1,24 +1,36 @@
+// src/layout/Layout.jsx
+import React, { Suspense, lazy } from 'react';
+import { Outlet } from 'react-router-dom';
+import Spinner from '../components/Spinner/Spinner';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary'; // Adjust the path
 
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import { Outlet } from 'react-router-dom'
-import CustomCursor from '../components/CustomCursor/CustomCursor'
+// Lazy load components
+const Header = lazy(() => import('../components/Header/Header'));
+const Footer = lazy(() => import('../components/Footer/Footer'));
+const CustomCursor = lazy(() => import('../components/CustomCursor/CustomCursor'));
 
 const Layout = () => {
   return (
-    <>
-     <CustomCursor /> 
-  
+    <ErrorBoundary>
+      {/* Header and CustomCursor */}
+      <Suspense fallback={<Spinner />}>
+        <CustomCursor />
+        <Header />
+      </Suspense>
 
-    <Header/>
-    <div className="main-content">
-        {/* This Outlet will render the current page component based on the route */}
-        <Outlet />
+      {/* Main Content */}
+      <div className="main-content">
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
       </div>
-    <Footer/>
-    
-    </>
-  )
-}
 
-export default Layout
+      {/* Footer */}
+      <Suspense fallback={<Spinner />}>
+        <Footer />
+      </Suspense>
+    </ErrorBoundary>
+  );
+};
+
+export default Layout;
