@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 lg:py-16 z-20 relative">
+    <footer className="bg-black text-white py-10 lg:py-16  relative">
       <div className="container mx-auto px-4 lg:px-24 z-20">
         {/* Top Section with "Connect us" */}
         <div className="flex flex-col items-center text-center z-10">
           <h2 className="text-4xl md:text-5xl lg:text-[170px] font-bold leading-none">
           <a href="#" className="flex items-center justify-center space-x-2">
-  <span className="text-3xl md:text-5xl lg:text-[165px] z-10">Connect us</span>
+  <span className="text-4xl md:text-5xl lg:text-[165px] z-10">Connect us</span>
   <RxArrowTopRight className="text-yellow-500 text-[2.5rem] md:text-[6rem] lg:text-[11rem] mt-0 md:mt-7" />
 </a>
 
@@ -23,13 +23,12 @@ const Footer = () => {
           {/* Logo and Social Icons */}
           <div className="flex flex-col items-center lg:items-start">
             <img
-              src="https://rbshstudio.com/wp-content/uploads/2024/07/RBSH-Studio-logo-white-e1723136206416-300x142.png"
+              src="./logo2.png"
               alt="RBSH Studio Logo"
-              className="mb-4"
-              width="203"
-              height="96"
+              className="mb-4 lg:w-[30rem] :h-[5rem] w-[15rem]  -ml-9"
+             
             />
-            <div className="flex space-x-4 md:space-x-11 mt-4">
+            <div className="flex space-x-7 md:space-x-9 mt-4 mr-8" >
               <a href="https://www.facebook.com/rbshstudio" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook" className="text-gray-400 hover:text-white">
                 <FaFacebookF />
               </a>
@@ -70,7 +69,7 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="z-10">
           <a href="https://maps.app.goo.gl/uDgAc8vujYwuEMcu6" target="_blank">
-  T3-236, Golden-I, Techzone IV, Greater Noida West, UP - 201308
+  T3-236, Golden-I, Techzone IV, Greater Noida West, UP - 201306
 </a>
 
             <a href="mailto:info@rbshstudio.com" className="block hover:text-yellow-500 mt-5" title="Email us at info@rbshstudio.com">

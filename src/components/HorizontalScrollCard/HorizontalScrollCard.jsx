@@ -106,27 +106,27 @@ const HorizontalScrollCard = () => {
   // Dummy card data, can be expanded dynamically
   const cards = [
     {
-      title: "Branding and Design",
+      title: "Brand Strategy",
       description: "We create distinctive brand identities with digital and print design.",
     },
     {
-      title: "Video Editing",
+      title: "Video Production",
       description: "We turn raw footage into captivating visuals.",
     },
-    { title: "Lead Generation",
+    { title: "Lead Optimization",
       description: "Drive leads and rank higher with focused SEO strategies",
       },
     {
-      title: "Social Media",
+      title: "Social Management",
       description: "Boost your brand with smart social media strategies.",
     },
     {
-      title: "Web Design",
+      title: "Web Development",
       description: "Crafting seamless web experiences with expert design and development.",
 
     },
     {
-      title: "Photography",
+      title: "Creative Photography",
       description: "Inspire and captivate with exceptional content and photography.",
 
     },
@@ -160,7 +160,7 @@ const HorizontalScrollCard = () => {
             }`}
             style={{ lineHeight: "1.5", height: "auto", paddingTop: "20px", paddingBottom: "20px" }}
           >
-            {card.title.split(" ")[0]} <br /> {card.title.split(" ")[1]} <br/> {card.title.split(" ")[2] || ""}
+            {card.title.split(" ")[0]} <br/> {card.title.split(" ")[1]}   <br/> {card.title.split(" ")[2] || ""}
           </h2>
 
           <p

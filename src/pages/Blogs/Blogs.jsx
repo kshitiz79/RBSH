@@ -5,14 +5,14 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const colors = [
  
-  "bg-[#ff635f]",
-  "bg-[#f0c21f]",
+  "bg-[#FA547C]",
 
 
-  "bg-[#46cc5f]",
+
+  "bg-[#FF5C00]",
   "bg-[#4384f2]",
-  "bg-[#2b9e44]",
-  "bg-[#8eb9fd]",
+  "bg-[#00c0ef]",
+  "bg-[#f90492]",
 
   "bg-[#ffd766]",
 ];
@@ -133,9 +133,11 @@ const Blog = () => {
   return (
     <div className=" p-6 sm:p-8  mt-6 lg:mt-0 ">
       <header className="text-center mb-8 lg:mb-24 ">
-        <h1 className="text-2xl sm:text-3xl lg:text-6xl md:text-4xl  font-bold text-black font-lato">
-          BLOGS
-        </h1>
+      <h1 className="relative text-4xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-black font-roboto">
+      BLOGS
+      {/* White Stripe */}
+
+    </h1>
       </header>
 
       <main>
@@ -152,7 +154,7 @@ const Blog = () => {
       <React.Fragment key={index}>
         <article className="space-y-2">
           <div
-            className={`${color} p-4 sm:p-6 rounded-lg transition-all duration-500 ease-in-out overflow-hidden`}
+            className={`${color} p-4 sm:p-6 rounded-3xl transition-all duration-500 ease-in-out overflow-hidden`}
           >
             <blockquote
               ref={(el) => (contentRefs.current[index] = el)}
@@ -162,17 +164,18 @@ const Blog = () => {
                 WebkitLineClamp: isCardExpanded ? 'unset' : 12,
                 WebkitBoxOrient: 'vertical',
                 overflow: 'hidden',
-                lineHeight: '1.5rem',
+                lineHeight: '1.4rem',
                 font: 'mono',
                 textAlign: 'justify',
               }}
             >
               {testimonial.title && (
-                <div className="text-center mb-4 font-robot text-lg underline">
+                <div className="text-center mb-4 font-robot text-lg underline ">
                   <strong>{testimonial.title}</strong>
                   <br />
                 </div>
               )}
+              
               {testimonial.text}
             </blockquote>
 
@@ -180,7 +183,7 @@ const Blog = () => {
             {shouldShowReadMore && (
               <button
                 onClick={() => toggleReadMore(index)}
-                className="mt-2 text-blue-200 hover:text-blue-400 focus:outline-none"
+                className="mt-2 text-blue-700 hover:text-blue-400 focus:outline-none"
                 aria-expanded={isCardExpanded}
               >
                 {isCardExpanded ? 'Read Less' : 'Read More'}
@@ -195,7 +198,7 @@ const Blog = () => {
             <img
               src={images[Math.floor(index / 4) % images.length]}
               alt={`Image ${Math.floor(index / 4) + 1}`}
-              className="w-full h-[47vh] rounded-lg object-cover"
+              className="w-full md:h-[19vh] rounded-lg object-cover lg:h-[47vh]  "
             />
           </div>
         )}

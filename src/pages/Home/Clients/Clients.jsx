@@ -1,12 +1,10 @@
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css"; 
-import "./Clents.css";
+import "./Clents.css"; // Ensure you have the correct CSS file name
+
+import React from 'react';
 
 const clients = [
   { name: 'EPS', logo: './clients2.png', alt: 'EPS logo' },
   { name: 'Active Sine', logo: './clients1.png', alt: 'Active Sine logo' },
- 
   { name: 'Himtaj Jewelry', logo: './clients4.png', alt: 'Himtaj Jewelry logo' },
   { name: 'Glucks Finance', logo: './clients5.png', alt: 'Glucks Finance logo' },
   { name: 'Glucks Finance', logo: './clients6.png', alt: 'Glucks Finance logo' },
@@ -14,53 +12,44 @@ const clients = [
 ];
 
 const ClientSection = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <section className="bg-white py-[4rem] w-full text-center relative ">
-    <Slider {...settings}>
-      {clients.map((client, index) => (
-        <div
-          key={index}
-          className="flex justify-center items-center h-full w-fit relative mb-5 sm:mb-0"
-        >
-          <img
-            src={client.logo}
-            alt={client.alt}
-            className=" py-10  w-36 sm:w-36 lg:w-56  md:w-40 mx-auto relative z-40 invert grayscale "
-          />
+    <section className="bg-white lg:py-[4rem] w-full text-center relative overflow-hidden">
+      <div className="logo-slider">
+        {/* Left shadow overlay */}
+        <div className="shadow-left"></div>
+        
+        <div className="logo-track">
+          {clients.map((client, index) => (
+            <div
+              key={index}
+              className="logo-item"
+            >
+              <img
+                src={client.logo}
+                alt={client.alt}
+                className="py-10 w-36 sm:w-36 lg:w-56 md:w-40 mx-auto"
+              />
+            </div>
+          ))}
+          {/* Duplicate the list for smooth infinite scrolling */}
+          {clients.map((client, index) => (
+            <div
+              key={index + 60 +clients.length}
+              className="logo-item"
+            >
+              <img
+                src={client.logo}
+                alt={client.alt}
+                className="py-10 w-36 sm:w-36 lg:w-56 md:w-40 mx-auto"
+              />
+            </div>
+          ))}
         </div>
-      ))}
-    </Slider>
-  </section>
+
+        {/* Right shadow overlay */}
+        <div className="shadow-right"></div>
+      </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
@@ -8,76 +8,77 @@ const Technology = () => {
     {
       id: 1,
       title: "Node.js",
-      content: "Building & deploying web apps, APIs, and software solutions.",
-      logo: "./technology1.png",
+      content: "Fast JavaScript runtime for scalable web applications.",
+      logo: "./technology1.webp",
     },
     {
       id: 2,
       title: "React.js",
-      content: "Complete e-commerce solutions to meet your business goals.",
-      logo: "./technology5.png",
+      content: "Library for building dynamic user interfaces efficiently.",
+      logo: "./technology5.webp",
     },
     {
       id: 3,
       title: "Adobe Creative Cloud",
-      content: "Leverage the power of Google Ads to scale your business.",
-      logo: "./technology12.png",
+      content: "Design and editing tools for creative professionals.",
+      logo: "./technology12.webp",
     },
     {
       id: 4,
       title: "Google Trends",
-      content: "Design and integrate business architecture for transformation.",
-      logo:  "./technology11.png",
+      content: "Explore trending search topics and keyword insights.",
+      logo: "./technology11.webp",
     },
     {
       id: 5,
       title: "Next.js",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo:  "./technology9.png",
+      content: "React framework for server-side rendering and SEO.",
+      logo: "./technology9.webp",
     },
     {
       id: 6,
       title: "Google Analytics",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo:  "./technology3.png",
+      content: "Track and analyze website traffic and performance.",
+      logo: "./technology3.webp",
     },
     {
       id: 7,
-      title: "DaVinci",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology2.png",
+      title: "DaVinci Resolve",
+      content: "Professional editing and color correction software.",
+      logo: "./technology2.webp",
     },
     {
       id: 8,
-      title: "Mall Chimp",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology4.png",
+      title: "Mailchimp",
+      content: "Email marketing platform for campaigns and automation.",
+      logo: "./technology4.webp",
     },
     {
       id: 9,
-      title: "Hub Spot",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology7.png",
+      title: "HubSpot",
+      content: "CRM software for marketing, sales, and customer service.",
+      logo: "./technology7.webp",
     },
     {
       id: 10,
       title: "Canva",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology10.png",
+      content: "Online tool for designing graphics and presentations.",
+      logo: "./technology10.webp",
     },
     {
       id: 11,
       title: "Google Ads",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology8.png",
+      content: "Advertising platform to reach customers through search.",
+      logo: "./technology8.webp",
     },
     {
       id: 12,
       title: "Facebook Analytics",
-      content: "Cloud computing solutions to drive digital transformation.",
-      logo: "./technology6.png",
+      content: "Insights into your audience and their interactions.",
+      logo: "./technology6.webp",
     },
   ];
+  
 
   const settings = {
     dots: false,

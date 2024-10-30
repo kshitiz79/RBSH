@@ -4,7 +4,8 @@ import { FaAlignJustify, FaXmark, FaChevronDown } from "react-icons/fa6";
 import gsap from "gsap";
 import _ from "lodash";
 import PropTypes from "prop-types";
-
+import logo from './../../../public/logo.png';
+import logo2 from './../../../public/logo2.png';
 // Navigation Item Component
 const NavItem = ({
   link,
@@ -25,6 +26,7 @@ const NavItem = ({
           }
           className=" text-lg text-black uppercase hover:text-black hover:text-xl hover:font-extrabold cursor-pointer flex items-center w-44"
           aria-expanded={activeDropdown === hasDropdown}
+          aria-controls={`${hasDropdown}-menu`}
           aria-haspopup="true"
         >
           {link}
@@ -82,7 +84,7 @@ const Header = () => {
 
   // Sticky Header on Scroll (throttled for performance)
   useEffect(() => {
-    const handleScroll = _.throttle(() => {
+    const handleScroll = _.debounce(() => {
       setIsSticky(window.scrollY > 100);
     }, 200);
     window.addEventListener("scroll", handleScroll);
@@ -97,6 +99,7 @@ const Header = () => {
         opacity: isMenuOpen ? 1 : 0,
         ease: "power3.inOut",
       });
+      
     });
 
     return () => ctx.revert();
@@ -127,6 +130,7 @@ const Header = () => {
     { link: "Our Services", path: "/#", hasDropdown: "services" },
     { link: "Blog", path: "/blog" },
     { link: "Career", path: "/career" },
+
   ];
 
   // Dropdown items
@@ -144,6 +148,8 @@ const Header = () => {
     ],
   };
 
+  
+
   return (
     <header className="w-full h-auto bg-white fixed top-0 left-0 z-50 right-0 transition-all ease-in duration-300">
       <nav
@@ -156,14 +162,14 @@ const Header = () => {
         aria-label="Main Navigation"
       >
         <div className="flex justify-between items-center text-base gap-8">
-          <Link
-            to="/"
-            className="text-black text-3xl font-bold"
-            aria-label="Homepage"
-          >
-            <img src="./logo.png" alt="Logo" className="h-16 -ml-6" />
-          </Link>
+        <Link
+        to="/"
+        className="text-black text-3xl font-bold flex items-center"
+        aria-label="Homepage"
+      >
+        <img src={logo} alt="Logo" className="h-16 w-52 -ml-6" width="208" height="64" />
 
+      </Link>
           {/* Desktop Menu */}
           <ul className="md:flex space-x-12 hidden navitems font-medium relative z-20">
             {navItems.map(({ link, path, hasDropdown }) => (
@@ -219,12 +225,12 @@ const Header = () => {
               className="text-white text-3xl font-bold"
               aria-label="Homepage"
             >
-              <img src="./logo2.png" alt="Logo" className="h-20 mr-2" />
+              <img src="./logo2.png" alt="Logo" className="h-18 w-[17rem] " />
             </Link>
             <button
               className="text-white focus:outline-none mb-14"
               aria-label="Close mobile menu"
-              onClick={toggleMenu}
+              onClick={toggleMenu} 
             >
               <FaXmark className="h-6 w-6" />
             </button>
@@ -241,7 +247,10 @@ const Header = () => {
                       )
                     }
                     className="flex items-center text-white uppercase text-lg focus:outline-none"
-                    aria-expanded={activeDropdown === hasDropdown}
+                    aria-expanded={activeDropdown === hasDropdown
+                      
+                    }
+
                   >
                     {link}
                     <FaChevronDown className="ml-2" aria-hidden="true" />

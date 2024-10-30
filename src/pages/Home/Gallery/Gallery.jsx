@@ -1,23 +1,25 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import img1 from '/src/assets/1.png';
-import img2 from '/src/assets/2.png';
-import img3 from '/src/assets/3.png';
-import img4 from '/src/assets/4.png';
-import img5 from '/src/assets/5.png';
-import img9 from '/src/assets/6.png';
-import img7 from '/src/assets/7.png';
-import img8 from '/src/assets/8.png';
-import img6 from '/src/assets/9.png';
-import img11 from '/src/assets/11.png';
-import img12 from '/src/assets/12.png';
-import img13 from '/src/assets/13.png';
-import img14 from '/src/assets/14.png';
-import img15 from '/src/assets/15.png';
-import img16 from '/src/assets/16.png';
-import img17 from '/src/assets/17.png';
-import img18 from '/src/assets/18.png';
-import img19 from '/src/assets/19.png';
+import img1 from '/src/assets/1.webp';
+import img2 from '/src/assets/2.webp';
+import img3 from '/src/assets/3.webp';
+import img4 from '/src/assets/4.webp';
+import img5 from '/src/assets/5.webp';
+import img9 from '/src/assets/6.webp';
+import img7 from '/src/assets/7.webp';
+import img8 from '/src/assets/8.webp';
+import img6 from '/src/assets/9.webp';
+import img11 from '/src/assets/11.webp';
+import img12 from '/src/assets/12.webp';
+import img13 from '/src/assets/13.webp';
+import img14 from '/src/assets/14.webp';
+import img15 from '/src/assets/15.webp';
+import img16 from '/src/assets/16.webp';
+import img17 from '/src/assets/17.webp';
+import img18 from '/src/assets/18.webp';
+import img19 from '/src/assets/19.webp';
+
+import './Gallery.css';
 
 const images = [img1, img2, img3, img4,img5,  img6,  img7,img8 ,img19, img11, img12, img13, img14, img15, img16, img17, img18, img9 ];
 const images2 = [img19, img11, img12, img13, img14, img15, img16, img17, img18, img9  ];
@@ -56,7 +58,7 @@ const MovingRow = ({ images, direction }) => {
 
     const animation = gsap.to(element, {
       x: direction === 'left' ? -scrollWidth : scrollWidth,
-      duration: 700, // Adjust duration as needed
+      duration: 900, // Adjust duration as needed
       ease: 'none',
       repeat: -1,
       modifiers: {
@@ -81,11 +83,11 @@ const MovingRow = ({ images, direction }) => {
       {duplicatedImages.map((image, index) => (
         <div
           key={index}
-          className="flex-none"
+          className="flex-none responsive-height"
           style={{
             flex: '0 0 auto',
             minWidth: '250px', 
-            height: '40vh', 
+   
             margin: '0 10px',
           }}
         >

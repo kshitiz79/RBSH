@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-
 export default {
+  mode: 'jit', // Enable JIT mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -11,23 +11,22 @@ export default {
         'primary': "#010851",
       },
       fontFamily: {
-        // Add Lato and Roboto Mono as custom fonts
         lato: ['Lato', 'sans-serif'],
-        robot: ['Roboto Mono', 'monospace'],
+        roboto: ['Roboto Mono', 'monospace'],
+        cursive: ['Pacifico', 'cursive'],
       },
-      // Add custom stroke widths and colors for hollow text
-      
+    
     },
   },
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
         '.hollow-text-black': {
-          '-webkit-text-stroke': '2px black',  // Black stroke
+          '-webkit-text-stroke': '2px black',
           'color': 'transparent',
         },
         '.hollow-text-white': {
-          '-webkit-text-stroke': '2px white',  // White stroke
+          '-webkit-text-stroke': '2px white',
           'color': 'transparent',
         },
       };

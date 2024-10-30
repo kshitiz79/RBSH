@@ -126,7 +126,7 @@ const About3 = () => {
     <>
       <div
         ref={sectionRef}
-        className={`relative ${bgColor} text-white min-h-screen sm:h-80[vh] flex flex-col justify-between`}
+        className={`relative ${bgColor} text-white lg:h-[100vh] h-[50vh] flex flex-col justify-between`}
       >
         {/* Top Static Paragraphs */}
         <div

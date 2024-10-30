@@ -2,10 +2,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { Suspense, lazy } from 'react';
+import AboutPage from "../pages/About/About";
+import Home from "../pages/home/Home";
+
 
 // Lazy load the pages
-const Home = lazy(() => import("../pages/home/Home"));
-const About = lazy(() => import("../pages/About/About"));
+
+
 const Career = lazy(() => import("../pages/Career/Career"));
 const Blogs = lazy(() => import("../pages/Blogs/Blogs"));
 const VideoEditing = lazy(() => import("../pages/Services/VideoEditing"));
@@ -14,7 +17,7 @@ const SocialMedia = lazy(() => import("../pages/Services/SocialMedia"));
 const LeadGeneration = lazy(() => import("../pages/Services/LeadGeneration"));
 const PhotoGraphy = lazy(() => import("../pages/Services/PhotoGraphy"));
 const WebDesign = lazy(() => import("../pages/Services/WebDesign"));
-
+const Test = lazy(() => import("../pages/Test/Test"));
 const ContactUs = lazy(() => import("../pages/ContactUs/ContactUs"));
 
 const router = createBrowserRouter([
@@ -28,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />,
+        element: <AboutPage />,
       },
       {
         path: '/career',
@@ -66,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: '/contactus',
         element: <ContactUs />,
+      },
+      {
+        path: '/test',
+        element: <Test />,
       },
     ],
   },

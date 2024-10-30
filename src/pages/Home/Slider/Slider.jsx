@@ -40,12 +40,12 @@ const FloatingSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative lg:flex lg:items-start lg:justify-between py-16 px-4 sm:px-6 md:px-8 lg:px-24 bg-gray-50"
+      className="relative lg:flex lg:items-start lg:justify-between lg:py-16 py-10  px-4 sm:px-6 md:px-8 lg:px-24 bg-gray-50   "
     >
       {/* Left Heading Section */}
-      <div className="mb-10 lg:mb-0 lg:sticky lg:top-16 lg:w-1/2">
+      <div className="mb-10 lg:mb-0 lg:sticky lg:top-16  lg:w-1/2  relative ">
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold leading-tight uppercase mt-10 sm:mt-14 md:mt-20 lg:mt-28"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold leading-tight uppercase mt-5 sm:mt-14 md:mt-3 lg:mt-28"
           style={{ lineHeight: '1.2' }}
         >
           We develop <br /> brands<br />from strategy <br /> to immersive <br /> experience.
@@ -53,7 +53,7 @@ const FloatingSection = () => {
       </div>
 
       {/* Right Floating Text Section */}
-      <div className="lg:ml-auto lg:w-1/2 space-y-8 sm:space-y-10">
+      <div className="lg:ml-auto lg:w-1/2 space-y-8 sm:space-y-10 relative   ">
         {[
           {
             number: '1',
@@ -78,13 +78,13 @@ const FloatingSection = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className="flex flex-col sm:flex-row mt-5"
+            className="flex flex-col sm:flex-row mt-5  "
             ref={(el) => (headingsRef.current[index] = el)}
           >
             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal mr-0 sm:mr-4 md:mr-6">
               {item.number}
             </h2>
-            <div>
+            <div >
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
                 {item.title}
               </h3>

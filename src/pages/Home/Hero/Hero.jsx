@@ -1,77 +1,129 @@
-import { useState, useEffect } from 'react';
-import {Link} from "react-router-dom"
-const Hero = () => {
-  // Static array of words with surrounding symbols
-  const words = [
-    { word: 'clean', symbols: { left: '', right: '' } },
-    { word: 'captivating', symbols: { left: '', right: '' } },
-    { word: 'creative', symbols: { left: '', right: '' } }
-  ];
+import React, { useState, useEffect, memo, useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { gsap } from 'gsap';
+import mobileBottomBg from './../../../../public/mobilebottombg.webp';
+import mobileTopBg from './../../../../public/mobiletopbg.webp';
 
-  // Corresponding colors for each word
-  const colors = ['text-red-500', 'text-blue-500', 'text-green-500', 'text-yellow-500'];
-  
+const Hero = () => {
+  const words = useMemo(
+    () => [
+      { word: 'clean', symbols: { left: '#', right: '#' } },
+      { word: 'Charming', symbols: { left: '@', right: '@' } },
+      { word: 'creative', symbols: { left: '$', right: '$' } },
+    ],
+    []
+  );
+
+  const colors = useMemo(() => ['text-red-500', 'text-blue-500', 'text-green-500', 'text-yellow-500'], []);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
+  // Change word every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1000); // Change word every 1 second
+    }, 3000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval);
+  }, [words.length]);
+
+  const backgroundStyle1 = useMemo(() => ({
+    backgroundImage: `url('./background.webp')`,
+    width: '100%',
+    height: '100%',
+    aspectRatio: '16 / 9',
+  }), []);
+
+  const backgroundStyle2 = useMemo(() => ({
+    backgroundImage: `url('./image1.webp')`,
+    width: '100%',
+    height: '100%',
+    aspectRatio: '16 / 9',
+  }), []);
+
+  useEffect(() => {
+    // Optimized background scrolling effect using requestAnimationFrame
+    const scrollingBg = document.querySelectorAll('.scrolling-bg');
+    const animate = () => {
+      scrollingBg.forEach(bg => {
+        bg.style.backgroundPosition = `${parseFloat(bg.style.backgroundPosition || '0') - 0.1}% 0`;
+      });
+      requestAnimationFrame(animate);
+    };
+    animate();
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden scroll-smooth">
-      {/* Background image (Static and Fixed) */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-center bg-fixed bg-no-repeat -z-40"
-        style={{ backgroundImage: `url('./background.png')` }}
-      ></div>
+    <>
+      <Helmet>
+        {/* Preload critical background images to improve LCP */}
+        <link rel="preload" as="image" href="./background.webp" />
+        <link rel="preload" as="image" href="./image1.webp" />
+        <link rel="preload" as="image" href={mobileBottomBg} />
+        <link rel="preload" as="image" href={mobileTopBg} />
+      </Helmet>
 
-      {/* Heading Text centered in the Hero Section */}
-      <div className="fixed inset-0 flex flex-col justify-center items-center">
-        <h1
-          className="text-center font-black text-black mt-28 text-base sm:text-base md:text-lg lg:text-xl xl:text-5xl font-lato"
-          style={{ lineHeight: '4rem' }}
-        >
-          TRANSFORM <span className="font-medium uppercase">Your</span> BRAND <br />
-          <span className="font-medium uppercase"> WITH </span> CREATIVITY <br />
-          <span className="font-extrabold"> MEDIA</span> <span className="font-medium">&</span>{' '}
-          <span className="font-extrabold"> TECHNOLOGY</span>
-        </h1>
+      {/* Top image, visible only on mobile */}
+      <div className="relative sm:hidden h-[31vh] bg-repeat-x bg-cover scrolling-bg" 
+        style={{ backgroundImage: `url(${mobileBottomBg})` }}></div>
 
-        {/* Dynamic word with symbols */}
-        <p className="text-center mt-7 font-mono text-lg" style={{ lineHeight: '2rem' }}>
-          RBSH Studio delivers{' '}
-          <span className="transition-all duration-500 ease-in-out symbol">
-            {words[currentWordIndex].symbols.left} {/* Left Symbol */}
-            <span className={`font-bold ${colors[currentWordIndex % colors.length]}`}>
-              {words[currentWordIndex].word}
-            </span> {/* Dynamic word with dynamic color */}
-            {words[currentWordIndex].symbols.right}
-          </span>{' '}
-          designs that <br /> bring your vision to life and set your brand apart.
-        </p>
+      <div className="relative lg:h-screen h-[45vh] md:h-[70vh] overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-center bg-fixed bg-no-repeat -z-1"
+          style={backgroundStyle1}
+          aria-hidden="true"
+          loading="lazy"
+        ></div>
 
-        <button className="border mt-24 border-black p-3 px-20 text-2xl rounded-full uppercase hover:text-white hover:bg-black">
-          <Link to="/contactus" >
-          Contact Us
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat -z-40 overflow-hidden"
+          style={backgroundStyle2}
+          aria-hidden="true"
+        ></div>
+
+        <div className="fixed inset-0 flex flex-col justify-center items-center md:mb-96 mb-0 lg:mb-0 mt-40 lg:mt-0 md:mt-0">
+          <h1 className="hero text-center font-black text-black mt-28 text-2xl sm:text-base md:text-lg lg:text-xl xl:text-5xl font-lato">
+            TRANSFORM <span className="font-medium uppercase">Your</span> BRAND <br />
+            <span className="font-medium uppercase"> WITH </span> CREATIVITY <br />
+            <span className="font-extrabold"> MEDIA</span> <span className="font-medium">&</span>{' '}
+            <span className="font-extrabold"> TECHNOLOGY</span>
+          </h1>
+
+          <p className="text-center lg:mt-7 mt-5 font-roboto lg:text-lg lg:px-0 px-7" style={{ lineHeight: '2rem' }}>
+            RBSH Studio delivers{' '}
+            <span className="symbol">
+              <span className="inline-block transition-all duration-500 ease-in-out">
+                {words[currentWordIndex].symbols.left}
+              </span>{' '}
+              <span
+                className={`font-bold inline-block transition-all duration-500 ease-in-out ${
+                  colors[currentWordIndex % colors.length]
+                }`}
+                style={{ minWidth: '10px', textAlign: 'center' }}
+              >
+                {words[currentWordIndex].word}
+              </span>{' '}
+              <span className="inline-block transition-all duration-500 ease-in-out">
+                {words[currentWordIndex].symbols.right}
+              </span>
+            </span>{' '}
+            designs that <br /> bring your vision to life and set your brand apart.
+          </p>
+
+          <Link
+            to="/contactus"
+            className="inline-block border border-black px-8 py-2 sm:p-3 sm:px-12 md:px-16 lg:px-20 text-lg sm:text-xl lg:text-2xl md:mt-12 mt-6 rounded-full uppercase hover:text-white hover:bg-black transition-colors duration-300"
+          >
+            Contact Us
           </Link>
-        </button>
+        </div>
       </div>
 
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat  -z-40 overflow-hidden"
-        style={{ backgroundImage: `url('./image1.png')` }}
-      ></div>
-    </div>
+      {/* Bottom image, visible only on mobile */}
+      <div className="relative sm:hidden h-[32vh] bg-repeat-x bg-cover scrolling-bg" 
+        style={{ backgroundImage: `url(${mobileTopBg})` }}></div>
+    </>
   );
 };
 
-export default Hero;
-
-
-
-
+export default memo(Hero);

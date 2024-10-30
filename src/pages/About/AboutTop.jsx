@@ -1,14 +1,11 @@
-import { useEffect, useState,  useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { Helmet } from "react-helmet-async"; // For adding SEO meta tags
 import { gsap } from 'gsap';
-
-
 
 const AboutTop = () => {
   const phrases = ["We Brainstorm.", "We Create.", "We Deliver."];
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const h1Ref = useRef(null);
-
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,53 +16,43 @@ const AboutTop = () => {
   }, [phrases.length]);
 
   useEffect(() => {
-    // Ensure that h1Ref is assigned before querying
     if (!h1Ref.current) return;
-  
-    // Select all elements with the class 'letter' inside the h1
+
     const letters = h1Ref.current.querySelectorAll('.letter');
-  
-    // Set initial opacity to 1 for all letters to ensure they are visible at start
     gsap.set(letters, { opacity: 1 });
-  
-    // Create a GSAP timeline
+
     const tl = gsap.timeline({
-      repeat: -1,       // Repeat infinitely
-      repeatDelay: 5,   // Wait for 5 seconds before repeating
+      repeat: -1,
+      repeatDelay: 5,
     });
-  
-    // Step 1: Fade out letters from end to start
+
     tl.to(letters, {
-      duration: 0.05,    // Duration for each letter's fade-out
-      opacity: 0,        // Fade to opacity 0
+      duration: 0.05,
+      opacity: 0,
       stagger: {
-        each: 0.05,      // Delay between each letter's animation
-        from: 'end',     // Start staggering from the end
-        ease: 'none',    // Linear easing for consistent timing
+        each: 0.05,
+        from: 'end',
+        ease: 'none',
       },
     });
-  
-    // Step 2: Fade in letters from start to end (reverse of fade out)
+
     tl.to(letters, {
-      duration: 0.05,    // Duration for each letter's fade-in
-      opacity: 1,        // Fade to opacity 1
+      duration: 0.05,
+      opacity: 1,
       stagger: {
-        each: 0.05,      // Delay between each letter's animation
-        from: 'start',   // Start staggering from the start
-        ease: 'none',    // Linear easing for consistent timing
+        each: 0.05,
+        from: 'start',
+        ease: 'none',
       },
-    }, ">"); // Start this tween immediately after the previous one
+    }, ">");
 
     return () => {
       tl.kill();
     };
   }, []);
-  
-
 
   const splitText = (text) => {
     return text.split('').map((char, index) => {
-      // Replace spaces with non-breaking spaces to preserve spacing
       if (char === ' ') {
         return (
           <span key={index} className="letter text-black">
@@ -81,9 +68,30 @@ const AboutTop = () => {
     });
   };
 
-
   return (
     <>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>RBSH | Top Marketing, Advertising & Web Development Company in NCR</title>
+        <meta
+          name="description"
+          content="RBSH Studio is the top marketing, advertising, and web development company located in Greater Noida West, NCR. We offer expert creative design, branding, and digital solutions for businesses."
+        />
+        <meta
+          name="keywords"
+          content="RBSH, top marketing company in NCR, advertising company in NCR, web development company NCR, creative design, digital marketing, branding, Greater Noida West, Techzone IV"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="RBSH Studio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="RBSH | Top Marketing, Advertising & Web Development Company in NCR" />
+        <meta property="og:description" content="RBSH Studio is the leading marketing, advertising, and web development company in NCR, offering creative design, branding, and digital marketing solutions." />
+        <meta property="og:url" content="https://rbshstudio.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://rbshstudio.com/og-image.png" /> {/* Replace with actual image URL */}
+        <meta name="address" content="T3-236, Golden-I, Techzone IV, Greater Noida West, NCR" />
+      </Helmet>
+
       <div
         className="
           relative 
@@ -105,7 +113,7 @@ const AboutTop = () => {
         ></video>
       </div>
 
-      <section className="w-full flex flex-col  justify-between bg-white">
+      <section className="w-full flex flex-col justify-between bg-white">
         <div
           className="
             flex 

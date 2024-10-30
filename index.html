@@ -3,44 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Title (Primary SEO factor) -->
     <title>RBSH Studio | Creative Design Solutions</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="./favicon.png">
 
     <!-- Meta Description (Critical for SEO) -->
-    <meta name="description" content="RBSH Studio offers creative design, video editing, branding, and digital marketing services to businesses. Let's bring your vision to life." />
+    <meta name="description" content="RBSH, RBSH Studio offers creative design, video editing, branding, and digital marketing services to businesses. Let's bring your vision to life." />
 
-    <!-- Meta Keywords (Though not heavily used by Google, still good for other search engines) -->
+    <!-- Meta Keywords -->
     <meta name="keywords" content="creative design, video editing, branding, digital marketing, creative solutions, RBSH Studio" />
 
     <!-- Meta Author -->
     <meta name="author" content="RBSH Studio" />
 
-    <!-- Open Graph for Social Media Sharing (Facebook, LinkedIn, etc.) -->
+    <!-- Open Graph for Social Media Sharing -->
     <meta property="og:title" content="RBSH Studio | Creative Design Solutions" />
     <meta property="og:description" content="RBSH Studio provides expert design services like branding, video editing, and more for businesses." />
-    <meta property="og:image" content="https://rbshstudio.com/og-image.jpg" />
+    <meta property="og:image" content="https://rbshstudio.com/og-image.webp" />
     <meta property="og:url" content="https://rbshstudio.com/" />
     <meta property="og:type" content="website" />
-    
+
     <!-- Twitter Cards for Sharing -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="RBSH Studio | Creative Design Solutions" />
     <meta name="twitter:description" content="Professional creative design solutions for businesses. Contact RBSH Studio for video editing, branding, and digital marketing services." />
-    <meta name="twitter:image" content="https://rbshstudio.com/twitter-image.jpg" />
+    <meta name="twitter:image" content="https://rbshstudio.com/twitter-image.webp" />
 
-    <!-- Canonical URL (To avoid duplicate content issues) -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://rbshstudio.com/" />
 
-    <!-- Robots Meta Tag (Ensures the page is indexed and links followed) -->
+    <!-- Robots Meta Tag -->
     <meta name="robots" content="index, follow" />
 
-    <!-- Google Fonts Preload -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload Fonts -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
+    <link
+
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -55,6 +72,7 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "RBSH Studio",
+        "name": "RBSH",
         "url": "https://rbshstudio.com/",
         "logo": "https://rbshstudio.com/logo.png",
         "sameAs": [
@@ -73,8 +91,12 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <main>
+      <div id="root"></div>
+    </main>
+  
+    <script type="module" src="/src/main.jsx" defer></script>
 
     <!-- No-JS Fallback for better accessibility -->
     <noscript>

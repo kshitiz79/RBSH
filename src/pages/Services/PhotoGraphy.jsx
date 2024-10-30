@@ -27,14 +27,12 @@ const PhotoGraphy = () => {
           <div className="md:w-2/3 mt-8 md:mt-4 md:pl-8">
             <p className="text-gray-700 text-base sm:text-xl leading-relaxed text-justify">
              
-              That’s why we offer a range of web development services to help businesses establish a strong online presence and achieve their business goals.
+            RBSH Studio is where creativity meets strategy. From concept to execution, we bring stories to life through innovative design, engaging social media campaigns, and strategic marketing solutions tailored for modern businesses.We specialize in helping brands stand out in an ever-crowded digital landscape. Whether you’re looking to enhance your online presence, drive engagement, or increase conversions, our team at RBSH Studio has the expertise to make it happen. Let’s build something extraordinary together.
             </p>
             <p className="text-gray-700 text-base sm:text-xl leading-relaxed mt-6 sm:mt-8 text-justify">
-              Our team of experienced developers are well-versed in WordPress, a popular content management system that allows for easy updates and customizable design options. It is perfect for businesses looking for a website that can be updated easily and maintained in-house. We also support the no-code movement, which allows for website development without requiring coding knowledge.
+            Capturing Moments, Crafting Memories– At RBSH Studio, we believe every photograph tells a story. Our photography services focus on delivering high-quality, captivating visuals that highlight the essence of your brand. From corporate shoots to lifestyle photography, our team combines creativity with technical expertise to bring out the best in every shot. Let us help you showcase your brand’s unique personality through the lens. Book a session with us today and let your story shine!
             </p>
-            <p className="text-gray-700 text-base sm:text-xl leading-relaxed mt-6 sm:mt-8 ">
-              Contact us today to learn more about how we can help your business succeed online.
-            </p>
+          
           </div>
         </div>
       </div>

@@ -1,11 +1,55 @@
-..invert.grayscale {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease; /* Optional, for a smooth transition */
+/* Create the animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .invert.grayscale:hover {
-    filter: grayscale(0%);
+  100% {
+    transform: translateX(-100%);
   }
-  /* Technology.css */
-  
-  
+}
+
+/* Wrapper for the logos */
+.logo-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; /* Adjust the height as necessary */
+}
+
+/* Track that holds the logos */
+.logo-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: calc(200%); /* Double the width to accommodate the duplicated logos */
+}
+
+/* Individual logo container */
+.logo-item {
+  flex-shrink: 0;
+  margin: 0 2rem;
+}
+
+/* Left shadow overlay */
+.shadow-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%; /* Cover 20% of the width */
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent); /* White shadow */
+  z-index: 10;
+}
+
+/* Right shadow overlay */
+.shadow-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40%; /* Cover 20% of the width */
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent); /* White shadow */
+  z-index: 10;
+}
