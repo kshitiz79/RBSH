@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col items-center text-center z-10">
           <h2 className="text-4xl md:text-5xl lg:text-[170px] font-bold leading-none">
           <a href="#" className="flex items-center justify-center space-x-2">
-  <span className="text-4xl md:text-5xl lg:text-[165px] z-10">Connect us</span>
+  <span className="text-4xl md:text-5xl lg:text-[165px] z-10">Contact us</span>
   <RxArrowTopRight className="text-yellow-500 text-[2.5rem] md:text-[6rem] lg:text-[11rem] mt-0 md:mt-7" />
 </a>
 

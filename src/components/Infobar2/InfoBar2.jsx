@@ -1,16 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-// If you're using ScrollTrigger in the future, you can keep this import
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger); // Register GSAP plugins if needed
 
 const InfoBar2 = () => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
     const element = scrollRef.current;
- 
+
     // Ensure the element has loaded and has a width
     if (!element) return;
 
@@ -34,16 +30,20 @@ const InfoBar2 = () => {
   }, []);
 
   // Define the text items
-  const textItems = ['T3-236, Golden-I, Techzone IV, Greater Noida',];
+  const textItems = [
+    { label: 'ADDRESS', value: 'T3-236, Golden-I, Techzone IV, Greater Noida' },
+    { label: 'PHONE', value: '+91 9876543210' },
+    { label: 'EMAIL', value: 'info@rbshstudio.com' },
+  ];
 
-  // Create the scrolling items with icons between them and after the last item
+  // Create the scrolling items with labels and values
   const scrollingItems = textItems.map((item, index) => (
-    <span key={`text-${index}`} className="text-xl flex items-center">
-      <span className="font-semibold text-white">{item}</span>
-      <p
-  
-        className=" text-yellow-500 ml-8 font-extrabold"
-      > ADDRESS :</p>
+    <span key={`text-${index}`} className="text-xl flex items-center ml-4">
+      <span className="text-yellow-500 font-bold">{item.label}:</span>
+      <span className="text-white font-semibold ml-2">{item.value}</span>
+      {index !== textItems.length - 1 && (
+        <span className="text-yellow-500 "></span>
+      )}
     </span>
   ));
 
@@ -51,12 +51,10 @@ const InfoBar2 = () => {
     <div className="bg-black text-white py-6 overflow-hidden relative">
       <div
         ref={scrollRef}
-        className="flex items-center space-x-1 whitespace-nowrap uppercase"
+        className="flex items-center space-x-4 whitespace-nowrap uppercase"
       >
         {/* Duplicate the scrolling items for seamless loop */}
         {Array(110).fill(scrollingItems)}
-        {/* {scrollingItems}
-        {scrollingItems} */}
       </div>
     </div>
   );

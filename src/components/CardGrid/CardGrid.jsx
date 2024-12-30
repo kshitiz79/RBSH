@@ -14,7 +14,7 @@ const CardButton = ({ text, link }) => (
   
   const CardButtonGrid = () => {
     return (
-      <div className="lg:px-14 mt-16 sm:px-5 md:px-8">
+      <div className="lg:px-22 mt-16 sm:px-5 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <CardButton text="Branding & Design" link="/branding-design" />
           <CardButton text="Video Editing" link="/video-editing" />

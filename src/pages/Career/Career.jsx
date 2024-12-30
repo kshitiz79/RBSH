@@ -118,7 +118,7 @@ const Career = () => {
           </div>
         </section>
 
-        <div className="w-full h-64 md:h-80 mx-auto px-4">
+        <div className="w-full lg:h-[25rem] md:h-80 mx-auto px-4">
         <Swiper
   spaceBetween={30}
   slidesPerView={1}
@@ -145,7 +145,7 @@ const Career = () => {
 
 
 
-      <div className="flex flex-col md:flex-col lg:flex-row  h-auto lg:h-[70vh] md:h-[50vh] p-6 md:p-0 lg:mt-16 md:mt-10">
+      <div className="flex flex-col md:flex-col lg:flex-row  h-auto lg:h-[70vh] md:h-[50vh] p-6 md:p-0 lg:mt-16 md:mt-10 mb-20">
         {/* "WORK WITH US" text with black stroke */}
         <h1 className="text-left inline-block text-6xl lg:text-[12rem]  md:text-[10rem] font-bold leading-tight md:ml-36 lg:ml-14 hollow-text-black font-lato mt-5 md:mt-9">
           WORK<br />WITH US

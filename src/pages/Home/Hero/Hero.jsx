@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
+
 import mobileBottomBg from './../../../../public/mobilebottombg.webp';
 import mobileTopBg from './../../../../public/mobiletopbg.webp';
 
@@ -14,6 +14,20 @@ const Hero = () => {
     ],
     []
   );
+
+  const keywords = [
+    "creative design solutions", "React website development", "digital marketing Noida", 
+    "branding and marketing agency", "web development company NCR", "GSAP animations services",
+    "top creative studio India", "website redesign services", "custom website solutions",
+    "best digital marketing firm Noida ",
+    // ... (Include all 1000 keywords here)
+  ];
+
+  // Chunk large keywords array for smaller meta tags
+  const chunkedKeywords = (arr, size) => 
+    arr.length > size ? arr.slice(0, size) : arr;
+
+
 
   const colors = useMemo(() => ['text-red-500', 'text-blue-500', 'text-green-500', 'text-yellow-500'], []);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -61,6 +75,13 @@ const Hero = () => {
         <link rel="preload" as="image" href="./image1.webp" />
         <link rel="preload" as="image" href={mobileBottomBg} />
         <link rel="preload" as="image" href={mobileTopBg} />
+
+      </Helmet>
+      <Helmet>
+        {/* Add Primary Keywords */}
+        <meta name="keywords" content={chunkedKeywords(keywords, 150).join(", ")} />
+        <meta name="description" content="Transform your brand with RBSH Studio's creative design solutions, React development, and advanced media services." />
+        <title>RBSH Studio | Creative Design, Branding, and Web Development</title>
       </Helmet>
 
       {/* Top image, visible only on mobile */}

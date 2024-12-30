@@ -12,8 +12,8 @@ const colors = [
   "bg-[#FF5C00]",
   "bg-[#4384f2]",
   "bg-[#00c0ef]",
-  "bg-[#f90492]",
 
+"bg-[#ff635f]",
   "bg-[#ffd766]",
 ];
 const testimonials = [

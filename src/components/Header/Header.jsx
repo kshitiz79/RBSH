@@ -136,13 +136,13 @@ const Header = () => {
   // Dropdown items
   const dropdownItems = {
     services: [
-      { link: "Branding & Design", path: "/branding-design" },
-      { link: "Video Editing", path: "/video-editing" },
-      { link: "Lead Generation & SEO", path: "/lead-generation-seo" },
-      { link: "Social Media Strategy", path: "/social-media-strategy" },
-      { link: "Web Design & Development", path: "/web-design-development" },
+      { link: "Brand Strategy", path: "/branding-design" },
+      { link: "Video Production", path: "/video-editing" },
+      { link: "Lead Optimization", path: "/lead-generation-seo" },
+      { link: "Social Media", path: "/social-media-strategy" },
+      { link: "Web Development", path: "/web-design-development" },
       {
-        link: "Content Marketing & Photography",
+        link: "Creative Photography",
         path: "/content-marketing-photography",
       },
     ],
@@ -209,83 +209,92 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          ref={menuRef}
-          className={`fixed top-0 left-0 w-[70%] h-full bg-black px-8 py-8 transform ${
-            isMenuOpen
-              ? "translate-x-0 opacity-100"
-              : "-translate-x-full opacity-0"
-          } transition-transform duration-500 ease-in-out`}
-          aria-hidden={!isMenuOpen}
-        >
-          {/* Logo at the top of the mobile menu */}
-          <div className="flex justify-between items-center mb-12">
-            <Link
-              to="/"
-              className="text-white text-3xl font-bold"
-              aria-label="Homepage"
-            >
-              <img src="./logo2.png" alt="Logo" className="h-18 w-[17rem] " />
-            </Link>
-            <button
-              className="text-white focus:outline-none mb-14"
-              aria-label="Close mobile menu"
-              onClick={toggleMenu} 
-            >
-              <FaXmark className="h-6 w-6" />
-            </button>
-          </div>
+       {/* Mobile Menu */}
+<div
+  ref={menuRef}
+  className={`fixed top-0 left-0 w-[70%] h-full bg-black px-8 py-8 transform ${
+    isMenuOpen
+      ? "translate-x-0 opacity-100"
+      : "-translate-x-full opacity-0"
+  } transition-transform duration-500 ease-in-out`}
+  aria-hidden={!isMenuOpen}
+>
+  {/* Logo at the top of the mobile menu */}
+  <div className="flex justify-between items-center mb-12">
+    <Link
+      to="/"
+      className="text-white text-3xl font-bold"
+      aria-label="Homepage"
+    >
+      <img src="./logo2.png" alt="Logo" className="h-18 w-[17rem]" />
+    </Link>
+    <button
+      className="text-white focus:outline-none mb-14"
+      aria-label="Close mobile menu"
+      onClick={toggleMenu}
+    >
+      <FaXmark className="h-6 w-6" />
+    </button>
+  </div>
 
-          {navItems.map(({ link, path, hasDropdown }) => (
-            <div key={path} className="mb-7">
-              {hasDropdown ? (
-                <div>
-                  <button
-                    onClick={() =>
-                      setActiveDropdown(
-                        activeDropdown === hasDropdown ? null : hasDropdown
-                      )
-                    }
-                    className="flex items-center text-white uppercase text-lg focus:outline-none"
-                    aria-expanded={activeDropdown === hasDropdown
-                      
-                    }
-
+  {/* Navigation Links */}
+  {navItems.map(({ link, path, hasDropdown }) => (
+    <div key={path} className="mb-7">
+      {hasDropdown ? (
+        <div>
+          <button
+            onClick={() =>
+              setActiveDropdown(
+                activeDropdown === hasDropdown ? null : hasDropdown
+              )
+            }
+            className="flex items-center text-white uppercase text-lg focus:outline-none"
+            aria-expanded={activeDropdown === hasDropdown}
+          >
+            {link}
+            <FaChevronDown className="ml-2" aria-hidden="true" />
+          </button>
+          {activeDropdown === hasDropdown && (
+            <ul className="pl-4 mt-2 space-y-2">
+              {dropdownItems[hasDropdown].map(({ link, path }) => (
+                <li key={path}>
+                  <Link
+                    to={path}
+                    className="block text-base text-white my-3 hover:text-yellow-500"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setActiveDropdown(null);
+                    }}
                   >
                     {link}
-                    <FaChevronDown className="ml-2" aria-hidden="true" />
-                  </button>
-                  {activeDropdown === hasDropdown && (
-                    <ul className="pl-4 mt-2 space-y-2">
-                      {dropdownItems[hasDropdown].map(({ link, path }) => (
-                        <li key={path}>
-                          <Link
-                            to={path}
-                            className="block text-base text-white my-3 hover:text-yellow-500"
-                            onClick={() => {
-                              setIsMenuOpen(false);
-                              setActiveDropdown(null);
-                            }}
-                          >
-                            {link}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  to={path}
-                  className="block text-base text-white uppercase hover:text-yellow-500"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link}
-                </Link>
-              )}
-            </div>
-          ))}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
+      ) : (
+        <Link
+          to={path}
+          className="block font-lato text-white uppercase hover:text-yellow-500"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {link}
+        </Link>
+      )}
+    </div>
+  ))}
+
+  {/* Contact Us Button - Mobile Only */}
+  <div c>
+    <Link to="/contactus">
+      <div className=" text-white uppercase  text-base ">
+        Contact Us
+      </div>
+    </Link>
+  </div>
+</div>
+
       </nav>
     </header>
   );

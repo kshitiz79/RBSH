@@ -117,7 +117,7 @@ const HorizontalScrollCard = () => {
       description: "Drive leads and rank higher with focused SEO strategies",
       },
     {
-      title: "Social Management",
+      title: "Social Media",
       description: "Boost your brand with smart social media strategies.",
     },
     {
