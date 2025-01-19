@@ -83,7 +83,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-700 pt-8 text-center z-10">
-          <p className="text-gray-400">© 2024 Copyright rbshstudio. All Rights Reserved.</p>
+          <p className="text-gray-400">© 2025 Copyright rbshstudio. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
