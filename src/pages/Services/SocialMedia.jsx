@@ -1,48 +1,81 @@
-import React from 'react';
-import CardButtonGrid from '../../components/CardGrid/CardGrid';
-import QuickLinks from '../../components/QuickLinks/QuickLinks';
+import React, { useEffect, useRef } from 'react';
+import './VideoEditing.css'; // Import custom CSS for scrollbar hiding
+import ServiceBanner from '../../components/ServiceBanner/ServiceBaneer';
+
+import ImageText from './ImageText';
 
 const SocialMedia = () => {
-  return (
-    <div className="bg-white text-black">
-      {/* Top Section with Image */}
-      <div className="relative flex justify-center items-center p-4 sm:p-6">
-    
+  const leftColumnRef = useRef(null);
+  const rightColumnRef = useRef(null);
 
-        {/* Image */}
-        <img
-          src="./service7.png"
-          alt="Social Media Services"
-          className="w-full h-48 sm:h-[50vh] rounded object-cover"
-    
-        />
+
+  useEffect(() => {
+    if (leftColumnRef.current) leftColumnRef.current.scrollTop = 0;
+    if (rightColumnRef.current) rightColumnRef.current.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }, []);
+
+
+
+
+  // Intercept wheel events on the text column and scroll both columns.
+  const handleRightWheel = (e) => {
+    // Prevent the default behavior for the text column itself.
+    e.preventDefault();
+    if (leftColumnRef.current && rightColumnRef.current) {
+      leftColumnRef.current.scrollTop += e.deltaY;
+      rightColumnRef.current.scrollTop += e.deltaY;
+    }
+  };
+
+  return (
+    <>
+    <div className="bg-white text-black flex flex-col">
+      {/* Top Section with Image */}
+      <div className="relative flex justify-center items-center p-4 sm:p-6 hidden md:block">
+      <ServiceBanner gradientName="yellow" />
       </div>
 
+      {/* Container for the two columns */}
+      <div className="flex flex-col md:flex-row flex-grow md:h-[70vh] md:px-6 h-[90vh] md:gap-20 gap-5">
+        {/* Left Column: scrollable image with hidden scrollbar */}
+        <div
+          ref={leftColumnRef}
+          className="md:w-2/5 overflow-y-auto hide-scrollbar"
+        >
+          <img
+            src="./desktop4.webp"
+            alt="Desktop"
+            className="w-full h-auto"
+          />
+        </div>
 
-      <div className="container mx-auto py-8 mt-10 px-4 sm:px-6 lg:px-24">
-  
-        <div className="flex flex-col md:flex-row">
-          <QuickLinks />
-    
-          <div className="md:w-2/3 mt-8 md:mt-4 md:pl-8">
-            <p className="text-gray-700 text-base sm:text-xl leading-relaxed text-justify">
-          
-              Our social media strategy services are focused on helping your brand thrive in the digital landscape. We understand that social media is more than just posting content—it’s about building a community, engaging with your audience, and driving meaningful interactions. Our approach begins with a deep dive into your brand’s goals, target audience, and competitive landscape. We then develop a tailored strategy that includes content creation, platform selection, posting schedules, and engagement tactics designed to maximize your reach and impact. Whether you’re looking to increase brand awareness, drive traffic, or boost conversions, our strategies are data-driven and results-focused.
-            </p>
-            <p className="text-gray-700 text-base sm:text-xl leading-relaxed mt-6 sm:mt-8">
-              Contact us today to learn more about how we can help your business succeed online.
-            </p>
-          </div>
+        {/* Right Column: scrollable text with hidden scrollbar */}
+        <div
+          ref={rightColumnRef}
+          onWheel={handleRightWheel}
+          className="md:w-3/5  md:p-8 px-4 overflow-y-auto hide-scrollbar h-[80vh] "
+        >
+          <p className="text-gray-700 md:text-6xl text-4xl font-lato">
+          Strategic Social Media Marketing
+          </p>
+          <p className="text-gray-700 text-base sm:text-xl leading-relaxed mt-6 w-[90%] sm:mt-8 text-justify"> Maximize your brand's reach with our expert social media strategies. We create compelling content, manage your accounts, and run targeted ad campaigns to enhance engagement and drive business growth. From Instagram reels to LinkedIn marketing, we ensure your brand stays relevant and connects effectively with your audience. </p>
         </div>
       </div>
-
-      
-      <div className="mb-16 sm:mb-20 px-4 sm:px-6 lg:px-24">
-   
-        <CardButtonGrid />
-      </div>
+     
     </div>
+
+
+    <div className=" mt-10 bg-black">
+     <ImageText/>
+      </div>
+      </>
   );
 };
+
+
+
+
+
 
 export default SocialMedia;

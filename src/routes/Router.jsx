@@ -4,6 +4,9 @@ import Layout from "../layout/Layout";
 import { Suspense, lazy } from 'react';
 import AboutPage from "../pages/About/About";
 import Home from "../pages/home/Home";
+import TermsConditions from "../pages/Terms&Condition/Terms";
+import PrivacyPolicy from "../pages/Terms&Condition/Privacy";
+import RefundPolicy from "../pages/Terms&Condition/Refund";
 
 
 // Lazy load the pages
@@ -17,7 +20,7 @@ const SocialMedia = lazy(() => import("../pages/Services/SocialMedia"));
 const LeadGeneration = lazy(() => import("../pages/Services/LeadGeneration"));
 const PhotoGraphy = lazy(() => import("../pages/Services/PhotoGraphy"));
 const WebDesign = lazy(() => import("../pages/Services/WebDesign"));
-const Test = lazy(() => import("../pages/Test/Test"));
+
 const ContactUs = lazy(() => import("../pages/ContactUs/ContactUs"));
 
 const router = createBrowserRouter([
@@ -69,10 +72,18 @@ const router = createBrowserRouter([
       {
         path: '/contactus',
         element: <ContactUs />,
+      }, 
+      {
+        path: '/terms&condition',
+        element: <TermsConditions />,
+      },
+       {
+        path: '/privacy&policy',
+        element: <PrivacyPolicy/>,
       },
       {
-        path: '/test',
-        element: <Test />,
+        path: '/refund-policy',
+        element: <RefundPolicy/>,
       },
     ],
   },

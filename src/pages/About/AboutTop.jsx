@@ -98,7 +98,7 @@ const AboutTop = () => {
           w-screen 
           bg-black 
           overflow-hidden
-          h-[32vh]          /* Mobile: 50% of viewport height */
+          h-[24vh]          /* Mobile: 50% of viewport height */
           md:h-[65vh]       /* Tablet: 65% of viewport height */
           lg:h-screen       /* Laptop and above: 100% of viewport height */
         "

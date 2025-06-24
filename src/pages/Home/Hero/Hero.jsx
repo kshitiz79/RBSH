@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 import mobileBottomBg from './../../../../public/mobilebottombg.webp';
-import mobileTopBg from './../../../../public/mobiletopbg.webp';
+import mobileTopBg from './../../../../public/mobiletopbg.png';
 
 const Hero = () => {
   const words = useMemo(
@@ -60,7 +60,7 @@ const Hero = () => {
     const scrollingBg = document.querySelectorAll('.scrolling-bg');
     const animate = () => {
       scrollingBg.forEach(bg => {
-        bg.style.backgroundPosition = `${parseFloat(bg.style.backgroundPosition || '0') - 0.1}% 0`;
+        bg.style.backgroundPosition = `${parseFloat(bg.style.backgroundPosition || '0') - 0.01}% 0`;
       });
       requestAnimationFrame(animate);
     };
@@ -102,7 +102,7 @@ const Hero = () => {
           aria-hidden="true"
         ></div>
 
-        <div className="fixed inset-0 flex flex-col justify-center items-center md:mb-96 mb-0 lg:mb-0 mt-40 lg:mt-0 md:mt-0">
+        <div className="fixed inset-0 flex flex-col justify-center items-center md:mb-96 mb-0 lg:mb-0 mt-28 lg:mt-0 md:mt-0">
           <h1 className="hero text-center font-black text-black mt-28 text-2xl sm:text-base md:text-lg lg:text-xl xl:text-5xl font-lato">
             TRANSFORM <span className="font-medium uppercase">Your</span> BRAND <br />
             <span className="font-medium uppercase"> WITH </span> CREATIVITY <br />
@@ -141,7 +141,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom image, visible only on mobile */}
-      <div className="relative sm:hidden h-[32vh] bg-repeat-x bg-cover scrolling-bg" 
+      <div className="relative sm:hidden h-[32vh] bg-repeat-x shadow-2xl bg-cover scrolling-bg" 
         style={{ backgroundImage: `url(${mobileTopBg})` }}></div>
     </>
   );

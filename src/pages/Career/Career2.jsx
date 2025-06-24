@@ -29,7 +29,7 @@ const Career2 = () => {
   };
 
   return (
-    <div className="w-full lg:w-1/4 md:w-4/6 mx-auto mt-9 px-4">
+    <div className="w-full lg:w-1/4 md:w-4/6 mx-auto mt-9 px-4 ">
       <form ref={form} onSubmit={sendEmail}>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 lg:mt-6">
@@ -39,7 +39,7 @@ const Career2 = () => {
             type="text"
             name="first_name" // Name attribute for EmailJS
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="First Name"
           />
         </div>
@@ -50,9 +50,9 @@ const Career2 = () => {
           </label>
           <input
             type="text"
-            name="last_name" // Name attribute for EmailJS
+            name="last_name"
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className=" block w-full px-3 py-1    border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Last Name"
           />
         </div>
@@ -63,9 +63,9 @@ const Career2 = () => {
           </label>
           <input
             type="email"
-            name="email" // Name attribute for EmailJS
+            name="from_email" 
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className=" block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Email"
           />
         </div>
@@ -78,8 +78,20 @@ const Career2 = () => {
             type="tel"
             name="from_number" // Name attribute for EmailJS
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className=" block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Phone"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">
+            Job Role <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            name="from_role" 
+            required
+            className=" block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            placeholder="Job Role"
           />
         </div>
 
@@ -91,7 +103,7 @@ const Career2 = () => {
             type="text"
             name="city" // Name attribute for EmailJS
             required
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             placeholder="Location (City)"
           />
         </div>
@@ -99,7 +111,7 @@ const Career2 = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full bg-blue-600 text-white py-1 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           {loading ? "Submitting..." : "Submit Application"}
         </button>

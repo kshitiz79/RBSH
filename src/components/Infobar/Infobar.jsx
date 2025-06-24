@@ -38,7 +38,7 @@ const ScrollText = () => {
 
   // Create the scrolling items with icons between them and after the last item
   const scrollingItems = textItems.map((item, index) => (
-    <span key={`text-${index}`} className="text-xl flex items-center">
+    <span key={`text-${index}`} className="lg:text-xl flex items-center">
       <span className="font-semibold text-white">{item}</span>
       <i
         key={`icon-${index}`}
@@ -48,7 +48,7 @@ const ScrollText = () => {
   ));
 
   return (
-    <div className="bg-black text-white py-6 overflow-hidden relative">
+    <div className="bg-black text-white lg:py-6 py-2 overflow-hidden relative">
       <div
         ref={scrollRef}
         className="flex items-center space-x-8 whitespace-nowrap uppercase"

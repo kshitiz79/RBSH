@@ -1,29 +1,9 @@
-/* Create the animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Wrapper for the logos */
+/* Container for the logos */
 .logo-slider {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 100%; /* Adjust the height as necessary */
-}
-
-/* Track that holds the logos */
-.logo-track {
-  display: flex;
-  animation: scroll 30s linear infinite;
-  width: calc(200%); /* Double the width to accommodate the duplicated logos */
+  margin-bottom: 2rem;
 }
 
 /* Individual logo container */
@@ -31,8 +11,6 @@
   flex-shrink: 0;
   margin: 0 2rem;
 }
-
-/* Left shadow overlay */
 .shadow-left {
   position: absolute;
   top: 0;

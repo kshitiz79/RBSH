@@ -1,52 +1,75 @@
-import "./Clents.css"; // Ensure you have the correct CSS file name
 
-import React from 'react';
 
-const clients = [
-  { name: 'EPS', logo: './clients2.png', alt: 'EPS logo' },
-  { name: 'Active Sine', logo: './clients1.png', alt: 'Active Sine logo' },
-  { name: 'Himtaj Jewelry', logo: './clients4.png', alt: 'Himtaj Jewelry logo' },
-  { name: 'Glucks Finance', logo: './clients5.png', alt: 'Glucks Finance logo' },
-  { name: 'Glucks Finance', logo: './clients6.png', alt: 'Glucks Finance logo' },
-  { name: 'Glucks Wealth', logo: './clients3.png', alt: 'Glucks Wealth logo' },
+
+import "./Clents.css";
+import React from "react";
+
+
+
+import Marquee from "react-fast-marquee";
+
+
+const row1Clients = [
+
+  { name: "Active Sine", logo: "./clients8.png", alt: "Active Sine logo" },
+  { name: "Glucks Finance", logo: "./clients10.png", alt: "Glucks Finance logo" },
+  { name: "Glucks Finance", logo: "./clients11.png", alt: "Glucks Finance logo" },
+  { name: "Client 7", logo: "./clients13.png", alt: "Client 7 logo" },
+  { name: "Client 8", logo: "./clients14.png", alt: "Client 8 logo" },
+
+  { name: "Glucks Wealth", logo: "./clients12.png", alt: "Glucks Wealth logo" },
+
+  { name: "Client 10", logo: "./clients16.png", alt: "Client 10 logo" },
+];
+
+const row2Clients = [
+  
+  { name: "Client 12", logo: "./clients18.png", alt: "Client 12 logo" },
+  { name: "Client 11", logo: "./clients20.png", alt: "Client 11 logo" },
+
+  { name: "Client 12", logo: "./clients22.png", alt: "Client 12 logo" },
+  { name: "Client 12", logo: "./clients23.png", alt: "Client 12 logo" },
+
+  { name: "Client 12", logo: "./clients25.png", alt: "Client 12 logo" },
+  
+  { name: "Client 12", logo: "./clients28.png", alt: "Client 12 logo" },
+  { name: "Client 12", logo: "./clients21.png", alt: "Client 12 logo" },
 ];
 
 const ClientSection = () => {
   return (
-    <section className="bg-white lg:py-[4rem] w-full text-center relative overflow-hidden">
-      <div className="logo-slider">
-        {/* Left shadow overlay */}
-        <div className="shadow-left"></div>
-        
-        <div className="logo-track">
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="logo-item"
-            >
+    <section className="bg-white py-10 lg:py-[1rem] w-full text-center relative">
+      {/* First Row Marquee (Scrolling Left) */}
+      <div className="logo-slider -mb-20">
+      <div className="shadow-left"></div>
+        <Marquee gradient={false} speed={50}>
+          {row1Clients.map((client, index) => (
+            <div key={`row1-${index}`} className="logo-item">
               <img
                 src={client.logo}
                 alt={client.alt}
-                className="py-10 w-36 sm:w-36 lg:w-56 md:w-40 mx-auto"
+                className="py-10 w-36 sm:w-36 md:w-40 lg:w-56 mx-auto"
               />
             </div>
           ))}
-          {/* Duplicate the list for smooth infinite scrolling */}
-          {clients.map((client, index) => (
-            <div
-              key={index + 60 +clients.length}
-              className="logo-item"
-            >
-              <img
-                src={client.logo}
-                alt={client.alt}
-                className="py-10 w-36 sm:w-36 lg:w-56 md:w-40 mx-auto"
-              />
-            </div>
-          ))}
-        </div>
+        </Marquee>
+        <div className="shadow-right"></div>
+      </div>
 
-        {/* Right shadow overlay */}
+      {/* Second Row Marquee (Scrolling Right) */}
+      <div className="logo-slider -mt-20">
+      <div className="shadow-left"></div>
+        <Marquee gradient={false} speed={50} direction="right">
+          {row2Clients.map((client, index) => (
+            <div key={`row2-${index}`} className="logo-item">
+              <img
+                src={client.logo}
+                alt={client.alt}
+                className="py-10 w-36 sm:w-36 md:w-40 lg:w-56 mx-auto"
+              />
+            </div>
+          ))}
+        </Marquee>
         <div className="shadow-right"></div>
       </div>
     </section>

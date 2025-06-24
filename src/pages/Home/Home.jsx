@@ -9,6 +9,7 @@ import Tablet from './Tablet/Tablet';
 import Gallery from '../../pages/Home/Gallery/Gallery';
 import ClientSection from './Clients/Clients';
 
+
 // Lazy load the components
 
 const FloatingSection = React.lazy(() => import('./Slider/Slider'));
@@ -58,9 +59,9 @@ const Home = () => {
 
         {/* Use Suspense with a single Spinner for all lazy-loaded components */}
         <Suspense fallback={<Spinner />}>
-          <LazyLoad height={200} offset={100}>
+        
             <DefineUs className="z-10" />
-          </LazyLoad>
+
 
           <Video />
 
@@ -68,23 +69,23 @@ const Home = () => {
 
       
 
-          <LazyLoad height={200} offset={100}>
+
             <FloatingSection />
-          </LazyLoad>
+      
 
           <Gallery />
 
-          <LazyLoad height={200} offset={100}>
+
             <HorizontalScrollCard />
-          </LazyLoad>
+
 
 
             <ClientSection />
  
 
-          <LazyLoad height={200} offset={100}>
+
             <Technology />
-          </LazyLoad>
+    
 
           <LazyLoad height={200} offset={100}>
             <ScrollingText />
