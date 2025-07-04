@@ -5,19 +5,19 @@ import { ArrowRight } from "lucide-react";
 const articles = [
   {
     title: "How Denim Brand Triarchy Is Blazing a Path for Sustainable Luxury",
-    image: "/img1.jpg",
+    image: "/3.png",
   },
   {
     title: "How Tarform Is Creating a New Breed of Electric Motorcycles: Stylish, Sustainable and Built to Last",
-    image: "/img2.jpg",
+    image: "/about2.png",
   },
   {
     title: "On Transforms Air Pollution into High-Performance Running Gear",
-    image: "/img3.jpg",
+    image: "/service.png",
   },
   {
     title: "Golden Globe Winner Billie Eilish Talks Thrifting and Climate Change in Her Signature Grunge Style",
-    image: "/img4.jpg",
+    image: "/about3.png",
     highlight: true,
   },
 ];
@@ -47,7 +47,7 @@ const ExpandingCards = () => {
               className="absolute left-0 w-full"
             >
               <div className="flex bg-white p-5 rounded-xl shadow-lg overflow-hidden p_multiplier-4 items-center gap-4 border border-gray-200">
-                <div className="w-[80px] h-[80px] rounded-md overflow-hidden shrink-0">
+                <div className="w-[80px] h-[80px] rounded-full overflow-hidden shrink-0">
                   <img
                     src={article.image}
                     alt={article.title}

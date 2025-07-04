@@ -6,6 +6,8 @@ import About3 from "./About3";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async"; // Import for SEO meta tags
 import InfoBar2 from "../../components/Infobar2/Infobar2";
+import AboutSection from "./AboutSection";
+// import HorizontalAboutSection from "../../components/About/HorizontalAbout";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -40,6 +42,8 @@ const AboutPage = () => {
         {/* Optional: Ensure proper scaling on mobile devices */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
+      {/* <HorizontalAboutSection/> */}
+      <AboutSection/>
 
       {/* Page Content */}
       <AboutTop />

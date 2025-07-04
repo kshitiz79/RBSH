@@ -14,12 +14,7 @@ import BlogHero from "../../components/Blogs/BlogHero";
 const Blog = () => {
 
 
-const tabs = [
-  { name: "All Articles", icon: "📄", path: "/blog" },
-  { name: "Design", icon: "🎨", path: "/design" },
-  { name: "Marketing", icon: "📈", path: "/marketing" },
-  { name: "Web Design", icon: "💻", path: "/web-development" },
-];
+// Removed unused tabs variable to fix the compile error
 
   return (
     <>

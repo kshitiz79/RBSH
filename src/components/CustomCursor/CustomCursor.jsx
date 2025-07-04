@@ -1,5 +1,5 @@
 // src/components/CustomCursor.jsx
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './CustomCursor.css'; // Create a CSS file for cursor styles
 

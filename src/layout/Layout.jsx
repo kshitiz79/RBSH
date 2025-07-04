@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async'; // Import for SEO
 import Spinner from '../components/Spinner/Spinner';
