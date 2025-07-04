@@ -7,6 +7,9 @@ import Home from "../pages/home/Home";
 import TermsConditions from "../pages/Terms&Condition/Terms";
 import PrivacyPolicy from "../pages/Terms&Condition/Privacy";
 import RefundPolicy from "../pages/Terms&Condition/Refund";
+import Design from "../pages/Blogs/Design";
+import Marketing from "../pages/Blogs/Marketing";
+import WebDevelopment from "../pages/Blogs/WebDesign";
 
 
 // Lazy load the pages
@@ -85,6 +88,24 @@ const router = createBrowserRouter([
         path: '/refund-policy',
         element: <RefundPolicy/>,
       },
+
+
+ {
+        path: '/design',
+        element: <Design/>,
+      },
+ {
+        path: '/marketing',
+        element: <Marketing/>,
+      },
+ {
+        path: '/web-development',
+        element: <WebDevelopment/>,
+      },
+
+
+
+
     ],
   },
 ]);

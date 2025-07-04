@@ -27,11 +27,11 @@ const ExpandingCards = () => {
 
   return (
     <div
-      className="fixed bottom-10 right-10 w-[370px] max-w-full z-50"
+      className="absolute bottom-10 right-10 w-[370px] max-w-full z-0"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative h-[450px]"> {/* Increased height to accommodate gaps */}
+      <div className="relative h-[450px]">
         {articles.map((article, i) => {
           const indexFromBottom = articles.length - 1 - i;
           return (
@@ -39,14 +39,14 @@ const ExpandingCards = () => {
               key={i}
               initial={false}
               animate={{
-                bottom: hovered ? indexFromBottom * 130 : 0, // added vertical gap
+                bottom: hovered ? indexFromBottom * 130 : 0,
                 scale: hovered ? 1 : 1 - indexFromBottom * 0.015,
                 zIndex: hovered ? i + 1 : 10 + i,
               }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="absolute left-0 w-full"
             >
-              <div className="flex bg-white rounded-xl shadow-lg overflow-hidden p-4 items-center gap-4 border border-gray-200">
+              <div className="flex bg-white p-5 rounded-xl shadow-lg overflow-hidden p_multiplier-4 items-center gap-4 border border-gray-200">
                 <div className="w-[80px] h-[80px] rounded-md overflow-hidden shrink-0">
                   <img
                     src={article.image}
