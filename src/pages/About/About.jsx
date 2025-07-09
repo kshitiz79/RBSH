@@ -1,12 +1,15 @@
 
 import FAQ from "../../components/FAQ/FAQ";
-import AboutTop from "./AboutTop";
+
 import AboutPhotoGrid from "./AboutPhotoGrid";
 import About3 from "./About3";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async"; // Import for SEO meta tags
 import InfoBar2 from "../../components/Infobar2/Infobar2";
 import AboutSection from "./AboutSection";
+import ValuesSection from "../../components/About/ValueSection";
+import Text from "../../components/About/Text";
+
 // import HorizontalAboutSection from "../../components/About/HorizontalAbout";
 
 const AboutPage = () => {
@@ -44,9 +47,12 @@ const AboutPage = () => {
       </Helmet>
       {/* <HorizontalAboutSection/> */}
       <AboutSection/>
+      <ValuesSection/>
+      <Text/>
+ 
 
       {/* Page Content */}
-      <AboutTop />
+      {/* <AboutTop /> */}
       <AboutPhotoGrid />
       <About3 />
 

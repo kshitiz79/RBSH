@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet-async"; // For adding SEO meta tags
 import { gsap } from 'gsap';
 

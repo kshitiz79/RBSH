@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import image1 from "./../../../public/about1.png";
 import image2 from "./../../../public/about2.png";
@@ -48,7 +48,7 @@ const AboutPhotoGrid = () => {
 
     <>
     
-    <section className="bg-white py-10 px-6">
+    <section className="relative bg-white py-10 px-6">
   <div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
     {/* Loop for campaign cards */}
     {campaigns.map((campaign, idx) => (
