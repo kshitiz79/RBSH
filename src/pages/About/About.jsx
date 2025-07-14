@@ -1,14 +1,15 @@
 
 import FAQ from "../../components/FAQ/FAQ";
 
-import AboutPhotoGrid from "./AboutPhotoGrid";
-import About3 from "./About3";
+
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async"; // Import for SEO meta tags
-import InfoBar2 from "../../components/Infobar2/Infobar2";
+
 import AboutSection from "./AboutSection";
 import ValuesSection from "../../components/About/ValueSection";
 import Text from "../../components/About/Text";
+import WhyRBSH from "../../components/About/WhyRBSH";
+
 
 // import HorizontalAboutSection from "../../components/About/HorizontalAbout";
 
@@ -49,53 +50,15 @@ const AboutPage = () => {
       <AboutSection/>
       <ValuesSection/>
       <Text/>
+      <WhyRBSH/>
+
  
 
-      {/* Page Content */}
-      {/* <AboutTop /> */}
-      <AboutPhotoGrid />
-      <About3 />
 
-      {/* Image-Text Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-          {/* Text Section */}
-          <div className="md:w-1/2">
-            <h3 className="font-extrabold text-3xl sm:text-4xl md:text-5xl mb-5">
-              OUR VISION
-            </h3>
-            <p className="mb-6 text-base sm:text-lg md:text-xl text-gray-700 text-justify">
-              We collaborate with visionary brands to help them evolve and succeed.
-              By transforming brand culture into passionate advocacy, we leverage
-              digital strategies to create a loyal and engaged customer community.
-              We craft compelling narratives that resonate deeply, turning brand
-              stories into excellent experiences. Our innovative approaches bridge
-              the gap between technology and emotion, driving meaningful engagement.
-              Together, we redefine possibilities, building a future where your brand
-              not only thrives but leads the way.
-            </p>
-          </div>
 
-          {/* Image Section */}
-          <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8">
-            <img
-              src="./aboutus.png" // Replace with your image URL
-              srcSet="./aboutus-small.png 480w, ./aboutus.png 1024w"
-              sizes="(max-width: 840px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              alt="Innovative Solutions"
-              className="w-full h-48 sm:h-64 md:h-[25rem] object-cover rounded shadow-lg"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
 
       <main className="bg-white relative">
-        <section aria-labelledby="info-bar">
-          <div className="auto">
-            <InfoBar2 />
-          </div>
-        </section>
+  
 
         <section aria-labelledby="faq-section">
           <FAQ />

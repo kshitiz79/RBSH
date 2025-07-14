@@ -13,15 +13,23 @@ const Block = ({
 }) => (
   <motion.div
     style={{ height, width: widthTransform }}
-    className="ml-auto border-t border-b border-white px-6 py-8 overflow-hidden"
+    className="ml-auto border-b border-t border-white px-0 py-8 overflow-hidden relative text-left"
   >
-    <h1 className="text-white text-[3rem] max-w-md">{title}</h1>
-    <motion.p
-      style={{ opacity: paragraphOpacity, y: paragraphY }}
-      className="text-white max-w-2xl"
-    >
-      {text}
-    </motion.p>
+    {/* Full container */}
+    <div className="absolute inset-0 flex flex-col text-left justify-between items-end px-6" >
+      {/* Title stays near the top */}
+      <div className="text-left max-w-xl pt-4 -ml-20 mr-40">
+        <h1 className="text-white text-[3rem] max-w-xl text-left" >{title}</h1>
+      </div>
+
+      {/* Paragraph is anchored to the bottom */}
+      <motion.p
+        style={{ opacity: paragraphOpacity, y: paragraphY }}
+        className="text-white text-left max-w-xl mr-20 pb-4"
+      >
+        {text}
+      </motion.p>
+    </div>
   </motion.div>
 );
 
@@ -32,21 +40,36 @@ const Text = () => {
     offset: ["start center", "end start"],
   });
 
-  // height animation for all blocks
-  const height = useTransform(scrollYProgress, [0, 0.5], [100, 250]);
-  // staggered width per block: each expands during its own third of scroll
-  const blockCount = 3;
+  const blockCount = 7;
+
+  // For each block, map scroll progress range so that animation is sequential:
+  // Each block animates when scrollYProgress is between i/blockCount and (i+1)/blockCount
   const widthTransforms = Array.from({ length: blockCount }).map((_, i) =>
     useTransform(
       scrollYProgress,
       [i / blockCount, (i + 1) / blockCount],
-      ["50%", "100%"]
+      ["50%", "100%"],
+      { clamp: true }
     )
   );
 
-  // paragraph reveal tied to block height
-  const paragraphOpacity = useTransform(height, [100, 300], [0, 1]);
-  const paragraphY = useTransform(height, [50, 70], [20, 0]);
+  const heights = Array.from({ length: blockCount }).map((_, i) =>
+    useTransform(
+      scrollYProgress,
+      [i / blockCount, (i + 1) / blockCount],
+      [100, 290],
+      { clamp: true }
+    )
+  );
+
+  // Paragraph animations per block tied to their height values
+  const paragraphOpacitys = heights.map(height =>
+    useTransform(height, [100, 200], [0, 1])
+  );
+
+  const paragraphYs = heights.map(height =>
+    useTransform(height, [50, 70], [20, 0])
+  );
 
   const blocks = [
     {
@@ -64,18 +87,18 @@ const Text = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="relative w-full">
-      <section className="w-full h-screen bg-[#0A0D11] border-t border-[#0A0D11]">
+    <div ref={sectionRef} className="relative w-full h-[130vh] py-12 bg-[#0A0D11]">
+      <section className="w-full h-screen bg-[#0A0D11] border-[#0A0D11]">
         <div className="w-full h-full relative">
           {blocks.map((block, idx) => (
             <Block
               key={idx}
               title={block.title}
               text={block.text}
-              height={height}
+              height={heights[idx]}
               widthTransform={widthTransforms[idx]}
-              paragraphOpacity={paragraphOpacity}
-              paragraphY={paragraphY}
+              paragraphOpacity={paragraphOpacitys[idx]}
+              paragraphY={paragraphYs[idx]}
             />
           ))}
         </div>
