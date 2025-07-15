@@ -10,6 +10,7 @@ import RefundPolicy from "../pages/Terms&Condition/Refund";
 import Design from "../pages/Blogs/Design";
 import Marketing from "../pages/Blogs/Marketing";
 import WebDevelopment from "../pages/Blogs/WebDesign";
+import { Service } from "../pages/Services/Services";
 
 
 // Lazy load the pages
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blogs />,
+      },
+      {
+        path: '/service',
+        element: <Service />
+
       },
       {
         path: '/video-editing',

@@ -13,8 +13,9 @@ const Block = ({
 }) => (
   <motion.div
     style={{ height, width: widthTransform }}
-    className="ml-auto border-b border-t border-white px-0 py-8 overflow-hidden relative text-left"
+    className="ml-auto border-b border-t h-[1px] border-white px-0 py-8 overflow-hidden relative text-left"
   >
+   
     {/* Full container */}
     <div className="absolute inset-0 flex flex-col text-left justify-between items-end px-6" >
       {/* Title stays near the top */}

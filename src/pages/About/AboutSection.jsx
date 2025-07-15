@@ -22,7 +22,7 @@ const AboutSection = () => {
   return (
     <div ref={sectionRef} className="relative w-full h-[400vh]">
       {/* This is the fixed animated section */}
-      <section className="fixed top-12 left-0 w-full h-screen bg-[#E0E0E0] text-[#0A0D11] border-t border-[#0A0D11] mt-10">
+      <section className="fixed top-12 left-0 w-full h-screen bg-[#e5e8ea] text-[#0A0D11] border-t border-[#0A0D11] mt-10">
         <div className="w-full h-full ">
           {/* Left Side */}
           <motion.div
@@ -115,7 +115,7 @@ const AboutSection = () => {
           {/* Right Panel Content */}
           <motion.div
             style={{ width: rightWidth }}
-            className="absolute top-0 right-0 h-full flex flex-col bg-[#E0E0E0] border-l border-[#0A0D11] z-10"
+            className="absolute top-0 right-0 h-full flex flex-col bg-[#e5e8ea] border-l border-[#0A0D11] z-10"
           >
             {/* Top border that fades */}
             <motion.div

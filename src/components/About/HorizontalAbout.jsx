@@ -12,7 +12,7 @@ const HorizontalAboutSection = () => {
   const translateX = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
-    <section ref={sectionRef} className="relative h-[300vh] bg-[#E0E0E0]">
+    <section ref={sectionRef} className="relative h-[300vh] bg-[#e5e8ea]">
       {/* Sticky horizontal scroll wrapper */}
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Horizontal Scrollable Area */}
@@ -21,12 +21,12 @@ const HorizontalAboutSection = () => {
           className="flex h-screen w-[200vw]" // Full screen height!
         >
           {/* Left Section - 70% of viewport width */}
-          <div className="w-[70vw] h-screen flex items-center justify-center px-10 bg-[#E0E0E0]">
+          <div className="w-[70vw] h-screen flex items-center justify-center px-10 bg-[#e5e8ea]">
             <h1 className="text-6xl font-bold text-[#0A0D11]">About</h1>
           </div>
 
           {/* Right Section - Full screen width */}
-          <div className="w-[100vw] h-screen flex flex-col border-l border-[#0A0D11] bg-[#E0E0E0]">
+          <div className="w-[100vw] h-screen flex flex-col border-l border-[#0A0D11] bg-[#e5e8ea]">
             {/* Video (40vh) */}
             <div className="w-full h-[40vh] shrink-0">
               <video

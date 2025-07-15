@@ -1,37 +1,65 @@
+
+
+
+
+
 "use client";
+import { useEffect } from "react";
+import HoverEffect from "hover-effect";
+import displacement from "../../../public/whyrbsh.webp"; // stored in /public
 
 export default function WhyRBSH() {
-  return (
-    <section className="relative bg-[#0A0D11] text-white px-6 md:px-12 py-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch min-h-[600px]">
+  useEffect(() => {
+    new HoverEffect({
+      parent: document.getElementById("image_story"),
+      intensity: 0.4,
+      speedIn: 1.0,
+      speedOut: 1.0,
+      easing: "easeInOut",
+      image1: "/whyrbsh.webp",
+      image2: "/whyrbsh.webp",
+      displacementImage: displacement,
+      hover: true,
+    });
+  }, []);
 
-        {/* Left Content - 60% */}
-        <div className="w-full md:w-[70%] flex flex-col justify-center space-y-8 pr-6">
+  return (
+    <section className="relative bg-[#0A0D11] h-[120vh] text-white px-6 md:px-12 py-50">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch min-h-[600px]">
+        {/* Left content */}
+        <div className="w-full md:w-[70%] flex flex-col justify-center space-y-8 pr-6 pb-12">
           <div>
-            <p className="text-sm uppercase tracking-widest text-gray-400 mb-2">Why Atoll</p>
-            <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
-              Atoll Digital is born from the dynamic fusion of design, technology, and business development, crafting captivating, functional solutions for businesses.
+            <h1 className="text-4xl md:text-[3rem] leading-tight">
+              We partner with ambitious brands to shape culture, ignite
+              advocacy, and drive success. Through strategic storytelling and
+              digital innovation, we create connections and deliver brand
+              experiences that truly resonate.
             </h1>
           </div>
-          <div className="leading-relaxed md:w-[40%] self-end ">
-          <p className="text-gray-300 text-base text-justify-end mt-20">
-  With us, you tap into a vibrant mix of functional creativity, innovation, and business-centric goals. We pack a punch with tailored website solutions that resonate with top brands&apos; objectives. With our close-knit team, you receive personalized attention and effortless integration with your team’s goals.
-</p>
-
-          <button className="mt-4 px-6 py-3 bg-white text-black text-sm font-semibold rounded-md flex items-center gap-2 hover:bg-gray-200 transition">
-            CONTACT US
-            <span className="transform rotate-90">▼</span>
-          </button>
+          <div className="leading-relaxed md:w-[56%] self-end py-20 ">
+            <button className="mt-4 px-6 py-3 bg-white text-black text-3xl font-semibold rounded-md flex items-center hover:bg-gray-200 transition">
+              OUR VISION
+            </button>
+            <p className="text-gray-300 text-lg text-justify-end mt-4">
+              We collaborate with visionary brands to help them evolve and
+              succeed. By transforming brand culture into passionate advocacy,
+              we leverage digital strategies to create a loyal and engaged
+              customer community. We craft compelling narratives that resonate
+              deeply, turning brand stories into excellent experiences. Our
+              innovative approaches bridge the gap between technology and
+              emotion, driving meaningful engagement. Together, we redefine
+              possibilities, building a future where your brand not only
+              thrives but leads the way.
+            </p>
           </div>
         </div>
 
-        {/* Right Image - 40% */}
-        <div className="w-full md:w-[30%] relative min-h-[500px] rounded-xl overflow-hidden mt-10 md:mt-0">
-          <img
-            src="/whyrbsh.webp"
-            alt="Why Atoll"
-            className="absolute inset-0 w-full h-full object-cover rounded-xl"
-          />
+        {/* Right image with shader distortion */}
+        <div className="w-full md:w-[40%] relative min-h-[100px] rounded-xl overflow-hidden mt-10 md:mt-4 mb-12">
+          <div
+            id="image_story"
+            className="absolute inset-0 h-[104vh] w-full overflow-hidden rounded-xl"
+          ></div>
         </div>
       </div>
     </section>

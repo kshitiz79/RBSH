@@ -52,11 +52,6 @@ const AboutPage = () => {
       <Text/>
       <WhyRBSH/>
 
- 
-
-
-
-
       <main className="bg-white relative">
   
 
