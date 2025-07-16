@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
-import heroWebP from '../../../assets/icon/1.webp'; // Optimized WebP image
-import heroFallback from '../../../assets/icon/1.png'; // Fallback PNG image
+import heroWebP from '../../../assets/icon/1.webp';
+import heroFallback from '../../../assets/icon/1.png';
 import { throttle } from 'lodash';
 
 const DefineUs = () => {
   const [rotation, setRotation] = useState(0);
   const iconContainerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const [isWhiteBg, setIsWhiteBg] = useState(false);
 
+  // Handle icon rotation on mousemove
   useEffect(() => {
     const handleMouseMove = throttle((event) => {
       if (iconContainerRef.current) {
@@ -21,35 +24,64 @@ const DefineUs = () => {
 
         setRotation(degree + 360);
       }
-    }, 200); // Increased throttle interval to reduce unnecessary triggers
+    }, 200);
 
     window.addEventListener('mousemove', handleMouseMove);
-
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       handleMouseMove.cancel();
     };
   }, []);
 
+  // Scroll-based background color change
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsWhiteBg(!entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    const current = sectionRef.current;
+    if (current) observer.observe(current);
+
+    return () => {
+      if (current) observer.unobserve(current);
+    };
+  }, []);
+
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between py-20 md:py-36 px-4 md:px-10 z-10 bg-slate-50 relative" aria-labelledby="define-us-heading">
-      {/* Left Section with Heading and Icon */}
+    <section
+      ref={sectionRef}
+      className={`transition-colors duration-700 ease-in-out flex flex-col md:flex-row items-center justify-between py-20 md:py-36 px-4 md:px-10 z-10 relative ${
+        isWhiteBg ? 'bg-[#e5e8ea]' : 'bg-[#e5e8ea]'
+      }`}
+      aria-labelledby="define-us-heading"
+    >
+      {/* Left Section */}
       <article className="flex flex-col items-center md:items-start w-full md:w-1/2 mb-8 md:mb-0 z-10">
         <header>
-          <h2 id="define-us-heading" className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 z-10 uppercase text-center md:text-left">
+          <h2
+            id="define-us-heading"
+            className="text-4xl md:text-6xl font-bold mb-6 md:mb-8 z-10 uppercase text-center md:text-left"
+          >
             <span className="font-light">What</span> <br /> defines us
           </h2>
         </header>
 
-        <figure ref={iconContainerRef} className="relative w-32 h-32 md:w-48 md:h-48 z-20" aria-hidden="true">
+        <figure
+          ref={iconContainerRef}
+          className="relative w-32 h-32 md:w-48 md:h-48 z-20"
+          aria-hidden="true"
+        >
           <picture>
             <source srcSet={heroWebP} type="image/webp" />
             <img
               src={heroFallback}
               alt="Hero representing creativity and innovation"
               className="w-full h-full object-contain"
-              width="192" // Ensure explicit width
-              height="192" // Ensure explicit height
+              width="192"
+              height="192"
               style={{
                 transform: `rotate(${rotation}deg)`,
                 transition: 'transform 0.1s linear',
@@ -60,9 +92,8 @@ const DefineUs = () => {
         </figure>
       </article>
 
-      {/* Right Section with Text and Button */}
+      {/* Right Section */}
       <aside className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left w-full">
-        {/* Subheading */}
         <h3
           className="text-xl md:text-4xl font-semibold mb-7 z-20"
           style={{ lineHeight: '2.5rem' }}
@@ -70,14 +101,11 @@ const DefineUs = () => {
           We’re brand builders at heart, creators by <br /> design, tech enthusiasts in practice, and integrated at our core.
         </h3>
 
-        {/* Paragraph with GSAP floating effect */}
         <p className="text-gray-500 mb-6 z-20 text-base md:text-xl animated-para">
           We’re on a mission to take the very best of Indian creative talent to the world. Driven by a ferocious hunger
           to create tangible impact for your business, we work with in-house specialists, industry partners, and
           technology leaders to push the boundaries of creativity and put your brand on the global stage.
         </p>
-
-       
       </aside>
     </section>
   );

@@ -40,7 +40,7 @@ const VideoSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full items-center h-[30vh] md:h-[60vh] lg:h-screen overflow-hidden bg-white"
+      className="relative w-full items-center h-[30vh] md:h-[60vh] lg:h-screen overflow-hidden bg-[#e2e5ea]"
     >
       {/* On mobile: always render the video. On desktop: render only when visible */}
       {(isMobile || isVisible) && (
@@ -58,8 +58,8 @@ const VideoSection = () => {
           poster="./video-poster.webp"
           aria-hidden="true"
         >
-          <source src="./video.webm" type="video/webm" />
-          <source src="./video.mp4" type="video/mp4" />
+          <source src="./video3.mp4" type="video/webm" />
+          <source src="/video3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}

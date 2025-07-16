@@ -76,7 +76,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white flex items-start justify-center py-12">
+    <div className="min-h-screen bg-[#e5e8ea] flex items-start justify-center py-12">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="form-section p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Drop Us A Message</h2>

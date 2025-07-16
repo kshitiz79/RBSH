@@ -68,6 +68,7 @@ const Hero = () => {
   }, []);
 
   return (
+    
     <>
       <Helmet>
         {/* Preload critical background images to improve LCP */}

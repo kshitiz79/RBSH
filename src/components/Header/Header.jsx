@@ -70,7 +70,7 @@ const Header = () => {
     <header className="w-full h-auto bg-[#e5e8ea] fixed top-0 left-0 z-50 right-0 transition-all ease-in duration-300">
       <nav
         ref={navRef}
-        className={`py-3 lg:px-16 px-4 ${
+        className={`py-3 lg:px-8 px-4 ${
           isSticky
             ? "sticky top-0 left-0 right-0 bg-[#e5e8ea] shadow-lg transition-all duration-300 ease-in"
             : "transition-all duration-300 ease-in"
@@ -83,7 +83,7 @@ const Header = () => {
             className="text-black text-3xl font-bold flex items-center"
             aria-label="Homepage"
           >
-            <img src={logo} alt="Logo" className="h-16 w-52 -ml-6" width="208" height="64" />
+            <img src={logo} alt="Logo" className="h-16 w-52 -ml-8" width="208" height="64" />
           </Link>
 
           {/* Desktop Menu */}

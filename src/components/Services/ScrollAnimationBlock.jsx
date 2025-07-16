@@ -213,7 +213,7 @@ const ScrollAnimationBlock = () => {
       </section>
 
       {/* Scroll-Aware Animated Blocks */}
-      <div ref={sectionRef} className="relative w-full h-[270vh] bg-[#e5e8ea] ">
+      <div ref={sectionRef} className="relative w-full h-[290vh] bg-[#e5e8ea] ">
         <section className="w-full h-screen bg-[#e5e8ea]">
           <div className="w-full h-full relative">
             {blocks.map((block, idx) => (

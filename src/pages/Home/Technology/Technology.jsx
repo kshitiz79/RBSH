@@ -111,7 +111,7 @@ const Technology = () => {
   };
 
   return (
-    <section className="bg-white py-10 w-full text-center relative">
+    <section className="bg-[#e5e8ea] py-10 w-full text-center relative">
       <Slider {...settings}>
         {slides.map((slide) => {
           const [hasError, setHasError] = useState(false);
@@ -122,7 +122,7 @@ const Technology = () => {
               key={slide.id}
               className="flex flex-col justify-start items-center h-full w-full relative p-4"
             >
-              <div className="bg-white rounded-lg shadow-md p-6 h-full flex flex-col">
+              <div className="bg-[#e5e8ea] rounded-lg shadow-md p-6 h-full flex flex-col">
                 {!hasError ? (
                   <img
                     src={slide.logo}

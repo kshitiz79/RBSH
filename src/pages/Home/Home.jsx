@@ -8,6 +8,7 @@ import Video from './Video/Video';
 import Tablet from './Tablet/Tablet';
 import Gallery from '../../pages/Home/Gallery/Gallery';
 import ClientSection from './Clients/Clients';
+// import ExpertiseSection from './Expertise/ExpertiseSection';
 
 
 // Lazy load the components
@@ -50,7 +51,7 @@ const Home = () => {
         </Helmet>
 
         {loading && (
-          <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+          <div className="fixed inset-0 flex justify-center items-center bg-[#e5e8ea] z-50">
             <Spinner />
           </div>
         )}
@@ -77,6 +78,8 @@ const Home = () => {
 
 
             <HorizontalScrollCard />
+
+            {/* <ExpertiseSection/> */}
 
 
 

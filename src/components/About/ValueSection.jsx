@@ -43,7 +43,7 @@ const ValuesSection = () => {
 
 
   return (
-    <section className="relative bg-[#0A0D11] text-white px-6 md:px-20 overflow-hidden">
+    <section className="relative bg-[#0A0D11] text-white px-6 md:px-8 overflow-hidden">
       <h1
         ref={h1Ref}
         className="top-0 left-0 text-[8rem] md:text-[11rem] font-bold text-[#E6E8EA] leading-none -z-10 tracking-tight select-none"

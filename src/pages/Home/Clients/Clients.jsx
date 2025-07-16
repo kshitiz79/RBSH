@@ -32,16 +32,16 @@ const row2Clients = [
 
   { name: "Client 12", logo: "./clients25.png", alt: "Client 12 logo" },
   
-  { name: "Client 12", logo: "./clients28.png", alt: "Client 12 logo" },
+  { name: "Client 12", logo: "./clients29.png", alt: "Client 12 logo" },
   { name: "Client 12", logo: "./clients21.png", alt: "Client 12 logo" },
 ];
 
 const ClientSection = () => {
   return (
-    <section className="bg-white py-10 lg:py-[1rem] w-full text-center relative">
+    <section className="bg-[#e5e8ea] py-10 lg:py-[1rem] w-full text-center relative">
       {/* First Row Marquee (Scrolling Left) */}
       <div className="logo-slider -mb-20">
-      <div className="shadow-left"></div>
+      {/* <div className="shadow-left"></div> */}
         <Marquee gradient={false} speed={50}>
           {row1Clients.map((client, index) => (
             <div key={`row1-${index}`} className="logo-item">
@@ -53,12 +53,12 @@ const ClientSection = () => {
             </div>
           ))}
         </Marquee>
-        <div className="shadow-right"></div>
+        {/* <div className="shadow-right"></div> */}
       </div>
 
       {/* Second Row Marquee (Scrolling Right) */}
       <div className="logo-slider -mt-20">
-      <div className="shadow-left"></div>
+      {/* <div className="shadow-left"></div> */}
         <Marquee gradient={false} speed={50} direction="right">
           {row2Clients.map((client, index) => (
             <div key={`row2-${index}`} className="logo-item">
@@ -70,7 +70,7 @@ const ClientSection = () => {
             </div>
           ))}
         </Marquee>
-        <div className="shadow-right"></div>
+        {/* <div className="shadow-right"></div> */}
       </div>
     </section>
   );

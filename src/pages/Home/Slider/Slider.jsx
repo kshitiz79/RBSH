@@ -40,7 +40,7 @@ const FloatingSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative lg:flex lg:items-start lg:justify-between lg:py-16 py-10  px-4 sm:px-6 md:px-8 lg:px-24 bg-gray-50   "
+      className="relative lg:flex lg:items-start lg:justify-between lg:py-16 py-10  px-4 sm:px-6 md:px-8 lg:px-24 bg-[#e5e8ea]   "
     >
       {/* Left Heading Section */}
       <div className="mb-10 lg:mb-0 lg:sticky lg:top-16  lg:w-1/2  relative ">

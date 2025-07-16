@@ -4,17 +4,18 @@ import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./style.css";
 
-// Register the ScrollToPlugin with GSAP
 gsap.registerPlugin(ScrollToPlugin);
 
-// Static data and configuration outside the component for clarity.
 const COLOR_CLASSES = [
   "bg-[#ff635f]",
-  "bg-[#f0c21f]",
+
   "bg-[#ffd766]",
+ 
   "bg-[#2b9e44]",
-  "bg-[#46cc5f]",
+
   "bg-[#4384f2]",
+  "bg-[#46cc5f]",
+  "bg-[#f0c21f]",
   "bg-[#8eb9fd]",
 ];
 
@@ -57,14 +58,9 @@ const CARDS = [
 const HorizontalScrollCard = () => {
   const scrollContainerRef = useRef(null);
   const navigate = useNavigate();
-
-  // Only animate the button element for each card.
   const buttonRefs = useRef([]);
-
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [colorIndices, setColorIndices] = useState({});
 
-  // Set initial position of buttons on mount.
   useEffect(() => {
     buttonRefs.current.forEach((button) => {
       if (button) {
@@ -73,7 +69,6 @@ const HorizontalScrollCard = () => {
     });
   }, []);
 
- 
   const handleMouseEnter = useCallback((index) => {
     gsap.to(scrollContainerRef.current, {
       scrollTo: { x: index * 400 },
@@ -82,11 +77,6 @@ const HorizontalScrollCard = () => {
     });
 
     setHoveredCard(index);
-    setColorIndices((prev) => ({
-      ...prev,
-      [index]:
-        prev[index] !== undefined ? (prev[index] + 1) % COLOR_CLASSES.length : 0,
-    }));
 
     if (buttonRefs.current[index]) {
       gsap.to(buttonRefs.current[index], {
@@ -98,7 +88,6 @@ const HorizontalScrollCard = () => {
     }
   }, []);
 
-  // Handle mouse leave: clear hovered state and animate button out.
   const handleMouseLeave = useCallback((index) => {
     setHoveredCard(null);
 
@@ -112,7 +101,6 @@ const HorizontalScrollCard = () => {
     }
   }, []);
 
-  // Navigate to the corresponding path on click.
   const handleViewMoreClick = useCallback((index) => {
     if (PATHS[index]) {
       navigate(PATHS[index]);
@@ -120,36 +108,30 @@ const HorizontalScrollCard = () => {
   }, [navigate]);
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-[#e5e8ea]">
       <div
         ref={scrollContainerRef}
-        className="flex overflow-x-auto items-center h-full scrollbar-hide relative bg-white"
+        className="flex overflow-x-auto items-center h-full scrollbar-hide relative bg-[#e5e8ea]"
         style={{ scrollBehavior: "smooth" }}
       >
         {CARDS.map((card, index) => {
-          // Prepare the card title lines.
           const titleWords = card.title.split(" ");
           return (
             <div
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
-              className={`min-w-[300px] w-[425px] h-[44rem] flex-shrink-0 rounded-lg 
+              className={`group min-w-[300px] w-[425px] h-[44rem] flex-shrink-0 rounded-lg 
                 flex flex-col justify-center items-center scroll-smooth
-                ${
-                  hoveredCard === index
-                    ? COLOR_CLASSES[colorIndices[index] || 0]
-                    : "bg-transparent"
-                } 
-                transition-colors duration-100 ease-in-out relative`}
+                ${hoveredCard === index ? COLOR_CLASSES[index % COLOR_CLASSES.length] : "bg-transparent"}
+                transition-colors duration-300 ease-in-out relative`}
             >
               <h2
-                className={`text-4xl font-lato font-bold uppercase text-center ${
+                className={`text-5xl font-lato font-bold uppercase leading-snug text-center ${
                   hoveredCard === index ? "text-white" : "text-zinc-400"
                 }`}
                 style={{
-                  lineHeight: "1.5",
-                  height: "auto",
+                  lineHeight: "1",
                   paddingTop: "20px",
                   paddingBottom: "20px",
                 }}
@@ -162,8 +144,9 @@ const HorizontalScrollCard = () => {
                 ))}
               </h2>
 
+              {/* Paragraph only shown on hover */}
               <p
-                className="text-pretty font-lato text-center uppercase px-10 text-white cursor-pointer"
+                className="hidden group-hover:block font-lato text-center uppercase px-10 text-white transition-opacity duration-500"
                 onClick={() => handleViewMoreClick(index)}
               >
                 {card.description}
