@@ -44,7 +44,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-white px-6 md:px-20 py-20">
+    <section className="bg-[#e5e8ea] px-6 md:px-20 py-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-42">
         {/* <h2 className="text-5xl font-black uppercase text-black  drop-shadow-[1px_1px_0_black] text-center">FAQs</h2> */}
 

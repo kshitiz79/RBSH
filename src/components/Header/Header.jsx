@@ -67,7 +67,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full h-auto bg-[#e5e8ea] fixed top-0 left-0 z-50 right-0 transition-all ease-in duration-300">
+    <header className="w-full h-auto bg-[#e5e8ea] fixed top-0 left-0 z-50 right-0 transition-all ease-in duration-300 border-b border-black">
       <nav
         ref={navRef}
         className={`py-3 lg:px-8 px-4 ${

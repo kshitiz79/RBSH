@@ -1,68 +1,243 @@
-import React from "react";
-import AnimatedIntro from "./AnimatedIntro";
-import { NavLink } from "react-router-dom";
 
-import {  ArrowRight } from "lucide-react";
+import AnimatedIntro from "./AnimatedIntro";
+
 import Section1 from "./Section1";
 
-
 const BlogHero = () => {
-
   return (
     <>
-         <Section1/>
-         <div>
+      <Section1 />
+      <div>
         <section className="bg-[#e5e8ea] py-10 px-4 pt-40">
           <div className=" max-w-4xl font-extrabold ">
             <h1 className="text-[4rem] leading-none ml-4">
               {" "}
-              <span className="text-red-600">The 2025 Design Shift: </span> What’s Defining the Future of Graphic Design?
+              <span className="text-red-600">The 2025 Design Shift: </span>{" "}
+              What’s Defining the Future of Graphic Design?
             </h1>
           </div>
         </section>
       </div>
       <AnimatedIntro />
- 
+
       <div>
         <section className="bg-[#e2e5ea] py-10 mx-auto  px-8">
           <div className="max-w-4xl mx-auto text-lg">
+            <p className="font-semibold text-xl">
+              {" "}
+              <span className="text-red-600">
+                The world of graphic design is evolving faster than ever — and
+                in 2025,{" "}
+              </span>
+              we’re seeing a powerful collision of minimalism, AI-generated
+              creativity, and emotionally intelligent branding.
+            </p>
+            <br />
+            <p>Here’s what’s shaping the future of design right now:</p>
+            <br />
             <p>
-        The world of graphic design is evolving faster than ever — and in 2025, we’re seeing a powerful collision of minimalism, AI-generated creativity, and emotionally intelligent branding.
-        </p>
-        <br />
-        <p>
-Here’s what’s shaping the future of design right now:
-</p>
-<br />
-<p>
+              AI Meets Imagination AI tools like Midjourney, Adobe Firefly, and
+              DALL·E have redefined what’s possible — not as replacements, but
+              as collaborators. Designers who embrace these tools are able to
+              ideate faster, iterate better, and push creative boundaries. The
+              key? Keeping your human intuition at the center.
+            </p>
+            <br />
+            <p>
+              Bold Type. Brave Color. Big Impact. Forget safe palettes and
+              subtle fonts — 2025 is about grabbing attention. Think
+              super-saturated neons, oversized fonts, and unapologetic visuals.
+              Brands are going louder and bolder, especially in digital spaces
+              where scroll-stopping matters most.
+            </p>
+            <br />
 
-1. AI Meets Imagination
-AI tools like Midjourney, Adobe Firefly, and DALL·E have redefined what’s possible — not as replacements, but as collaborators. Designers who embrace these tools are able to ideate faster, iterate better, and push creative boundaries. The key? Keeping your human intuition at the center.
-</p>
-<br />
-<p>
+            <p>
+              Retro-Tech & Nostalgia Designers are bringing back pixel art,
+              skeuomorphism, and 90s grunge in a polished way — giving digital
+              experiences a touch of analog warmth. It’s not just aesthetic —
+              it’s storytelling through memory.
+            </p>
 
-2. Bold Type. Brave Color. Big Impact.
-Forget safe palettes and subtle fonts — 2025 is about grabbing attention. Think super-saturated neons, oversized fonts, and unapologetic visuals. Brands are going louder and bolder, especially in digital spaces where scroll-stopping matters most.
-</p>
-<br />
+            <p>
+              {" "}
+              Motion as the New Static From microinteractions to scroll-based
+              animations, static design is fading. Websites, social posts, and
+              even logos are becoming kinetic. If it doesn’t move, it might not
+              stand out.
+            </p>
+            <br />
 
-<p>
-3. Retro-Tech & Nostalgia
-Designers are bringing back pixel art, skeuomorphism, and 90s grunge in a polished way — giving digital experiences a touch of analog warmth. It’s not just aesthetic — it’s storytelling through memory.
-</p>
+            <p>
+              Purpose-Driven Aesthetics Whether it’s eco-conscious packaging or
+              inclusive visual language, brands are finally designing with
+              intention — not just for clicks. Users care why something looks
+              the way it does, and designers are responding with meaning, not
+              just style.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto pt-24 text-xl">
+            <img
+              src="https://a-us.storyblok.com/f/1020011/768x670/f4a1e4ded5/11-90981822-on-new-clothing-line.webp/m/1536x0/filters:format(webp):quality(80)"
+              alt=""
+              className="rounded-xl"
+            />
 
-<p>
-4. Motion as the New Static
-From microinteractions to scroll-based animations, static design is fading. Websites, social posts, and even logos are becoming kinetic. If it doesn’t move, it might not stand out.
-</p>
- <br />
+            <h1 className="text-[4rem] leading-none pt-20 hover:text-red-600">
+              The Future of Digital Marketing: 7 Trends Shaping 2025
+            </h1>
+            <p className="py-8 text-2xl pb-20">
+              In the fast-moving world of digital marketing, staying ahead isn’t
+              optional—it’s essential. As we settle into 2025, brands face a
+              more fragmented, more competitive, and more opportunity-rich
+              landscape than ever before.
+            </p>
+          </div>
+          <div className="flex flex-row gap-4 rounded-md">
+            <div className="w-[50%]">
+              <img
+                src="https://a-us.storyblok.com/f/1020011/768x960/0996a96917/06-90981822-on-new-clothing-line.webp/m/1024x0/filters:format(webp):quality(80)"
+                alt=""
+                className="rounded-md"
+              />
+            </div>
+            <div className="w-[50%]">
+              <img
+                src="https://a-us.storyblok.com/f/1020011/1440x1800/0a66f250cc/medium-png-1we10230864-pace-t_white-fw23-w-4x5-c-g4-1440x1800.png/m/1024x0/filters:format(webp):quality(80)"
+                alt=""
+                className="rounded-md"
+              />
+            </div>
+          </div>
 
-<p>
-5. Purpose-Driven Aesthetics
-Whether it’s eco-conscious packaging or inclusive visual language, brands are finally designing with intention — not just for clicks. Users care why something looks the way it does, and designers are responding with meaning, not just style.
-</p>
-</div>
+          <div className=" px-6 py-20 text-[#0a0f1c] max-w-4xl mx-auto space-y-4 text-xl">
+            {/* 1. Micro-Communities */}
+            <div>
+              <h2 className="font-bold mb-4">The Age of Micro-Communities</h2>
+              <p className="">
+                Large audiences are splintering into passionate
+                micro-communities—whether it’s niche Reddit threads, Telegram
+                groups, or Discord servers. Instead of broadcasting generic
+                content, successful brands are embedding themselves in these
+                spaces, speaking directly to highly engaged segments.
+              </p>
+            </div>
+
+            {/* 2. AI-Generated Content */}
+            <div>
+              <h2 className="font-bold mb-4">
+                AI-Generated Content—With a Human Touch
+              </h2>
+              <p className="">
+                <span className="text-red-600">
+                Generative AI tools </span>can now produce text, video, and images in
+                seconds. But raw AI content often feels soulless. Leading brands
+                are combining AI efficiency with skilled human editing to
+                maintain authenticity and quality.
+              </p>
+            </div>
+
+            {/* 3. Interactive Content */}
+            <div>
+              <h2 className=" font-bold mb-4">
+                Interactive Content Wins Attention
+              </h2>
+              <p className="">
+                Static posts are easy to ignore.   <span className="text-red-600">Interactive
+                experiences —quizzes, polls, calculators, AR filters—invite  </span>
+                participation and keep audiences engaged longer.
+              </p>
+            </div>
+
+            {/* 4. Voice & Conversational Commerce */}
+            <div>
+              <h2 className="font-bold mb-4">
+                Voice and Conversational Commerce
+              </h2>
+              <p className="">
+                Voice search adoption is surging, and chatbots are rapidly
+                evolving into intelligent virtual sales reps. Customers expect
+                immediate, natural-feeling support.
+              </p>
+            </div>
+
+            {/* 5. Sustainability & Purpose */}
+            <div>
+              <h2 className=" font-bold mb-4">
+                Sustainability and Purpose-Driven Storytelling
+              </h2>
+              <p className="">
+                Consumers want to buy from brands that align with their values.
+                Clear, credible communication about <span className="text-red-600"> sustainability and social
+                impact</span> is no longer a nice-to-have—it's a competitive
+                differentiator.
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-black"></div>
+          <div className="max-w-4xl mx-auto py-20">
+            <h1 className="text-[4rem] leading-none text-center hover:text-red-600 font-bold">
+              The Future of Frontend: Why Developers Are Choosing Next.js in
+              2025
+            </h1>
+            <p className="py-4 text-xl text-center px-12 mb-20">
+              From startups to enterprises, everyone’s betting on Next.js—and
+              for good reason. In 2025, it’s not just a React framework. It’s
+              the backbone of some of the most high-performance websites and
+              apps on the internet.
+            </p>
+            <img
+              src="https://a-us.storyblok.com/f/1020011/1440x1801/2cfe14d8f5/medium-png-1me10190864-pace_long-t_undyed_white-fw23-m-4x5-c-g2-1440x1801.png/m/1536x0/filters:format(webp):quality(80)"
+              alt=""
+            />
+          </div>
+
+          <div className=" px-6 py-20 text-[#0a0f1c] max-w-4xl mx-auto space-y-4 text-xl">
+            {/* 1. Micro-Communities */}
+            <div>
+              <h2 className="font-bold mb-4">App Router Revolution</h2>
+              <p className="">
+              The new file-based routing system in Next.js 14+ makes scalable routing effortless.
+              </p>
+            </div>
+
+            {/* 2. AI-Generated Content */}
+            <div>
+              <h2 className="font-bold mb-4">
+              Built-in SEO & Server-Side Rendering
+              </h2>
+              <p className="">
+              Perfect for performance and discoverability.
+              </p>
+            </div>
+
+            {/* 3. Interactive Content */}
+            <div>
+              <h2 className=" font-bold mb-4">
+              Vercel Integration
+              </h2>
+              <p className="">
+                1-click deploys, edge functions, and analytics make life easier.
+              </p>
+            </div>
+
+            {/* 4. Voice & Conversational Commerce */}
+            <div>
+              <h2 className="font-bold mb-4">
+              Support for AI, Streaming, and Edge
+              </h2>
+              <p className="">
+              Next.js now supports React Server Components, AI APIs, and edge caching natively.
+              </p>
+            </div>
+            
+
+            {/* 5. Sustainability & Purpose */}
+            
+          </div>
+          <div className="h-[70vh]">
+            <img src="/blog.jpeg" alt="" className=""/>
+          </div>
         </section>
       </div>
     </>
