@@ -19,7 +19,7 @@ const Block = ({
     {/* Full container */}
     <div className="absolute inset-0 flex flex-col text-left justify-between items-end px-6" >
       {/* Title stays near the top */}
-      <div className="text-left max-w-xl pt-4 -ml-20 mr-40">
+      <div className="text-left max-w-xl pt-4 md:-ml-20 md:mr-40">
         <h1 className="text-white text-[3rem] max-w-xl text-left" >{title}</h1>
       </div>
 
@@ -49,7 +49,7 @@ const Text = () => {
     useTransform(
       scrollYProgress,
       [i / blockCount, (i + 1) / blockCount],
-      ["50%", "100%"],
+      ["70%", "100%"],
       { clamp: true }
     )
   );
@@ -88,7 +88,7 @@ const Text = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="relative w-full h-[130vh] py-12 bg-[#0A0D11]">
+    <div ref={sectionRef} className="relative w-full md:h-[130vh] h-[110vh] py-12 bg-[#0A0D11]">
       <section className="w-full h-screen bg-[#0A0D11] border-[#0A0D11]">
         <div className="w-full h-full relative">
           {blocks.map((block, idx) => (

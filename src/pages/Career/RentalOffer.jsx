@@ -52,16 +52,16 @@ const Card = ({ heading, paragraph, bgColor }) => {
 
 export default function RentalOffer() {
   return (
-    <section className="relative w-full h-auto bg-[#e5e8ea] z-10">
-      <section className="relative bg-[#e5e8ea] text-black  px-6 py-16 md:px-20">
+    <section className="relative w-full h-auto bg-[#e5e8ea] z-10 md:pt-10">
+      <section className="relative bg-[#e5e8ea] text-black  px-6 md:py-16 md:px-20">
         <div className="w-full ">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 max-w-4xl">
+          <h1 className="text-5xl md:text-6xl md:font-bold font-light leading-none mb-6 max-w-4xl">
             Create Bold. Think Beyond. <br />
             Work Together
           </h1>
 
           <div className="mb-12">
-            <button className="flex items-center gap-2 bg-[#ea4335] px-5 py-2 text-sm font-semibold">
+            <button className="flex items-center gap-2 bg-[#ea4335] text-white px-5 py-2 text-sm font-semibold">
               Join the RBSH Studio Team
               <span className="text-xl">➜</span>
             </button>

@@ -3,33 +3,32 @@ import React from "react";
 
 const Section1 = () => {
   return (
-    <section className="h-[90vh] bg-[#e5e8ea] flex border-t border-b border-black mt-2" >
-      {/* Left 60% */}
-      <div className="w-[70%] h-full flex flex-col justify-start py-10 relative">
-  {/* Image Wrapper */}
-  <div className="relative w-full">
-    <img
-      src="/blog.png"
-      alt="Blog Image"
-      className="w-full max-w-full h-auto object-cover rounded "
-    />
+    <section className="md:h-[90vh] h-screen bg-[#e5e8ea] flex flex-col md:flex-row border-t border-b border-black mt-2">
+      {/* Left Section */}
+      <div className="md:w-[70%] w-full flex flex-col relative order-1 md:order-1 px-12 md:px-0 md:py-0 py-10">
+        {/* Main Article Image */}
+        <div className="w-full">
+          <img
+            src="/blog.png"
+            alt="Blog Image"
+            className="w-full h-auto object-cover rounded "
+          />
+        </div>
 
-    {/* Bottom paragraph inside the image wrapper */}
-  
-  </div>
-  <div className="absolute bottom-4 left-4 ml-4 max-w-md">
-      <p className="text-black text-[2.7rem] leading-none">Maximalist graphic design is back: How to make chaos look cool</p>
-    </div>
-</div>
+        {/* Paragraph (below both images on mobile) */}
+        <div className="md:absolute md:bottom-4 md:left-4 md:ml-4  md:max-w-md order-3 md:order-2">
+          <p className="text-black text-2xl md:text-[2.7rem] leading-tight md:leading-none">
+            Maximalist graphic design is back: How to make chaos look cool
+          </p>
+        </div>
+      </div>
 
-
-
-      {/* Right 30% */}
-      <div className="w-[35%]  border-l border-black">
+      {/* Right Section Image (on mobile appears second) */}
+      <div className="md:w-[35%] w-full border-t md:border-t-0 md:border-l border-black order-2 md:order-3">
         <img
-          src="https://atolldigital.com/wp-content/uploads/2025/02/blog_preview.webp" // Replace with your image path
+          src="https://atolldigital.com/wp-content/uploads/2025/02/blog_preview.webp"
           alt="Side Visual"
-          className="w-full h-full object-cover p-8 "
+          className="w-full h-full object-cover p-4 md:p-8"
         />
       </div>
     </section>

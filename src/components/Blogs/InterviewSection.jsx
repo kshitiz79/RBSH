@@ -28,7 +28,7 @@ export default function InterviewSection() {
   ];
 
   return (
-    <section className="bg-[#e5e8ea] text-black  pt-60 pb-20 font-sans px-6 border-b border-black">
+    <section className="bg-[#e5e8ea] text-black  md:pt-60 mb:pb-20 font-sans px-6 border-b border-black">
       <div className="">
         <p className="text-2xl md:text-3xl font-light leading-relaxed mb-16 ">
           <span className="text-red-600">
@@ -41,13 +41,13 @@ export default function InterviewSection() {
           agile and efficient.
         </p>
 
-        <div className="grid grid-cols-5 gap-4 text-sm md:text-base max-w-2xl mx-auto">
+        <div className="grid grid-cols-5 md:gap-4  text-sm md:text-base max-w-2xl mx-auto">
           {dialogue.map((entry, index) => (
             <div key={index} className="contents">
-              <div className="col-span-1 text-gray-700 font-medium">
+              <div className="md:col-span-1  text-gray-700 font-medium">
                 {entry.speaker}
               </div>
-              <div className="col-span-4 mb-8">{entry.text}</div>
+              <div className="md:col-span-4 col-span-5 mb-8">{entry.text}</div>
             </div>
           ))}
         </div>

@@ -11,10 +11,8 @@ export default {
         'primary': "#010851",
       },
       fontFamily: {
-        lato: ['Lato', 'sans-serif'],
-        roboto: ['Roboto Mono', 'monospace'],
-        cursive: ['Pacifico', 'cursive'],
-      },
+    mozilla: ['"Mozilla Text"', 'sans-serif'],
+  },
     
     },
   },

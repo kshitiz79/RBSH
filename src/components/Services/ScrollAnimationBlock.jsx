@@ -18,13 +18,11 @@ const Block = ({
   return (
     <>
       <motion.div
-        className="absolute w-full top-0 right-0 h-[1px] bg-black origin-right"
-   
-      />
+        className="absolute w-full top-0 right-0 h-[1px] bg-black origin-right"/>
 
     <motion.div
       style={{ height, width: widthTransform }}
-      className="ml-auto px-8 py-8 relative"
+      className="ml-auto px-8 md:py-8 relative"
     >
       {/* Border appears first */}
       <motion.div
@@ -34,7 +32,7 @@ const Block = ({
 
       {/* Content appears after */}
       <motion.div
-        className="absolute inset-0 flex flex-row px-4 gap-40 w-full h-full"
+        className="absolute inset-0 flex md:flex-row flex-col px-4 gap-40 w-full h-full"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -48,19 +46,19 @@ const Block = ({
 
         {/* Image */}
         <motion.div
-          className="w-[35%] h-[240px] rounded-md flex items-center justify-center pt-4 flex-shrink-0"
+          className="w-[35%] md:h-[240px] h-[100px] rounded-md flex items-center justify-center md:pt-4 flex-shrink-0"
           style={{ width: imageWidth }}
         >
           <img
             src={image}
             alt={title}
-            className="w-[120vh] h-full object-cover"
+            className="md:w-[120vh] w-[100px] h-full object-cover"
           />
         </motion.div>
 
         {/* Paragraph */}
         <motion.div
-          className="w-[40%] pt-4 overflow-hidden"
+          className="w-[40%] md:pt-4 overflow-hidden"
           style={{
             opacity: paragraphOpacity,
             y: paragraphY,
@@ -126,7 +124,7 @@ const ScrollAnimationBlock = () => {
 
   // Constant height
   const heights = Array.from({ length: blockCount }).map(() =>
-    useTransform(scrollYProgress, [0, 1], [272, 272])
+    useTransform(scrollYProgress, [0, 1], [272, 282])
   );
 
   // Image width animation
@@ -188,8 +186,8 @@ const ScrollAnimationBlock = () => {
   return (
     <>
       {/* Intro Section */}
-      <section className="bg-[#e5e8ea] h-[90vh] pt-12">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#e5e8ea] md:h-[90vh] h-[50vh] pt-12">
+        <div className="container mx-auto px-6">
           <h1 className="text-6xl md:text-[20rem] font-bold text-gray-900 mb-8">
             <img
               src="https://atolldigital.com/wp-content/uploads/2025/01/title-services.svg"
@@ -197,7 +195,7 @@ const ScrollAnimationBlock = () => {
             />
           </h1>
 
-          <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 mb-12 md:w-[60%] mx-auto mt-40">
+          <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 md:mb-12 md:w-[60%] mx-auto md:mt-40">
             <div className="flex-shrink-0">
               <div className="h-16 w-16 md:h-20 md:w-20 rounded-full border-2 border-gray-900 flex items-center justify-center">
                 <span className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -205,7 +203,7 @@ const ScrollAnimationBlock = () => {
                 </span>
               </div>
             </div>
-            <p className="text-gray-900 text-lg md:text-2xl max-w-lg">
+            <p className="text-gray-900 text-lg md:text-2xl max-w-lg ">
               Our services blend strategy, design, and technology to bring brands to life. From digital platforms to bold identities and growth-driven solutions—we help ideas scale with clarity and impact.
             </p>
           </div>
@@ -213,7 +211,7 @@ const ScrollAnimationBlock = () => {
       </section>
 
       {/* Scroll-Aware Animated Blocks */}
-      <div ref={sectionRef} className="relative w-full h-[280vh] bg-[#e5e8ea] border-b border-black ">
+      <div ref={sectionRef} className="relative w-full md:h-[280vh] md:h-[300vh] h-[370vh] bg-[#e5e8ea] border-b border-black ">
         <section className="w-full h-screen bg-[#e5e8ea]">
           <div className="w-full h-full relative">
             {blocks.map((block, idx) => (
@@ -238,3 +236,4 @@ const ScrollAnimationBlock = () => {
 };
 
 export default ScrollAnimationBlock;
+

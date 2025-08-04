@@ -46,6 +46,13 @@ const Layout = () => {
 
           {/* Contact information for SEO */}
           <meta name="address" content="T3-236, Golden-I, Techzone IV, Greater Noida West, NCR" />
+
+           <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap"
+    rel="stylesheet"
+  />
         </Helmet>
 
         {/* Header and CustomCursor */}

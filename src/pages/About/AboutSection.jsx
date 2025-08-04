@@ -27,11 +27,12 @@ const AboutSection = () => {
           {/* Left Side */}
           <motion.div
             style={{ x: leftTranslateX }}
-            className="absolute top-20 left-0 h-full w-[60%] flex justify-center px-10 z-0"
+            className="absolute md:top-20 md:mt-0 -mt-80 left-0 h-full w-[60%] flex justify-center px-10 z-0"
           >
             {/* Main SVG Text Block (Already present) */}
-            <div className="absolute left-4">
+            <div className="left-4 ">
               <svg
+                className="h-[97vh] w-[261px] sm:h-[61vh] sm:w-[870px] sm:rotate-0 origin-top-left"
                 width="870"
                 height="261"
                 viewBox="0 0 870 261"

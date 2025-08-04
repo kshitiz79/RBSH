@@ -48,25 +48,28 @@ const Footer = () => {
 
   return (
     <>
-     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-6 pt-40 pb-32 z-20">
-        <div className="">
-          <h1 className="text-4xl md:text-[9rem] font-semibold md:leading-none">
-            <span className="block">let’s discuss your</span>
-            <span className="block">
-              <span className="mr-4">next</span>
-              <span className="inline-block transform translate-y-[-2px] text-4xl md:text-6xl px-28">
-              <img src={arrowImg} alt="arrow" className="w-20" />
-              </span>
-              <span className="ml-4">{displayedText}</span>
-            </span>
-          </h1>
-          <div className="max-w-3xl mx-auto pt-20 mr-10 text-lg">
-          <p>Big ambitions?</p>
-          <p>We match the energy.</p>
-          <br />
-          <button className="bg-black text-white px-12 py-4 rounded-md font-semibold ">CONTACT US</button>
-          </div>
-        </div>
+     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-2 md:pt-40 md:pb-32 py-10 md:py-0 z-20">
+   <div className="px-4 md:px-4">
+  <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[9rem] font-semibold leading-tight md:leading-none">
+    <span className="block">let’s discuss your</span>
+    <span className="block">
+      <span className="mr-2 sm:mr-4">next</span>
+      <span className="inline-block align-middle transform translate-y-[-2px] text-xl sm:text-3xl md:text-6xl md:px-20">
+        <img src={arrowImg} alt="arrow" className="w-8 sm:w-12 md:w-20 inline" />
+      </span>
+      <span className="ml-1 sm:ml-2">{displayedText}</span>
+    </span>
+  </h1>
+  <div className="max-w-3xl mx-auto pt-10 sm:pt-20 px-2 sm:px-0 text-base sm:text-lg">
+    <p>Big ambitions?</p>
+    <p>We match the energy.</p>
+    <br />
+    <button className="bg-black text-white px-6 sm:px-12 py-3 sm:py-4 rounded-md font-semibold">
+      CONTACT US
+    </button>
+  </div>
+</div>
+
       </section>
 
       <footer className="z-20 bg-black text-white py-10 lg:py-16 relative">
@@ -116,7 +119,7 @@ const Footer = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="z-10">
+            <div className="z-10 md:max-w-full max-w-xs mx-auto items-center md:items-start">
               <a href="https://maps.app.goo.gl/uDgAc8vujYwuEMcu6" target="_blank">
                 T3-236, Golden-I, Techzone IV, Greater Noida West, UP - 201306
               </a>

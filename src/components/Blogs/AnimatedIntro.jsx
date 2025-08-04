@@ -7,7 +7,7 @@ export default function AnimatedIntro() {
   const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowImage(true), 2000); // Show image after 2s
+    const timer = setTimeout(() => setShowImage(true), 100); // Show image after 2s
     return () => clearTimeout(timer);
   }, []);
 
@@ -16,22 +16,22 @@ export default function AnimatedIntro() {
       {/* Image Section */}
       <AnimatePresence>
         {showImage && (
-          <motion.div
+          <div
             key="image"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
             <img
-              src="https://a-us.storyblok.com/f/1020011/2000x1684/c7f1b3613e/scontent-cdninstagram-com-107631171711815140.jpg/m/2048x0/filters:format(webp):quality(80)"
+              src="/blog2.png"
               alt="Visual"
               className="w-full h-screen object-cover"
             />
             <div className="z-[-50]">
               <ExpandingCards />
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </section>

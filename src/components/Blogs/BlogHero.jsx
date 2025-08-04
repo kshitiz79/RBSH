@@ -78,12 +78,16 @@ const BlogHero = () => {
           </div>
           <div className="max-w-4xl mx-auto pt-24 text-xl">
             <img
-              src="https://a-us.storyblok.com/f/1020011/768x670/f4a1e4ded5/11-90981822-on-new-clothing-line.webp/m/1536x0/filters:format(webp):quality(80)"
+              src="/blog1.png"
               alt=""
               className="rounded-xl"
             />
 
-            <h1 className="text-[4rem] leading-none pt-20 hover:text-red-600">
+           
+          </div>
+          <div className="border-t border-white mt-10 ">
+            <div className="max-w-4xl mx-auto">
+             <h1 className=" md:text-[3.6rem] text-[3.8rem] leading-none pt-20 hover:text-red-600">
               The Future of Digital Marketing: 7 Trends Shaping 2025
             </h1>
             <p className="py-8 text-2xl pb-20">
@@ -92,18 +96,19 @@ const BlogHero = () => {
               more fragmented, more competitive, and more opportunity-rich
               landscape than ever before.
             </p>
+            </div>
           </div>
           <div className="flex flex-row gap-4 rounded-md">
             <div className="w-[50%]">
               <img
-                src="https://a-us.storyblok.com/f/1020011/768x960/0996a96917/06-90981822-on-new-clothing-line.webp/m/1024x0/filters:format(webp):quality(80)"
+                src="/blog3.png"
                 alt=""
                 className="rounded-md"
               />
             </div>
             <div className="w-[50%]">
               <img
-                src="https://a-us.storyblok.com/f/1020011/1440x1800/0a66f250cc/medium-png-1we10230864-pace-t_white-fw23-w-4x5-c-g4-1440x1800.png/m/1024x0/filters:format(webp):quality(80)"
+                src="/blog4.png"
                 alt=""
                 className="rounded-md"
               />
@@ -174,25 +179,26 @@ const BlogHero = () => {
               </p>
             </div>
           </div>
-          <div className="border-t border-black"></div>
-          <div className="max-w-4xl mx-auto py-20">
-            <h1 className="text-[4rem] leading-none text-center hover:text-red-600 font-bold">
+          <div className="border-t border-white"></div>
+          <div className="max-w-4xl mx-auto md:py-20 py-10">
+            <h1 className="md:text-[4rem] text-[1.5rem] leading-none text-center hover:text-red-600 font-bold">
               The Future of Frontend: Why Developers Are Choosing Next.js in
               2025
             </h1>
-            <p className="py-4 text-xl text-center px-12 mb-20">
+            <p className="py-4 text-xl text-center px-12 md:mb-20">
               From startups to enterprises, everyone’s betting on Next.js—and
               for good reason. In 2025, it’s not just a React framework. It’s
               the backbone of some of the most high-performance websites and
               apps on the internet.
             </p>
             <img
-              src="https://a-us.storyblok.com/f/1020011/1440x1801/2cfe14d8f5/medium-png-1me10190864-pace_long-t_undyed_white-fw23-m-4x5-c-g2-1440x1801.png/m/1536x0/filters:format(webp):quality(80)"
+              src="/blog5.png"
               alt=""
+              className="w-full"
             />
           </div>
 
-          <div className=" px-6 py-20 text-[#0a0f1c] max-w-4xl mx-auto space-y-4 text-xl">
+          <div className="px-6 md:py-2 md:pb-20 text-[#0a0f1c] max-w-4xl mx-auto space-y-4 text-xl">
             {/* 1. Micro-Communities */}
             <div>
               <h2 className="font-bold mb-4">App Router Revolution</h2>
@@ -235,8 +241,8 @@ const BlogHero = () => {
             {/* 5. Sustainability & Purpose */}
             
           </div>
-          <div className="h-[70vh]">
-            <img src="/blog.jpeg" alt="" className=""/>
+          <div className="md:h-[70vh]">
+            <img src="/blog.jpeg" alt="" className="md:mt-0 mt-4"/>
           </div>
         </section>
       </div>

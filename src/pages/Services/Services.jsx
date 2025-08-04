@@ -1,13 +1,14 @@
 import React from 'react'
 
 
-import ScrollAnimationBlocks from '../../components/Services/ScrollAnimationBlock'
+
+import Services from '../../components/Services/Services'
 
 export const Service = () => {
   return (
     <div>
       {/* <Hero/> */}
-      <ScrollAnimationBlocks/>
+     <Services/>
     </div>
   )
 }

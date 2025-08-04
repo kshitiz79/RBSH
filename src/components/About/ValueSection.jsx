@@ -46,12 +46,12 @@ const ValuesSection = () => {
     <section className="relative bg-[#0A0D11] text-white px-6 md:px-8 overflow-hidden">
       <h1
         ref={h1Ref}
-        className="top-0 left-0 text-[8rem] md:text-[11rem] font-bold text-[#E6E8EA] leading-none -z-10 tracking-tight select-none"
+        className="top-0 left-0 text-[4.76rem] py-2 md:text-[11rem] font-bold text-[#E6E8EA] leading-none -z-10 tracking-tight select-none"
       >
         {phrases[currentPhraseIndex]}
       </h1>
 
-      <div className="relative z-10 max-w-2xl ml-auto mt-32">
+      <div className="relative z-10 max-w-2xl ml-auto md:mt-32 mt-10">
         {/* Description Block */}
         <div className="flex items-start gap-8 ">
           <img

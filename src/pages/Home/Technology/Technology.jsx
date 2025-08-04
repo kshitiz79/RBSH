@@ -111,7 +111,7 @@ const Technology = () => {
   };
 
   return (
-    <section className=" bg-[#e5e8ea] px-4 w-full text-center relative ">
+    <section className=" bg-[#e5e8ea] px-4 md:py-0 py-[2rem] w-full text-center relative ">
       <Slider {...settings}>
         {slides.map((slide) => {
           const [hasError, setHasError] = useState(false);

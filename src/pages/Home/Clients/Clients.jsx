@@ -57,7 +57,7 @@ const ClientSection = () => {
       </div>
 
       {/* Second Row Marquee (Scrolling Right) */}
-      <div className="logo-slider -mt-36">
+      <div className="logo-slider md:-mt-36 -mt-20">
       {/* <div className="shadow-left"></div> */}
         <Marquee gradient={false} speed={50} direction="right">
           {row2Clients.map((client, index) => (
