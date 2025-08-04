@@ -32,15 +32,15 @@ const row2Clients = [
 
   { name: "Client 12", logo: "./clients25.png", alt: "Client 12 logo" },
   
-  { name: "Client 12", logo: "./clients29.png", alt: "Client 12 logo" },
+  { name: "Client 12", logo: "./client29.png", alt: "Client 12 logo" },
   { name: "Client 12", logo: "./clients21.png", alt: "Client 12 logo" },
 ];
 
 const ClientSection = () => {
   return (
-    <section className="bg-[#e5e8ea] py-10 lg:py-[1rem] w-full text-center relative">
+    <section className="bg-[#e5e8ea] py-10 md:py-[1rem] leading-none  w-full text-center relative">
       {/* First Row Marquee (Scrolling Left) */}
-      <div className="logo-slider -mb-20">
+      <div className="logo-slider ">
       {/* <div className="shadow-left"></div> */}
         <Marquee gradient={false} speed={50}>
           {row1Clients.map((client, index) => (
@@ -48,7 +48,7 @@ const ClientSection = () => {
               <img
                 src={client.logo}
                 alt={client.alt}
-                className="py-10 w-36 sm:w-36 md:w-40 lg:w-56 mx-auto"
+                className="mx-auto h-16 w-auto"
               />
             </div>
           ))}
@@ -57,7 +57,7 @@ const ClientSection = () => {
       </div>
 
       {/* Second Row Marquee (Scrolling Right) */}
-      <div className="logo-slider -mt-20">
+      <div className="logo-slider -mt-36">
       {/* <div className="shadow-left"></div> */}
         <Marquee gradient={false} speed={50} direction="right">
           {row2Clients.map((client, index) => (

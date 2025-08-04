@@ -111,7 +111,7 @@ const Technology = () => {
   };
 
   return (
-    <section className="bg-[#e5e8ea] py-10 w-full text-center relative">
+    <section className=" bg-[#e5e8ea] px-4 w-full text-center relative ">
       <Slider {...settings}>
         {slides.map((slide) => {
           const [hasError, setHasError] = useState(false);
@@ -120,14 +120,14 @@ const Technology = () => {
           return (
             <div
               key={slide.id}
-              className="flex flex-col justify-start items-center h-full w-full relative p-4"
+              className="flex flex-col justify-start items-center h-full w-full relative px-4"
             >
-              <div className="bg-[#e5e8ea] rounded-lg shadow-md p-6 h-full flex flex-col">
+              <div className="bg-[#e5e8ea] rounded-lg shadow-md px-6 h-full flex flex-col">
                 {!hasError ? (
                   <img
                     src={slide.logo}
                     alt={slide.title}
-                    className="mb-4 mx-auto h-16 w-auto"
+                    className="mx-auto h-16 w-auto"
                     loading="lazy" // Lazy loading for better performance
                     onError={handleError} // Handle loading error
                   />

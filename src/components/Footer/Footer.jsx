@@ -48,7 +48,7 @@ const Footer = () => {
 
   return (
     <>
-     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-6 pt-40 pb-32">
+     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-6 pt-40 pb-32 z-20">
         <div className="">
           <h1 className="text-4xl md:text-[9rem] font-semibold md:leading-none">
             <span className="block">let’s discuss your</span>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </section>
 
-      <footer className="bg-black text-white py-10 lg:py-16 relative">
+      <footer className="z-20 bg-black text-white py-10 lg:py-16 relative">
         <div className="container mx-auto px-4 lg:px-24 z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 md:mt-16 lg:mt-28 text-center lg:text-left z-20">
             {/* Logo and Social Icons */}

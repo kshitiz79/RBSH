@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../components/Spinner/Spinner'; // Adjust the path as needed
-import InfoBar2 from '../../components/Infobar2/InfoBar2';
+
 import Hero from './Hero/Hero';
 import Video from './Video/Video';
 import Tablet from './Tablet/Tablet';
