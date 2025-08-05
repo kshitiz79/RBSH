@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async'; // Import for SEO
 import Spinner from '../components/Spinner/Spinner';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary'; // Adjust the path
@@ -12,6 +12,12 @@ const Footer = lazy(() => import('../components/Footer/Footer'));
 const CustomCursor = lazy(() => import('../components/CustomCursor/CustomCursor'));
 
 const Layout = () => {
+     const location = useLocation(); // Track route changes
+
+  useEffect(() => {
+    // Scroll to top whenever the route changes
+    window.scrollTo(0, 0);
+  }, [location]);
   const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   // Simulate content load finish for Footer rendering

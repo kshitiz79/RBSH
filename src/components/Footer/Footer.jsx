@@ -84,7 +84,7 @@ const Footer = () => {
   return (
     <>
     
-     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-2 md:pt-40 md:pb-32 py-4 md:py-0 z-20">
+     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-2 md:pt-24 md:pb-32 py-4 md:py-0 z-20">
    <div className="px-4 md:px-4">
   <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[7rem] font-semibold leading-none md:leading-none">
     <span className="block tracking-tight">let’s discuss your</span>
@@ -96,12 +96,12 @@ const Footer = () => {
       <span className="ml-1 sm:ml-2">{displayedText}</span>
     </span>
   </h1>
-  <div className="max-w-3xl sm:pt-20 px-2 sm:px-0 text-base sm:text-lg">
-    <p>Big ambitions?</p>
-    <p>We match the energy.</p>
+  <div className="max-w-3xl sm:pt-20 px-2 sm:px-0 text-xl sm:text-lg">
+    <p className="text-2xl">Big ambitions?</p>
+    <p className="text-2xl">We match the energy.</p>
     <br />
-    <Link to={"/contactus"} className="">
-    <button className="bg-black text-white px-6 sm:px-12 py-3 sm:py-4 rounded-md font-semibold">
+    <Link to={"/contactus"} className="bg-black text-white px-6 rounded-md py-6 hover:bg-gray-500">
+    <button className="bg-black text-white px-22  sm:px-12 py-3 sm:py-4 rounded-md font-semibold text-xl">
       CONTACT US
     </button>
     </Link>

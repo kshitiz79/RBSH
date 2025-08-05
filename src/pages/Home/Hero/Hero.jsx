@@ -9,7 +9,7 @@ const Hero = () => {
   const words = useMemo(
     () => [
       { word: 'clean', symbols: { left: '#', right: '#' } },
-      { word: 'Charming', symbols: { left: '@', right: '@' } },
+      { word: 'quality', symbols: { left: '@', right: '@' } },
       { word: 'creative', symbols: { left: '$', right: '$' } },
     ],
     []
@@ -104,7 +104,8 @@ const Hero = () => {
         ></div>
 
         <div className="fixed inset-0 flex flex-col justify-center items-center md:mb-96 mb-0 lg:mb-0 mt-28 lg:mt-0 md:mt-0">
-          <h1 className="hero text-center font-black text-black mt-28 text-2xl sm:text-base md:text-lg lg:text-xl xl:text-5xl font-lato">
+          <h1 className="hero text-center font-black text-black mt-28 text-2xl sm:text-base md:text-lg lg:text-xl xl:text-5xl " 
+          style={{ lineHeight: '1.2' }}>
             TRANSFORM <span className="font-medium uppercase">Your</span> BRAND <br />
             <span className="font-medium uppercase"> WITH </span> CREATIVITY <br />
             <span className="font-extrabold"> MEDIA</span> <span className="font-medium">&</span>{' '}

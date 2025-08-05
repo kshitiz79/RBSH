@@ -245,10 +245,10 @@ const BlogHero = () => {
             
 
             {/* 5. Sustainability & Purpose */}
-            
+       
           </div>
           <div className="md:h-[70vh]">
-            <img src="/blog.jpeg" alt="" className="md:mt-0 mt-4"/>
+            <img src="/blog8.png" alt="" className="md:mt-0 mt-4"/>
           </div>
           </section>
         </section>

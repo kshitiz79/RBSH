@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { Suspense, lazy } from 'react';
 import AboutPage from "../pages/About/About";
-import Home from "../pages/home/Home";
+import Home from "../pages/Home/Home";
 import TermsConditions from "../pages/Terms&Condition/Terms";
 import PrivacyPolicy from "../pages/Terms&Condition/Privacy";
 import RefundPolicy from "../pages/Terms&Condition/Refund";
@@ -77,36 +77,36 @@ const router = createBrowserRouter([
         path: '/web-design-development',
         element: <WebDesign />,
       },
-     
+
       {
         path: '/contactus',
         element: <ContactUs />,
-      }, 
+      },
       {
         path: '/terms&condition',
         element: <TermsConditions />,
       },
-       {
+      {
         path: '/privacy&policy',
-        element: <PrivacyPolicy/>,
+        element: <PrivacyPolicy />,
       },
       {
         path: '/refund-policy',
-        element: <RefundPolicy/>,
+        element: <RefundPolicy />,
       },
 
 
- {
+      {
         path: '/design',
-        element: <Design/>,
+        element: <Design />,
       },
- {
+      {
         path: '/marketing',
-        element: <Marketing/>,
+        element: <Marketing />,
       },
- {
+      {
         path: '/web-development',
-        element: <WebDevelopment/>,
+        element: <WebDevelopment />,
       },
 
 
@@ -115,5 +115,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+
 
 export default router;

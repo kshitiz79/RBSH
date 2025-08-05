@@ -95,7 +95,7 @@ const DefineUs = () => {
       {/* Right Section */}
       <aside className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left w-full">
         <h3
-          className="text-xl md:text-4xl font-semibold mb-7 z-20"
+          className="text-xl md:text-[2rem] font-semibold mb-7 z-20"
           style={{ lineHeight: '2.5rem' }}
         >
           We’re brand builders at heart, creators by <br /> design, tech enthusiasts in practice, and integrated at our core.

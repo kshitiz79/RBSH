@@ -11,7 +11,7 @@ const NavItem = ({ link, path }) => (
   <li className="relative">
     <Link
       to={path}
-      className="block text-lg  text-slate-800 uppercase hover:text-black hover:text-xl hover:font-extrabold whitespace-normal"
+      className="block text-lg  text-slate-800 uppercase hover:text-black  hover:font-extrabold whitespace-normal transition-all duration-300 "
     >
       {link}
     </Link>
