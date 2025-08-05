@@ -11,7 +11,7 @@ const NavItem = ({ link, path }) => (
   <li className="relative">
     <Link
       to={path}
-      className="block text-lg text-slate-800 uppercase hover:text-black hover:text-xl hover:font-extrabold whitespace-nowrap"
+      className="block text-lg  text-slate-800 uppercase hover:text-black hover:text-xl hover:font-extrabold whitespace-normal"
     >
       {link}
     </Link>
@@ -72,7 +72,7 @@ const Header = () => {
         ref={navRef}
         className={`py-3 lg:px-8 px-4 ${
           isSticky
-            ? "sticky top-0 left-0 right-0 bg-[#e5e8ea] shadow-lg transition-all duration-300 ease-in"
+            ? "sticky top-0 left-0 right-0 bg-[#e5e8ea]  shadow-lg transition-all duration-300 ease-in"
             : "transition-all duration-300 ease-in"
         }`}
         aria-label="Main Navigation"
@@ -87,7 +87,8 @@ const Header = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="md:flex space-x-12 hidden navitems font-medium relative z-20">
+          <ul className="md:flex space-x-12   hidden navitems font-medium relative z-20">
+
             {navItems.map(({ link, path }) => (
               <NavItem
                 key={path}
@@ -95,6 +96,7 @@ const Header = () => {
                 path={path}
               />
             ))}
+
           </ul>
 
           {/* Mobile Menu Button */}
@@ -142,10 +144,10 @@ const Header = () => {
 
           {/* Navigation Links */}
           {navItems.map(({ link, path }) => (
-            <div key={path} className="mb-7">
+            <div key={path} className="mb-7 p-12">
               <Link
                 to={path}
-                className="block font-lato text-white uppercase hover:text-yellow-500 whitespace-nowrap"
+                className="block font-lato p-12 text-white uppercase hover:text-yellow-500 whitespace-nowrap"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link}

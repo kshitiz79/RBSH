@@ -34,35 +34,7 @@ const ScrollingText = () => {
   }, [totalItems]);
 
   return (
-    <div ref={containerRef} className="overflow-hidden relative w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-black">
-      {/* Scrolling Text */}
-      <div
-        ref={textRef}
-        className="whitespace-nowrap flex text-white font-bold"
-      >
-        {/* Responsive Text Sizes */}
-        {textArray.map((text, index) => (
-          <span
-            key={index}
-            className="px-2 sm:px-4 md:px-6 lg:px-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            {text}
-          </span>
-        ))}
-      </div>
-
-      {/* Left Gradient Overlay */}
-      <div className="absolute top-0 left-0 h-full 
-                      w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
-                      bg-gradient-to-r from-black to-transparent 
-                      pointer-events-none"></div>
-
-      {/* Right Gradient Overlay */}
-      <div className="absolute top-0 right-0 h-full 
-                      w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
-                      bg-gradient-to-l from-black to-transparent 
-                      pointer-events-none"></div>
-    </div>
+  
   );
 };
 

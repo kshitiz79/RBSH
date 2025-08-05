@@ -17,7 +17,7 @@ const FloatingSection = React.lazy(() => import('./Slider/Slider'));
 const HorizontalScrollCard = React.lazy(() => import('../../components/HorizontalScrollCard/HorizontalScrollCard'));
 const DefineUs = React.lazy(() => import('./DefineUs/DefineUs'));
 const Technology = React.lazy(() => import('./Technology/Technology'));
-const ScrollingText = React.lazy(() => import('../../components/ScrollingText/ScrollingText'));
+
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -90,9 +90,7 @@ const Home = () => {
             <Technology />
     
 
-          <LazyLoad height={200} offset={100}>
-            <ScrollingText />
-          </LazyLoad>
+         
         </Suspense>
       </div>
     </HelmetProvider>

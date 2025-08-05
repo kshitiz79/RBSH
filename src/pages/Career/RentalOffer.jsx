@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 const Card = ({ heading, paragraph, bgColor }) => {
   const [hovered, setHovered] = useState(false);
 
@@ -26,7 +27,7 @@ const Card = ({ heading, paragraph, bgColor }) => {
         <h3
           className={clsx(
             "font-bold mb-4 transition-all duration-300",
-            hovered ? "text-2xl" : "text-3xl"
+            hovered ? "text-3xl" : "text-3xl"
           )}
         >
           {heading}
@@ -61,10 +62,12 @@ export default function RentalOffer() {
           </h1>
 
           <div className="mb-12">
+            <Link to={"/contactus"} className="inline-flex items-center gap-2 bg-[#ea4335] text-white px-5 py-2 text-sm font-semibold">
             <button className="flex items-center gap-2 bg-[#ea4335] text-white px-5 py-2 text-sm font-semibold">
               Join the RBSH Studio Team
               <span className="text-xl">➜</span>
             </button>
+            </Link>
           </div>
 
 

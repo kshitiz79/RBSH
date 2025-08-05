@@ -49,7 +49,7 @@ const CareerPage = () => {
           </div>
 
           {/* Right Content */}
-          <div className="w-[70%] p-8 flex flex-col bg-[#e5e8ea]">
+          <div className="w-[70%] p-14 flex flex-col bg-[#e5e8ea]">
             {/* Title */}
             <div className="h-[40%] flex items-center pt-20">
               <img src="/careerfont.png" alt="Career Font" />

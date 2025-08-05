@@ -1,8 +1,10 @@
-import { Suspense, lazy, useState, useEffect } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async'; // Import for SEO
 import Spinner from '../components/Spinner/Spinner';
 import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary'; // Adjust the path
+
+
 
 // Lazy load components
 const Header = lazy(() => import('../components/Header/Header'));
@@ -47,12 +49,12 @@ const Layout = () => {
           {/* Contact information for SEO */}
           <meta name="address" content="T3-236, Golden-I, Techzone IV, Greater Noida West, NCR" />
 
-           <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap"
-    rel="stylesheet"
-  />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&display=swap"
+            rel="stylesheet"
+          />
         </Helmet>
 
         {/* Header and CustomCursor */}
@@ -67,6 +69,8 @@ const Layout = () => {
             <Outlet />
           </Suspense>
         </div>
+
+
 
         {/* Footer (only visible after content is loaded) */}
         {isContentLoaded && (

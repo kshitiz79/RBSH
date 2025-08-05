@@ -14,7 +14,7 @@ const Technology = () => {
     {
       id: 2,
       title: "React.js",
-      content: "Library for building dynamic user interfaces efficiently.",
+      content: "Library for building dynamic user interfaces ",
       logo: "./technology5.webp",
     },
     {
@@ -26,13 +26,13 @@ const Technology = () => {
     {
       id: 4,
       title: "Google Trends",
-      content: "Explore trending search topics and keyword insights.",
+      content: "Explore trending search topics and keyword .",
       logo: "./technology11.webp",
     },
     {
       id: 5,
       title: "Next.js",
-      content: "React framework for server-side rendering and SEO.",
+      content: "React framework for server-side rendering and.",
       logo: "./technology9.webp",
     },
     {
@@ -50,31 +50,31 @@ const Technology = () => {
     {
       id: 8,
       title: "Mailchimp",
-      content: "Email marketing platform for campaigns and automation.",
+      content: "Email marketing platform for campaigns .",
       logo: "./technology4.webp",
     },
     {
       id: 9,
       title: "HubSpot",
-      content: "CRM software for marketing, sales, and customer service.",
+      content: "CRM software for marketing, sales",
       logo: "./technology7.webp",
     },
     {
       id: 10,
       title: "Canva",
-      content: "Online tool for designing graphics and presentations.",
+      content: "Online tool for designing graphics ",
       logo: "./technology10.webp",
     },
     {
       id: 11,
       title: "Google Ads",
-      content: "Advertising platform to reach customers through search.",
+      content: "Advertising platform to reach customers ",
       logo: "./technology8.webp",
     },
     {
       id: 12,
       title: "Facebook Analytics",
-      content: "Insights into your audience and their interactions.",
+      content: "Insights into your audience and engagement.",
       logo: "./technology6.webp",
     },
   ];
@@ -120,9 +120,9 @@ const Technology = () => {
           return (
             <div
               key={slide.id}
-              className="flex flex-col justify-start items-center h-full w-full relative px-4"
+              className="flex flex-col justify-start items-center h-full w-full relative px-4 py-5"
             >
-              <div className="bg-[#e5e8ea] rounded-lg shadow-md px-6 h-full flex flex-col">
+              <div className="bg-[#e5e8ea] rounded-lg shadow-md px-6 py-2 h-full flex flex-col">
                 {!hasError ? (
                   <img
                     src={slide.logo}

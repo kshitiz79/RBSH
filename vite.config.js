@@ -5,8 +5,14 @@ import svgr from 'vite-plugin-svgr'; // Import the SVG plugin
 // Vite configuration
 export default defineConfig({
   plugins: [react(), svgr()], // Add svgr plugin to the plugins array
+  base: '/', // Ensures the app is served from the root path
   server: {
     host: '0.0.0.0', // Allows access from any IP address on your local network
     port: 5173,      // Optional: Change the port if needed
+    historyApiFallback: true, // Enable SPA fallback for dev server
+  },
+  build: {
+    outDir: 'dist', // Output directory for production build
+    assetsDir: 'assets', // Directory for static assets
   },
 });

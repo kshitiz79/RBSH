@@ -17,7 +17,7 @@ const Section1 = () => {
 
         {/* Paragraph (below both images on mobile) */}
         <div className="md:absolute md:bottom-4 md:left-4 md:ml-4  md:max-w-md order-3 md:order-2">
-          <p className="text-black text-2xl md:text-[2.7rem] leading-tight md:leading-none">
+          <p className="text-black text-2xl md:text-[2.5rem] leading-tight md:leading-none">
             Maximalist graphic design is back: How to make chaos look cool
           </p>
         </div>
