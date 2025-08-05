@@ -36,15 +36,15 @@ const Testing = () => {
         {/* Right Side */}
         <div className="w-full md:w-[70%] p-4 md:p-8 flex flex-col bg-[#e5e8ea] md:px-20">
           {/* Title */}
-          <div className="pt-6 md:pt-10">
+          <div className="pt-6 md:pt-10 md:px-2">
             <h1 className="text-2xl md:text-4xl font-semibold">
               What sets RBSH Studio Private Limited apart
             </h1>
           </div>
 
           {/* Description */}
-          <div className="mt-4 md:mt-6 px-1 md:px-4">
-            <p className="text-base md:text-xl text-gray-700">
+          <div className="mt-4 md:mt-6 px-1 md:px-2">
+            <p className="text-base md:text-xl text-gray-700 text-justify">
               It’s not just the work we do — it’s how we do it. At RBSH Studio,
               creativity isn’t confined to a department; it’s the foundation of
               everything we build. We foster a culture where ideas are heard,
@@ -56,7 +56,7 @@ const Testing = () => {
 
           {/* Instagram Scroll Image */}
           <div className="w-full bg-[#e5e8ea] py-10 overflow-hidden">
-            <img src="/careerpage6.png" alt="Instagram Posts Preview" className="w-full object-cover" />
+            <img src="/careerpage6.png" alt="Instagram Posts Preview" className="w-full h-full cover" />
 
             {/* Keyframe (still included in case used later) */}
             <style>{`

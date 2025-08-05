@@ -70,7 +70,7 @@ const CareerPage = () => {
                     <img
                       src={src}
                       alt={`card-${index + 1}`}
-                      className="w-full h-full object-cover rounded"
+                      className="w-full h-full cover rounded"
                     />
                   </div>
                 ))}

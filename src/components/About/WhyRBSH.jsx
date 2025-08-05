@@ -29,7 +29,7 @@ export default function WhyRBSH() {
         {/* Left content */}
         <div className="w-full md:w-[70%] flex flex-col justify-center space-y-8 pr-6 pb-12">
           <div>
-            <h1 className="text-4xl md:text-[3rem] leading-none">
+            <h1 className="text-4xl md:text-[3rem] leading-none ">
               We partner with ambitious brands to shape culture, ignite
               advocacy, and drive success. Through strategic storytelling and
               digital innovation, we create connections and deliver brand
@@ -37,10 +37,10 @@ export default function WhyRBSH() {
             </h1>
           </div>
           <div className="leading-relaxed md:w-[56%] self-end py-20 ">
-            <button className="mt-4 px-6 py-3 bg-white text-black text-3xl font-semibold rounded-md flex items-center hover:bg-gray-200 transition">
+            <button className="mt-4 px-6 py-3 bg-white text-black text-3xl font-light rounded-md flex items-center hover:bg-gray-200 transition">
               OUR VISION
             </button>
-            <p className="text-gray-300 text-[1.11rem] text-justify-end mt-4">
+            <p className="text-gray-300 text-[1.11rem] text-justify mt-4">
               We collaborate with visionary brands to help them evolve and
               succeed. By transforming brand culture into passionate advocacy,
               we leverage digital strategies to create a loyal and engaged
@@ -55,7 +55,7 @@ export default function WhyRBSH() {
         </div>
 
         {/* Right image with shader distortion */}
-        <div className="w-full md:w-[40%] relative md:h-[100vh] h-[40vh] rounded-xl overflow-hidden mt-0 md:mt-4 mb-12">
+        <div className="w-full md:w-[40%] relative md:h-[100vh] h-[40vh] rounded-xl overflow-hidden mt-0 md:mt-4 mb-12 ml-2">
           <div
             id="image_story"
             className="absolute inset-0 md:h-[104vh] h-full w-full overflow-hidden rounded-xl"

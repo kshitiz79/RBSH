@@ -34,7 +34,7 @@ const Card = ({ heading, paragraph, bgColor }) => {
         </h3>
 
         {/* Paragraph + Icon */}
-        <div className="flex items-end justify-between mt-auto">
+        <div className="flex items-end justify-between mt-auto text-justify">
           <p
             className={clsx(
               "transition-opacity duration-300 max-w-[90%]",
@@ -73,7 +73,7 @@ export default function RentalOffer() {
 
           <div className=" max-w-4xl ml-auto">
 
-          <div className="grid md:grid-cols-2 gap-8 ">
+          <div className="grid md:grid-cols-2 gap-8  ">
             <Card
               heading="RBSH Studio is where ideas turn into visuals, and visuals turn into impact."
               paragraph="We’re a creative house driven by a simple belief — bold storytelling can shape how people think, feel, and connect. From concept to execution, we work across mediums and industries to craft stories that matter."

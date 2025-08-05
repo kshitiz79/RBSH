@@ -10,10 +10,10 @@ import { gsap } from "gsap";
 
 const Footer = () => {
 
-    const textRef = useRef(null);
+  const textRef = useRef(null);
   const containerRef = useRef(null);
 
-    const initialTextArray = [
+  const initialTextArray = [
     "Partner With Us For Innovative Strategies And Standout Campaigns",
   ];
 
@@ -47,7 +47,7 @@ const Footer = () => {
     { text: "idea", symbol: "→" },
   ];
 
-  const symbols = ["#", "@", "!", "&", "%", "$","{","*", "}"];
+  const symbols = ["#", "@", "!", "&", "%", "$", "{", "*", "}"];
 
   const [index, setIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState(words[0].text);
@@ -83,66 +83,66 @@ const Footer = () => {
 
   return (
     <>
-    
-     <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-2 md:pt-24 md:pb-32 py-4 md:py-0 z-20">
-   <div className="px-4 md:px-4">
-  <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[7rem] font-semibold leading-none md:leading-none">
-    <span className="block tracking-tight">let’s discuss your</span>
-    <span className="block">
-      <span className="mr-2 sm:mr-4">next</span>
-      <span className="inline-block align-middle transform translate-y-[-2px] text-xl sm:text-3xl md:text-6xl md:px-20">
-        <img src={arrowImg} alt="arrow" className="w-8 sm:w-12 md:w-20 inline" />
-      </span>
-      <span className="ml-1 sm:ml-2">{displayedText}</span>
-    </span>
-  </h1>
-  <div className="max-w-3xl sm:pt-20 px-2 sm:px-0 text-xl sm:text-lg">
-    <p className="text-2xl">Big ambitions?</p>
-    <p className="text-2xl">We match the energy.</p>
-    <br />
-    <Link to={"/contactus"} className="bg-black text-white px-6 rounded-md py-6 hover:bg-gray-500">
-    <button className="bg-black text-white px-22  sm:px-12 py-3 sm:py-4 rounded-md font-semibold text-xl">
-      CONTACT US
-    </button>
-    </Link>
-  </div>
-</div>
+
+      <section className="relative bg-[#e5e8ea] text-[#0a0f1c] px-2 md:pt-24 md:pb-32 py-4 md:py-0 z-20">
+        <div className="px-4 md:px-4">
+          <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[7rem] font-semibold leading-none md:leading-none">
+            <span className="block tracking-tight">let’s discuss your</span>
+            <span className="block">
+              <span className="mr-2 sm:mr-4">next</span>
+              <span className="inline-block align-middle transform translate-y-[-2px] text-xl sm:text-3xl md:text-6xl md:px-20">
+                <img src={arrowImg} alt="arrow" className="w-8 sm:w-12 md:w-20 inline" />
+              </span>
+              <span className="ml-1 sm:ml-2">{displayedText}</span>
+            </span>
+          </h1>
+          <div className="max-w-3xl sm:pt-20 px-2 sm:px-0 text-xl sm:text-lg">
+            <p className="text-2xl">Big ambitions?</p>
+            <p className="text-2xl">We match the energy.</p>
+            <br />
+            <Link to={"/contactus"} className="bg-black text-white px-6 rounded-md py-6 hover:bg-gray-500">
+              <button className=" text-white px-22  sm:px-12 py-3 sm:py-4 rounded-md font-semibold text-xl">
+                CONTACT US
+              </button>
+            </Link>
+          </div>
+        </div>
 
       </section>
 
-    <div ref={containerRef} className="overflow-hidden relative w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-black z-10">
-      {/* Scrolling Text */}
-      <div
-        ref={textRef}
-        className="whitespace-nowrap flex text-white font-bold"
-      >
-        {/* Responsive Text Sizes */}
-        {textArray.map((text, index) => (
-          <span
-            key={index}
-            className="uppercase px-2 sm:px-4 md:px-6 lg:px-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            {text}
-          </span>
-        ))}
-      </div>
+      <div ref={containerRef} className="overflow-hidden relative w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-black z-10">
+        {/* Scrolling Text */}
+        <div
+          ref={textRef}
+          className="whitespace-nowrap flex text-white font-bold"
+        >
+          {/* Responsive Text Sizes */}
+          {textArray.map((text, index) => (
+            <span
+              key={index}
+              className="uppercase px-2 sm:px-4 md:px-6 lg:px-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+              {text}
+            </span>
+          ))}
+        </div>
 
-      {/* Left Gradient Overlay */}
-      <div className="absolute top-0 left-0 h-full 
+        {/* Left Gradient Overlay */}
+        <div className="absolute top-0 left-0 h-full 
                       w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
                       bg-gradient-to-r from-black to-transparent 
                       pointer-events-none"></div>
 
-      {/* Right Gradient Overlay */}
-      <div className="absolute top-0 right-0 h-full 
+        {/* Right Gradient Overlay */}
+        <div className="absolute top-0 right-0 h-full 
                       w-1/6 sm:w-1/8 md:w-1/6 lg:w-6/12 
                       bg-gradient-to-l from-black to-transparent 
                       pointer-events-none"></div>
-    </div>
+      </div>
 
-      <footer className="z-20 bg-black text-white py-10 lg:py-16 relative">
+      <footer className="z-20 bg-black text-white py-10 lg:py-10 relative">
         <div className="container  max-w-full px-4 md:px-0 lg:px-8 z-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 md:mt-16 lg:mt-28 text-center lg:text-left z-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 md:mt-10 lg:mt-10 text-center lg:text-left z-20">
             {/* Logo and Social Icons */}
             <div className="flex flex-col items-center lg:items-start">
               <img

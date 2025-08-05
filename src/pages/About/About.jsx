@@ -9,6 +9,7 @@ import AboutSection from "./AboutSection";
 import ValuesSection from "../../components/About/ValueSection";
 import Text from "../../components/About/Text";
 import WhyRBSH from "../../components/About/WhyRBSH";
+import { ImageRippleDemo } from "../../components/About/ImageReppleDemo";
 
 
 // import HorizontalAboutSection from "../../components/About/HorizontalAbout";
@@ -51,6 +52,7 @@ const AboutPage = () => {
       <ValuesSection/>
       <Text/>
       <WhyRBSH/>
+      {/* <ImageRippleDemo/> */}
 
       <main className="bg-white relative">
   
