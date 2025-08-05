@@ -28,7 +28,7 @@ export default function InterviewSection() {
   ];
 
   return (
-    <section className="bg-[#e5e8ea] text-black  md:pt-60 mb:pb-20 font-sans px-6 border-b border-black">
+    <section className="bg-[#e5e8ea] text-black  md:pt-60 mb:pb-20 font-sans px-6 border-b border-black text-justify">
       <div className="">
         <p className="text-2xl md:text-3xl font-light leading-relaxed mb-16 ">
           <span className="text-red-600">

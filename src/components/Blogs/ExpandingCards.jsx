@@ -4,20 +4,20 @@ import { ArrowRight } from "lucide-react";
 
 const articles = [
   {
-    title: "How Denim Brand Triarchy Is Blazing a Path for Sustainable Luxury",
-    image: "/3.png",
+    title: "The Future of Frontend: Why Developers Are Choosing Next.js in 2025",
+    image: "/blog5.png",
+      targetId: "frontend",
   },
   {
-    title: "How Tarform Is Creating a New Breed of Electric Motorcycles: Stylish, Sustainable and Built to Last",
-    image: "/about2.png",
+    title: "The Future of Digital Marketing: 7 Trends Shaping 2025",
+    image: "/blog3.png",
+    targetId: "marketing",
   },
+
   {
-    title: "On Transforms Air Pollution into High-Performance Running Gear",
-    image: "/service.png",
-  },
-  {
-    title: "Golden Globe Winner Billie Eilish Talks Thrifting and Climate Change in Her Signature Grunge Style",
-    image: "/about3.png",
+    title: "The 2025 Design Shift: What’s Defining the Future of Graphic Design?",
+    image: "/blog2.png",
+    targetId: "design",
     highlight: true,
   },
 ];
@@ -35,17 +35,23 @@ const ExpandingCards = () => {
         {articles.map((article, i) => {
           const indexFromBottom = articles.length - 1 - i;
           return (
-            <motion.div
-              key={i}
-              initial={false}
-              animate={{
-                bottom: hovered ? indexFromBottom * 130 : 0,
-                scale: hovered ? 1 : 1 - indexFromBottom * 0.015,
-                zIndex: hovered ? i + 1 : 10 + i,
-              }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute left-0 w-full"
-            >
+           <motion.div
+  key={i}
+  initial={false}
+  animate={{
+    bottom: hovered ? indexFromBottom * 130 : 0,
+    scale: hovered ? 1 : 1 - indexFromBottom * 0.015,
+    zIndex: hovered ? i + 1 : 10 + i,
+  }}
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+  className="absolute left-0 w-full cursor-pointer"
+  onClick={() => {
+    const el = document.getElementById(article.targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
               <div className="flex bg-white p-5 rounded-xl shadow-lg overflow-hidden p_multiplier-4 items-center gap-4 border border-gray-200">
                 <div className="w-[80px] h-[80px] rounded-full overflow-hidden shrink-0">
                   <img

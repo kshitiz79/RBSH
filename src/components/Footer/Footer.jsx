@@ -141,26 +141,26 @@ const Footer = () => {
     </div>
 
       <footer className="z-20 bg-black text-white py-10 lg:py-16 relative">
-        <div className="container mx-auto px-4 lg:px-24 z-20">
+        <div className="container  max-w-full px-4 md:px-0 lg:px-8 z-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 md:mt-16 lg:mt-28 text-center lg:text-left z-20">
             {/* Logo and Social Icons */}
             <div className="flex flex-col items-center lg:items-start">
               <img
                 src="./logo2.png"
                 alt="RBSH Studio Logo"
-                className="mb-4 lg:w-[30rem] h-[5rem] w-[15rem] -ml-9"
+                className="mb-4 lg:w-full h-auto w-[15rem] -ml-16"
               />
-              <div className="flex space-x-7 md:space-x-9 mt-4 mr-8">
-                <a href="https://www.facebook.com/rbshstudio" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook" className="text-gray-400 hover:text-white">
+              <div className="flex space-x-7 md:space-x-2 mt-4 mr-8 text-3xl  ">
+                <a href="https://www.facebook.com/rbshstudio" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook" className="text-gray-400 hover:text-white border rounded-full p-2">
                   <FaFacebookF />
                 </a>
-                <a href="https://www.linkedin.com/company/rbshstudio/" target="_blank" rel="noopener noreferrer" title="Connect with us on LinkedIn" className="text-gray-400 hover:text-white">
+                <a href="https://www.linkedin.com/company/rbshstudio/" target="_blank" rel="noopener noreferrer" title="Connect with us on LinkedIn" className="text-gray-400 hover:text-white border rounded-full p-2">
                   <FaLinkedinIn />
                 </a>
-                <a href="https://www.instagram.com/rbshstudio" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram" className="text-gray-400 hover:text-white">
+                <a href="https://www.instagram.com/rbshstudio" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram" className="text-gray-400 hover:text-white border rounded-full p-2 ">
                   <FaInstagram />
                 </a>
-                <a href="https://www.youtube.com/@rbshstudio" target="_blank" rel="noopener noreferrer" title="Subscribe to our YouTube channel" className="text-gray-400 hover:text-white">
+                <a href="https://www.youtube.com/@rbshstudio" target="_blank" rel="noopener noreferrer" title="Subscribe to our YouTube channel" className="text-gray-400 hover:text-white border rounded-full p-2">
                   <FaYoutube />
                 </a>
               </div>
@@ -181,7 +181,7 @@ const Footer = () => {
               <h5 className="text-lg font-semibold mb-4 z-20">Find It Fast</h5>
               <ul className="space-y-2">
                 <li><Link to="/about" className="hover:text-yellow-500 z-10">About Us</Link></li>
-                <li><Link to="/branding-design" className="hover:text-yellow-500">Services</Link></li>
+                <li><Link to="/service" className="hover:text-yellow-500">Services</Link></li>
                 <li><Link to="/contactus" className="hover:text-yellow-500">Contact Us</Link></li>
               </ul>
             </div>

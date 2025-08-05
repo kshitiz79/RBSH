@@ -10,7 +10,7 @@ const BlogHero = () => {
       <div>
         <section className="bg-[#e5e8ea] py-10 px-4 pt-40">
           <div className=" max-w-4xl font-extrabold ">
-            <h1 className="text-[4rem] leading-none ml-4">
+            <h1 id="design"  className="text-[4rem] leading-none ml-4">
               {" "}
               <span className="text-red-600">The 2025 Design Shift: </span>{" "}
               What’s Defining the Future of Graphic Design?
@@ -21,9 +21,10 @@ const BlogHero = () => {
       <AnimatedIntro />
 
       <div>
-        <section className="bg-[#e2e5ea] py-10 mx-auto  px-8">
+        <section className="bg-[#e2e5ea] py-10 mx-auto  px-8 text-justify">
+          <section>
           <div className="max-w-4xl mx-auto text-lg">
-            <p className="font-semibold text-xl">
+            <p className="font-semibold text-2xl py-4 text-justify">
               {" "}
               <span className="text-red-600">
                 The world of graphic design is evolving faster than ever — and
@@ -85,12 +86,14 @@ const BlogHero = () => {
 
            
           </div>
+          </section>
+          <section id="marketing">
           <div className="border-t border-white mt-10 ">
-            <div className="max-w-4xl mx-auto">
-             <h1 className=" md:text-[3.6rem] text-[3.8rem] leading-none pt-20 hover:text-red-600">
+            <div className="max-w-4xl mx-auto items-center text-center">
+             <h1  className=" md:text-[3.6rem] text-[3.8rem] leading-none pt-20 hover:text-red-600">
               The Future of Digital Marketing: 7 Trends Shaping 2025
             </h1>
-            <p className="py-8 text-2xl pb-20">
+            <p className="py-10 text-2xl pb-20">
               In the fast-moving world of digital marketing, staying ahead isn’t
               optional—it’s essential. As we settle into 2025, brands face a
               more fragmented, more competitive, and more opportunity-rich
@@ -179,13 +182,16 @@ const BlogHero = () => {
               </p>
             </div>
           </div>
-          <div className="border-t border-white"></div>
+          </section>
+         
+          <section id="frontend" >
+             <div className="border-t border-white"></div>
           <div className="max-w-4xl mx-auto md:py-20 py-10">
-            <h1 className="md:text-[4rem] text-[1.5rem] leading-none text-center hover:text-red-600 font-bold">
+            <h1  className="md:text-[4rem] text-[1.5rem] leading-none text-center hover:text-red-600 font-bold">
               The Future of Frontend: Why Developers Are Choosing Next.js in
               2025
             </h1>
-            <p className="py-4 text-xl text-center px-12 md:mb-20">
+            <p className="py-4 md:mt-4 text-xl text-center px-12 md:mb-10">
               From startups to enterprises, everyone’s betting on Next.js—and
               for good reason. In 2025, it’s not just a React framework. It’s
               the backbone of some of the most high-performance websites and
@@ -244,6 +250,7 @@ const BlogHero = () => {
           <div className="md:h-[70vh]">
             <img src="/blog.jpeg" alt="" className="md:mt-0 mt-4"/>
           </div>
+          </section>
         </section>
       </div>
     </>
